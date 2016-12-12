@@ -28,7 +28,22 @@ public class Livre implements ILoadSave{
 	private boolean isSave = false;
 
 	private boolean isLoad = false;
+	
+	private boolean chapitreUnique = false;
+	
+	private boolean isAncienTestament = false;
 
+	/**
+	 * @param nom
+	 * @param abv
+	 */
+	public Livre(String nom, String abv,boolean at) {
+		super();
+		this.nom = nom;
+		this.abv = abv;
+		this.isAncienTestament = at;
+	}
+	
 	/**
 	 * @param nom
 	 * @param abv
@@ -37,6 +52,16 @@ public class Livre implements ILoadSave{
 		super();
 		this.nom = nom;
 		this.abv = abv;
+		this.isAncienTestament = false;
+	}
+	
+	/**
+	 * @param nom
+	 * @param abv
+	 */
+	public Livre(String nom, String abv,boolean at,boolean chapUnique) {
+		this(nom,abv,at);
+		this.chapitreUnique = chapUnique;
 	}
 
 	/**
@@ -86,6 +111,13 @@ public class Livre implements ILoadSave{
 		char add = '\0';
 		System.out.println("--------------------------------");
 		System.out.print(getNom()+":\t");
+		if(chapitreUnique){
+			this.chapitres.clear();
+			Chapitre chapitre = new Chapitre(this, 0);
+			chapitre.fetchFromInternet();
+			System.out.println("\n-- ["+this.getNom()+"] 1 Chapitre fetch --");
+			return;
+		}
 		List<String> list = getListChapitreFromInternet();
 		for(String numero : list){
 			int num = -1;
@@ -177,8 +209,23 @@ public class Livre implements ILoadSave{
 			}
 			String name = ver.getName();
 			try{
-				int numero = Integer.parseInt(name);
-				Chapitre chapitre = new Chapitre(this, numero);
+				String st = "";
+				String nbr = "";
+				char[] tmp = name.toCharArray();
+				for(int index = 0;index<tmp.length;index++){
+					if(Character.isDigit(tmp[index])){
+						nbr+=tmp[index];
+					}else{
+						st+=tmp[index];
+					}
+				}
+				int numero = Integer.parseInt(nbr);
+				Chapitre chapitre = null;
+				if(st.length()==1){
+					chapitre = new Chapitre(this, numero,st.charAt(0));
+				}else{
+					chapitre = new Chapitre(this, numero);
+				}
 				addChapitre(chapitre);
 				chapitre.load();
 				if(!chapitre.isLoad()){
@@ -221,7 +268,12 @@ public class Livre implements ILoadSave{
 	}
 
 	public String getFolderPath(){
-		return LivreColector.pathFolderLivre+File.separator+this.getAbv();
+		if(isAncienTestament){
+			return LivreColector.pathFolderAncienTestament+File.separator+this.getAbv();
+		}else{
+			return LivreColector.pathFolderNouveauTestament+File.separator+this.getAbv();
+		}
+		
 	}
 
 	public Chapitre createChapitre(int i) {
@@ -232,5 +284,9 @@ public class Livre implements ILoadSave{
 			}
 		}
 		return null;
+	}
+	
+	public boolean isChapitreUnique(){
+		return chapitreUnique;
 	}
 }

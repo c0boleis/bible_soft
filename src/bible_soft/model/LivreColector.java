@@ -4,7 +4,11 @@ import java.io.File;
 
 public class LivreColector {
 	
-	public static String pathFolderLivre = "/home/bata/bible";
+	public static String pathFolderLivre = "/home/bata/livres/bible";
+	
+	public static String pathFolderAncienTestament = "/home/bata/livres/bible/ancien_testament";
+	
+	public static String pathFolderNouveauTestament = "/home/bata/livres/bible/nouveau_testament";
 	
 	public static File folderLivre = new File(pathFolderLivre);
 	

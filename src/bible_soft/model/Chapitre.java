@@ -100,7 +100,12 @@ public class Chapitre implements ILoadSave{
 
 	public void fetchFromInternet() throws IOException, ParserConfigurationException, SAXException {
 		String add = cmpNumero=='\0'?"":String.valueOf(cmpNumero);
-		URL url = new URL(getLivre().getAddrInternet()+getNumero()+add);
+		URL url = null;
+		if(livre.isChapitreUnique()){
+			url = new URL(getLivre().getAddrInternet());
+		}else{
+			url = new URL(getLivre().getAddrInternet()+getNumero()+add);
+		}
 		URLConnection con = url.openConnection();
 		con.addRequestProperty("User-Agent", 
 				"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.0)");
@@ -261,8 +266,23 @@ public class Chapitre implements ILoadSave{
 			}
 			String name = ver.getName();
 			try{
-				int numero = Integer.parseInt(name);
-				Verset verset = new Verset(this, numero);
+				String st = "";
+				String nbr = "";
+				char[] tmp = name.toCharArray();
+				for(int index = 0;index<tmp.length;index++){
+					if(Character.isDigit(tmp[index])){
+						nbr+=tmp[index];
+					}else{
+						st+=tmp[index];
+					}
+				}
+				int numero = Integer.parseInt(nbr);
+				Verset verset = null;
+				if(st.length()==1){
+					verset = new Verset(this, numero,st.charAt(0));
+				}else{
+					verset = new Verset(this, numero);
+				}
 				addVerset(verset);
 				verset.load();
 				if(!verset.isLoad()){
