@@ -98,7 +98,7 @@ public class Book implements IBook {
 	}
 
 	@Override
-	public boolean isEmpty() {
+	public boolean isSubDivisionEmpty() {
 		File folder = new File(this.folderPath);
 		if(!folder.exists()){
 			return true;

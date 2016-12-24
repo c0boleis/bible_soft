@@ -7,6 +7,7 @@ import java.util.List;
 import javax.swing.JTree;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
+import javax.swing.tree.TreeNode;
 
 import books.model.IBook;
 import ihm.tree.nodes.BookNode;
@@ -29,7 +30,6 @@ public class TreeBooks extends JTree {
 	public TreeBooks(){
 		super();
 		this.setMinimumSize(new Dimension(50, 150));
-		this.setPreferredSize(new Dimension(50, 150));
 		this.setModel(getPersoModel());
 		this.setRootVisible(true);
 		this.addTreeSelectionListener(getListeners());
@@ -62,6 +62,10 @@ public class TreeBooks extends JTree {
 			listeners = new TreeBooksListeners(this);
 		}
 		return listeners;
+	}
+
+	public TreeNode getRootNode() {
+		return root;
 	}
 
 }

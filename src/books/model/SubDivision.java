@@ -20,6 +20,8 @@ public class SubDivision implements ISubDivision {
 	
 	private String hierarchy = null;
 	
+	private List<IText> texts = new ArrayList<IText>();
+	
 	private List<ISubDivision> subDivisions = new ArrayList<ISubDivision>();
 
 	public SubDivision(String fPtah){
@@ -63,7 +65,13 @@ public class SubDivision implements ISubDivision {
 		}
 		File[] files = folder.listFiles();
 		for(File file :files){
-			
+			if(file.isDirectory()){
+				SubDivision sub = new SubDivision(file.getAbsolutePath());
+				try {
+					sub.loadInfo();
+					subDivisions.add(sub);
+				} catch (NoPropetiesException e) {}
+			}
 		}
 	}
 
@@ -96,13 +104,12 @@ public class SubDivision implements ISubDivision {
 
 	@Override
 	public IText[] getTexts() {
-		// TODO Auto-generated method stub
-		return null;
+		return texts.toArray(new IText[0]);
 	}
+	
 	@Override
-	public boolean isEmpty() {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean isSubDivisionEmpty() {
+		return subDivisions.isEmpty();
 	}
 
 	@Override
@@ -114,7 +121,12 @@ public class SubDivision implements ISubDivision {
 	@Override
 	public boolean isTextEmpty() {
 		// TODO Auto-generated method stub
-		return false;
+		return texts.isEmpty();
+	}
+
+	@Override
+	public String getHierarchy() {
+		return this.hierarchy;
 	}
 
 }

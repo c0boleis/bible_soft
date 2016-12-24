@@ -5,8 +5,12 @@ import java.awt.event.MouseListener;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.swing.event.TreeModelEvent;
+import javax.swing.event.TreeModelListener;
 import javax.swing.event.TreeSelectionEvent;
 import javax.swing.event.TreeSelectionListener;
+import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreePath;
 
 import ihm.tree.nodes.BookNode;
@@ -15,13 +19,13 @@ import ihm.tree.nodes.SubBookDivisionNode;
 public class TreeBooksListeners implements MouseListener,TreeSelectionListener{
 
 	private TreeBooks tree;
-	
+
 	private Object[] selection = new Object[0];
-	
+
 	public TreeBooksListeners(TreeBooks t) {
 		this.tree = t;
 	}
-	
+
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
@@ -35,9 +39,10 @@ public class TreeBooksListeners implements MouseListener,TreeSelectionListener{
 			((BookNode) selection[0]).init();
 			System.out.println("BookNode load: "
 					+((BookNode) selection[0]).getChildCount());
-			tree.getPersoModel().reload();
-//			tree.getPersoModel().reload((TreeNode) tree.getModel().getRoot());
-			
+			tree.getPersoModel().reload((BookNode) selection[0]);
+//			tree.setModel(new TreeBooksModel(tree,tree.getRootNode()));
+			//			tree.getPersoModel().reload((TreeNode) tree.getModel().getRoot());
+
 		}else if(selection[0] instanceof SubBookDivisionNode){
 			((SubBookDivisionNode) selection[0]).init();
 			tree.getPersoModel().reload(((SubBookDivisionNode) selection[0]));

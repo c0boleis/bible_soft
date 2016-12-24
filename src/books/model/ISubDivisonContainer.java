@@ -6,6 +6,6 @@ public interface ISubDivisonContainer {
 	
 	public void loadSubDivisions();
 	
-	public boolean isEmpty();
+	public boolean isSubDivisionEmpty();
 
 }

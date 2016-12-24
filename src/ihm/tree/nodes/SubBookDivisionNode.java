@@ -69,7 +69,7 @@ public class SubBookDivisionNode extends DefaultMutableTreeNode {
 	 */
 	private DefaultMutableTreeNode getNodeSubDivision() {
 		if(nodeSubDivision == null){
-			nodeSubDivision = new DefaultMutableTreeNode("Chapter");//TODO properties
+			nodeSubDivision = new DefaultMutableTreeNode(this.subDivision.getHierarchy());//TODO properties
 		}
 		return nodeSubDivision;
 	}

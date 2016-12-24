@@ -15,5 +15,7 @@ public interface ISubDivision extends IOrderedObject,ITextContainer, IProperties
 	public String getName();
 	
 	public String getAbv();
+	
+	public String getHierarchy();
 
 }

@@ -20,16 +20,17 @@ public class BookNode extends DefaultMutableTreeNode {
 	public BookNode( IBook b) {
 		super();
 		this.book = b;
+//		this.setAllowsChildren(true);
 //		init();
 	}
 	
 	/* (non-Javadoc)
 	 * @see javax.swing.tree.DefaultMutableTreeNode#isLeaf()
 	 */
-	@Override
-	public boolean isLeaf() {
-		return !book.isEmpty();
-	}
+//	@Override
+//	public boolean isLeaf() {
+//		return !book.isEmpty();
+//	}
 
 	public final void init(){
 		if(this.getChildCount()>0){
