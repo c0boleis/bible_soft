@@ -1,6 +1,9 @@
 package bible_soft.model;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.StringWriter;
@@ -14,6 +17,8 @@ import javax.xml.parsers.ParserConfigurationException;
 
 import org.apache.commons.io.IOUtils;
 import org.xml.sax.SAXException;
+
+import books.model.IPropertiesUsed;
 
 public class Livre implements ILoadSave{
 
@@ -197,17 +202,20 @@ public class Livre implements ILoadSave{
 
 	@Override
 	public void load() {
-		File file = new File(getFolderPath());
-		if(!file.exists()){
+		File folder = new File(getFolderPath());
+		if(!folder.exists()){
 			return;
 		}
-		File[] files = file.listFiles();
+		File[] files = folder.listFiles();
 		boolean loaded = true;
-		for(File ver : files){
-			if(!file.isDirectory()){
+		for(File file : files){
+			if(!folder.isDirectory()){
 				continue;
 			}
-			String name = ver.getName();
+			if(file.getName().contains("info.properties")){
+				continue;
+			}
+			String name = file.getName();
 			try{
 				String st = "";
 				String nbr = "";
@@ -289,4 +297,42 @@ public class Livre implements ILoadSave{
 	public boolean isChapitreUnique(){
 		return chapitreUnique;
 	}
+	
+	public void createPropertiesFile(){
+		File file = new File(getFolderPath()+File.separator+"info.properties");
+		if(file.exists()){
+			return;
+		}
+		try {
+			BufferedWriter buf = new BufferedWriter(new FileWriter(file));
+			buf.write(IPropertiesUsed.KEY_NAME+"="+getNom()+"\n");
+			buf.write(IPropertiesUsed.KEY_ABV+"="+getAbv()+"\n");
+			buf.write(IPropertiesUsed.KEY_HIERARCHY+"=Chapitres");
+			buf.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+//	public int compteMot(final String mot,boolean thread){
+//		if(thread){
+//			int nbr=0;
+//			for(Chapitre chap : chapitres){
+//				Thread th = new Thread(new Runnable() {
+//					
+//					@Override
+//					public void run() {
+//						nbr+=chap.compteMot(mot, false);
+//					}
+//				});
+//				
+//			}
+//		}else{
+//			int nbr=0;
+//			for(Chapitre chap : chapitres){
+//				nbr+=chap.compteMot(mot, false);
+//			}
+//		}
+//	}
 }

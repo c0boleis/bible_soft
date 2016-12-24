@@ -9,6 +9,7 @@ import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JSplitPane;
 
+import ihm.tree.TreeBookCellRenderer;
 import ihm.tree.TreeBooks;
 import ihm.viewers.TabbedPaneChapeter;
 
@@ -28,6 +29,8 @@ public class Window extends JFrame {
 	private static JSplitPane mainSplit;
 	
 	private static JScrollPane scrollPaneTree;
+	
+	private static TreeBooks treeBooks;
 
 	private Window(){
 		super();
@@ -57,7 +60,7 @@ public class Window extends JFrame {
 	private static JScrollPane getScrollPaneTree() {
 		if(scrollPaneTree==null){
 			scrollPaneTree = new JScrollPane();
-			scrollPaneTree.setViewportView(TreeBooks.get());
+			scrollPaneTree.setViewportView(getTreeBooks());
 		}
 		return scrollPaneTree;
 	}
@@ -73,6 +76,16 @@ public class Window extends JFrame {
 			mainSplit.setDividerLocation(150);
 		}
 		return mainSplit;
+	}
+
+	/**
+	 * @return the treeBooks
+	 */
+	public static TreeBooks getTreeBooks() {
+		if(treeBooks==null){
+			treeBooks = new TreeBooks();
+		}
+		return treeBooks;
 	}
 
 }

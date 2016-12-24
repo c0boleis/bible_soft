@@ -6,9 +6,9 @@ public class LivreColector {
 	
 	public static String pathFolderLivre = "/home/bata/livres/bible";
 	
-	public static String pathFolderAncienTestament = "/home/bata/livres/bible/ancien_testament";
+	public static String pathFolderAncienTestament = "/home/bata/livres/bible/AT";
 	
-	public static String pathFolderNouveauTestament = "/home/bata/livres/bible/nouveau_testament";
+	public static String pathFolderNouveauTestament = "/home/bata/livres/bible/NT";
 	
 	public static File folderLivre = new File(pathFolderLivre);
 	

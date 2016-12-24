@@ -1,6 +1,8 @@
 package bible_soft.model;
 
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.StringReader;
@@ -22,6 +24,8 @@ import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
+
+import books.model.IPropertiesUsed;
 
 
 public class Chapitre implements ILoadSave{
@@ -254,17 +258,20 @@ public class Chapitre implements ILoadSave{
 
 	@Override
 	public void load() {
-		File file = new File(getFolderPath());
-		if(!file.exists()){
+		File folder = new File(getFolderPath());
+		if(!folder.exists()){
 			return;
 		}
-		File[] files = file.listFiles();
+		File[] files = folder.listFiles();
 		boolean loaded = true;
-		for(File ver : files){
-			if(!file.isDirectory()){
+		for(File file : files){
+			if(!folder.isDirectory()){
 				continue;
 			}
-			String name = ver.getName();
+			if(file.getName().contains("info.properties")){
+				continue;
+			}
+			String name = file.getName();
 			try{
 				String st = "";
 				String nbr = "";
@@ -276,7 +283,13 @@ public class Chapitre implements ILoadSave{
 						st+=tmp[index];
 					}
 				}
-				int numero = Integer.parseInt(nbr);
+				int numero = -1;
+				try{
+					numero = Integer.parseInt(nbr);
+				}catch(NumberFormatException e){
+					throw e;
+				}
+				
 				Verset verset = null;
 				if(st.length()==1){
 					verset = new Verset(this, numero,st.charAt(0));
@@ -333,6 +346,40 @@ public class Chapitre implements ILoadSave{
 	public String getFolderPath(){
 		String add = cmpNumero=='\0'?"":String.valueOf(cmpNumero);
 		return this.getLivre().getFolderPath()+File.separator+LivreColector.getNumberString(numero)+add;
+	}
+	
+	public int compteMot(String mot,boolean thread){
+		if(thread){
+			
+		}else{
+			int nbr = 0;
+			for(Verset chap : versets){
+				nbr+=chap.compteMot(mot);
+			}
+			return nbr;
+		}
+		return 0;
+	}
+	
+	public void createPropertiesFile(){
+		File file = new File(getFolderPath()+File.separator+"info.properties");
+		if(file.exists()){
+			return;
+		}
+		try {
+			String add = "";
+			if(cmpNumero!='\0'){
+				add = String.valueOf(cmpNumero);
+			}
+			BufferedWriter buf = new BufferedWriter(new FileWriter(file));
+			buf.write(IPropertiesUsed.KEY_NAME+"="+getNumero()+add+"\n");
+			buf.write(IPropertiesUsed.KEY_ABV+"="+getNumero()+add+"\n");
+			buf.write(IPropertiesUsed.KEY_HIERARCHY+"=Versets");
+			buf.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 }

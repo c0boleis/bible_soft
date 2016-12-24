@@ -2,10 +2,18 @@ package ihm;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 
+import javax.swing.JFileChooser;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
+
+import books.exceptions.NoPropetiesException;
+import books.model.Book;
+import ihm.tree.TreeBookCellRenderer;
+import ihm.tree.TreeBooks;
 
 public class MenuBarWindow extends JMenuBar {
 
@@ -24,6 +32,8 @@ public class MenuBarWindow extends JMenuBar {
 	/*
 	 * les menuItems
 	 */
+	
+	private static JMenuItem menuItemLoadBook;
 	
 	private static JMenuItem menuItemClose;
 	
@@ -44,6 +54,7 @@ public class MenuBarWindow extends JMenuBar {
 		if(menuFile==null){
 			menuFile = new JMenu();
 			menuFile.setText("Fichier");
+			menuFile.add(getMenuItemLoadBook());
 			menuFile.add(getMenuItemSave());
 			menuFile.addSeparator();
 			menuFile.add(getMenuItemClose());
@@ -88,6 +99,42 @@ public class MenuBarWindow extends JMenuBar {
 			});
 		}
 		return menuItemClose;
+	}
+
+	/**
+	 * @return the menuItemLoadBook
+	 */
+	private static JMenuItem getMenuItemLoadBook() {
+		if(menuItemLoadBook==null){
+			menuItemLoadBook = new JMenuItem();
+			menuItemLoadBook.setText("Load book");
+			menuItemLoadBook.addActionListener(new ActionListener() {
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					JFileChooser chooser = new JFileChooser();
+					chooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+					chooser.setMultiSelectionEnabled(false);
+					chooser.showOpenDialog(Window.get());
+					
+					File file = chooser.getSelectedFile();
+					if(file == null){
+						return;
+					}
+					Book livre = new Book(file.getPath());
+					try {
+						livre.loadInfo();
+						Window.getTreeBooks().addBook(livre);
+					} catch (NoPropetiesException e1) {
+						JOptionPane.showMessageDialog(Window.get(), e1.getMessage(), "ERREUR", JOptionPane.ERROR_MESSAGE);
+						e1.printStackTrace();
+					}
+					
+				}
+			});
+			
+		}
+		return menuItemLoadBook;
 	}
 
 }

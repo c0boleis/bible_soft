@@ -2,15 +2,33 @@ package lancement;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+
+
+import com.sun.org.apache.bcel.internal.generic.NEWARRAY;
 
 import bible_soft.model.Chapitre;
 import bible_soft.model.Livre;
+import bible_soft.model.Verset;
+import bible_soft.recherche.CompteurDeMots;
+import dico.VerbeCollector;
 
 public class Main {
 
-	public static void main(String[] args) {
 
+	static int nbrVersetAT = 0;
+	static int nbrVersetNT = 0;
+	static int nbrMot = 0;
+	static String mot = "[\\W][E|e]mmanuel";
+	static CompteurDeMots compteurDeMots = new CompteurDeMots();
+	static List<Thread> ths = new ArrayList<Thread>();
+	static HashMap<String, Integer> maps = new HashMap<String, Integer>();
+	
+	
+	public static void main(String[] args) {
+//		System.out.println(CompteurDeMots.sansAccent("Cœur").split("[\\W&&[^œ]]")[0]);
+//		VerbeCollector.loadVerbe();
 		/**********************/
 		/** ANCIEN TESTAMENT **/
 		/**********************/
@@ -275,115 +293,133 @@ public class Main {
 		livreAp.setAddrInternet("http://www.aelf.org/bible-liturgie/Ap/Livre+de+l%27Apocalypse/chapitre/");
 		NouveauTestament.add(livreAp);		
 
-		//		livre.setAddrInternet("http://www.aelf.org/bible-liturgie/Gn/Livre+de+la+Gen%C3%A8se/chapitre/");
-		//		try {
-		//			livre.fetchFromInternet(1);
-		//		} catch (IOException e) {
-		//			e.printStackTrace();
-		//		} catch (SAXException e) {
-		//			e.printStackTrace();
-		//		} catch (ParserConfigurationException e) {
-		//			e.printStackTrace();
-		//		}
-		////		System.out.println(livre.toString());
-		//		livre.save();
-		//		System.out.println("save? "+livre.isSave());
-		//		Chapitre chape = livreGn.createChapitre(1);
-		//
-		//		if(chape == null){
-		//			return;
-		//		}
-		//		chape.load();
-		//		Verset[] vers = chape.getVersets();
-		//		for(Verset ver : vers){
-		//			System.out.println(ver.getNumero()+": "+ver.getText()+"\n");
-		//		}
-
-		//		try {
-		//			livrePs.fetchFromInternet();
-		//			livrePs.save();
-		//		} catch (IOException e1) {
-		//			// TODO Auto-generated catch block
-		//			e1.printStackTrace();
-		//		}
-		//		Livre livre = livre2Tm;
-		//		try {
-		//			livre.fetchFromInternet();
-		//			livre.save();
-		//			System.out.println("#### "+livre.getNom()+" fecth and save ####");
-		//		} catch (Exception e) {
-		//			e.printStackTrace();
-		//		}
-		//		System.out.println("/**********************/");
-		//		System.out.println("/** ANCIEN TESTAMENT **/");
-		//		System.out.println("**********************/");
-		//		for(Livre liv : AncienTestament){
-		//			try {
-		//				liv.fetchFromInternet();
-		//				liv.save();
-		//				System.out.println("#### "+liv.getNom()+" fecth and save ####");
-		//			} catch (Exception e) {
-		//				e.printStackTrace();
-		//				System.err.println("#### ERREUR : "+liv.getNom());
-		//			}
-		//		}
-		//		System.out.println("/***********************/");
-		//		System.out.println("/** NOUVEAU TESTAMENT **/");
-		//		System.out.println("/***********************/");
-		//
-		//		for(Livre liv : NouveauTestament){
-		//			try {
-		//				liv.fetchFromInternet();
-		//				liv.save();
-		//				System.out.println("#### "+liv.getNom()+" fecth and save ####");
-		//			} catch (Exception e) {
-		//				e.printStackTrace();
-		//				System.err.println("#### ERREUR : "+liv.getNom());
-		//			}
-		//		}
-		int nbrVersetAT = 0;
+		long timeStart = System.currentTimeMillis();
 		System.out.println("/**********************/");
 		System.out.println("/** ANCIEN TESTAMENT **/");
 		System.out.println("**********************/");
-		for(Livre liv : AncienTestament){
-			try {
-				liv.load();
-				Chapitre[] chapitres = liv.getChapitres();
-				int k = 0;
-				for(Chapitre chap : chapitres){
-					k+=chap.getVersets().length;
-					nbrVersetAT+=chap.getVersets().length;
+		for(final Livre liv : AncienTestament){
+			Thread th = new Thread(new Runnable() {
+
+				@Override
+				public void run() {
+					try {
+						liv.load();
+						int k = 0;
+						Chapitre[] chapitres = liv.getChapitres();
+						for(Chapitre chap : chapitres){
+							k+=chap.getVersets().length;
+							nbrVersetAT+=chap.getVersets().length;
+							Verset[] versets = chap.getVersets();
+							for(Verset ver : versets){
+								//								ver.load();
+								//								nbrMot+=ver.compteMotRegex(mot);
+								nbrMot+=ver.compteMotRegex(mot);
+//								String[] tab = ver.getMots();
+//								for(String st : tab){
+//									compteurDeMots.addMots(st);
+//								}
+							}
+						}
+//						System.out.println("#### "+liv.getNom()+" à "+chapitres.length +" Chapitres et "+k+" versets");
+
+					} catch (Exception e) {
+						e.printStackTrace();
+						System.err.println("#### ERREUR : "+liv.getNom());
+					}
+
 				}
-				System.out.println("#### "+liv.getNom()+" à "+chapitres.length +" Chapitres et "+k+" versets");
-				
-			} catch (Exception e) {
-				e.printStackTrace();
-				System.err.println("#### ERREUR : "+liv.getNom());
-			}
+			});
+			ths.add(th);
+			th.run();
+
 		}
-		System.out.println("IL Y A "+nbrVersetAT+" DANS L'ANCIEN TESTAMENT");
+		//		System.out.println("IL Y A "+nbrVersetAT+" DANS L'ANCIEN TESTAMENT");
 		System.out.println("/***********************/");
 		System.out.println("/** NOUVEAU TESTAMENT **/");
 		System.out.println("/***********************/");
-		int nbrVersetNT = 0;
-		for(Livre liv : NouveauTestament){
-			try {
-				liv.load();
-				int k = 0;
-				Chapitre[] chapitres = liv.getChapitres();
-				for(Chapitre chap : chapitres){
-					k+=chap.getVersets().length;
-					nbrVersetNT+=chap.getVersets().length;
+		for(final Livre liv : NouveauTestament){
+			Thread th = new Thread(new Runnable() {
+
+				@Override
+				public void run() {
+					try {
+						liv.load();
+						int k = 0;
+						Chapitre[] chapitres = liv.getChapitres();
+						for(Chapitre chap : chapitres){
+							k+=chap.getVersets().length;
+							nbrVersetNT+=chap.getVersets().length;
+							Verset[] versets = chap.getVersets();
+							for(Verset ver : versets){
+								//															ver.load();
+								nbrMot+=ver.compteMotRegex(mot);
+//								String[] tab = ver.getMots();
+//								for(String st : tab){
+//									compteurDeMots.addMots(st);
+//								}
+							}
+						}
+//						System.out.println("#### "+liv.getNom()+" à "+liv.getChapitres().length +" Chapitres et "+k+" versets");
+					} catch (Exception e) {
+						e.printStackTrace();
+						System.err.println("#### ERREUR : "+liv.getNom());
+					}
+
 				}
-				System.out.println("#### "+liv.getNom()+" à "+liv.getChapitres().length +" Chapitres et "+k+" versets");
-			} catch (Exception e) {
+
+			});
+			ths.add(th);
+			th.run();
+		}
+		while(nbrThreadAlive()>0){
+			try {
+				Thread.sleep(100);
+				Thread.yield();
+			} catch (InterruptedException e) {
 				e.printStackTrace();
-				System.err.println("#### ERREUR : "+liv.getNom());
 			}
 		}
-		System.out.println("IL Y A "+nbrVersetNT+" DANS LE NOUVEAU TESTAMENT");
-		System.out.println("------------------------------------------------");
-		System.out.println("IL Y A "+(nbrVersetNT+nbrVersetAT)+" DANS LA BIBLE");
+		long time = System.currentTimeMillis()-timeStart;
+		int milli = (int) time  % 1000 ;
+		int seconds = (int) (time / 1000) % 60 ;
+		int minutes = (int) ((time / (1000*60)) % 60);
+		int hours   = (int) ((time / (1000*60*60)) % 24);
+		//		System.out.println("IL Y A "+nbrVersetNT+" DANS LE NOUVEAU TESTAMENT");
+		//		System.out.println("------------------------------------------------");
+		//		System.out.println("IL Y A "+(nbrVersetNT+nbrVersetAT)+" DANS LA BIBLE");
+		System.out.println("IL Y A "+(nbrMot)+" FOIS LE MOT: \""+mot+"\" DANS LA BIBLE");
+		compteurDeMots.sort();
+		System.out.println("IL Y A "+(compteurDeMots.size())+" MOTS DIFFERENTS DANS LA BIBLE");
+		compteurDeMots.print(30000);
+		if(hours>0){
+			System.out.println("temps de la recherche: "+hours+" h: "+minutes+" m: "+seconds+" s: "+milli+" milli");
+		}else if(minutes>0){
+			System.out.println("temps de la recherche: "+minutes+" m: "+seconds+" s: "+milli+" milli");
+		}else{
+			System.out.println("temps de la recherche: "+seconds+" s: "+milli+" milli");
+		}
+
+	}
+
+	public static boolean isAlive(){
+		for(Thread th : ths){
+			if(th.isAlive()){
+				return true;
+			}
+		}
+		//		System.err.println(nbr+" thread alive");
+		return false;
+	}
+	public static int nbrThreadAlive(){
+		int nbr = 0;
+		for(Thread th : ths){
+			if(th.isAlive()){
+				nbr++;
+			}
+		}
+		//		System.err.println(nbr+" thread alive");
+		System.err.flush();
+		return nbr;
 	}
 
 }

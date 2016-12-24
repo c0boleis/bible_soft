@@ -1,0 +1,17 @@
+package books.model;
+
+import books.exceptions.NoPropetiesException;
+
+public interface IPropertiesUsed {
+	
+	public static final String PROPERTIES_FILE_NAME = "info.properties";
+	
+	public static final String KEY_NAME = "name";
+	
+	public static final String KEY_ABV = "abv";
+	
+	public static final String KEY_HIERARCHY = "hierarchy";
+	
+	public void loadInfo() throws NoPropetiesException;
+
+}

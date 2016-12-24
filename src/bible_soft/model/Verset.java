@@ -6,19 +6,24 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.text.Normalizer;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import bible_soft.recherche.CompteurDeMots;
 
 public class Verset implements ILoadSave{
-	
+
 	private Chapitre chapitre;
-	
+
 	private int numero;
-	
+
 	private char cmpNumero = '\0';
-	
+
 	private String text;
-	
+
 	private boolean isSave = false;
-	
+
 	private boolean isLoad = false;
 
 	/* (non-Javadoc)
@@ -68,7 +73,7 @@ public class Verset implements ILoadSave{
 	public Chapitre getChapitre() {
 		return chapitre;
 	}
-	
+
 	public int getNumero(){
 		return numero;
 	}
@@ -89,7 +94,7 @@ public class Verset implements ILoadSave{
 
 	@Override
 	public void load() {
-		File file = new File(getChapitre().getFolderPath()+File.separator+getNumero());
+		File file = new File(getFilePath());
 		if(!file.exists()){
 			return;
 		}
@@ -113,7 +118,7 @@ public class Verset implements ILoadSave{
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
+
 	}
 
 	@Override
@@ -140,7 +145,7 @@ public class Verset implements ILoadSave{
 			e.printStackTrace();
 			isSave = false;
 		}
-		
+
 	}
 
 	@Override
@@ -152,13 +157,56 @@ public class Verset implements ILoadSave{
 	public boolean isSave() {
 		return isSave;
 	}
-	
+
 	public String getFilePath(){
 		String add = "";
 		if(cmpNumero!='\0'){
-				add+=cmpNumero;
+			add+=cmpNumero;
 		}
 		return getChapitre().getFolderPath()+File.separator+LivreColector.getNumberString(numero)+add;
+	}
+
+	public int compteMotRegex(String regex) {
+		Pattern pattern = Pattern.compile(regex);
+		Matcher matcher = pattern.matcher(text);
+		// Check all occurrences
+		int nbr=0;
+		while (matcher.find()) {
+			//	        System.out.println("Start index: " + matcher.start());
+			//	        System.out.println(" End index: " + matcher.end());
+			System.out.println("\t"+getRefference()+"\"" + matcher.group()+"\"\n"+getText());
+			nbr++;
+		}
+		return nbr;
+	}
+
+	public synchronized int compteMot(String mot){
+		if(text==null){
+			return 0;
+		}
+		int k = text.indexOf(mot);
+		int nbr = 0;
+		while(k>0){
+			k = text.indexOf(mot,k+mot.length());
+			nbr++;
+		}
+		if(nbr>0){
+			System.out.println("\t"+getRefference()+": "+nbr+" occurrence de \""+mot+"\"");
+			//			System.out.println(text);
+		}
+
+		//		System.out.flush();
+		return nbr;
+	}
+
+	public String getRefference(){
+		return this.getChapitre().getLivre().getAbv()+" "+this.getChapitre().getNumero()+", "+this.numero;
+	}
+
+	public String[] getMots(){
+		String textTmp = CompteurDeMots.sansAccent(text);
+		textTmp = textTmp.replaceAll("œ", "oe");
+		return textTmp.split("\\W");
 	}
 
 
