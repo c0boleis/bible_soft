@@ -25,6 +25,10 @@ public class TreeBooksListeners implements MouseListener,TreeSelectionListener{
 	public TreeBooksListeners(TreeBooks t) {
 		this.tree = t;
 	}
+	
+	public Object[] getSelection(){
+		return selection;
+	}
 
 
 	@Override
@@ -40,7 +44,7 @@ public class TreeBooksListeners implements MouseListener,TreeSelectionListener{
 			System.out.println("BookNode load: "
 					+((BookNode) selection[0]).getChildCount());
 			tree.getPersoModel().reload((BookNode) selection[0]);
-//			tree.setModel(new TreeBooksModel(tree,tree.getRootNode()));
+			//			tree.setModel(new TreeBooksModel(tree,tree.getRootNode()));
 			//			tree.getPersoModel().reload((TreeNode) tree.getModel().getRoot());
 
 		}else if(selection[0] instanceof SubBookDivisionNode){
@@ -81,7 +85,17 @@ public class TreeBooksListeners implements MouseListener,TreeSelectionListener{
 		for(TreePath path : paths){
 			sel.add(path.getLastPathComponent());
 		}
+		if(sel.isEmpty()){
+			selection = new Object[0];
+			return;
+		}
+		if(sel.size()>1){
+			sel.remove(sel.size()-1);
+		}
 		selection = sel.toArray(new Object[0]);
+		if(selection.length==1){
+			this.tree.getTreeBooksPopupMenu().init(selection[0]);
+		}
 	}
 
 }

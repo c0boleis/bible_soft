@@ -2,9 +2,13 @@ package ihm.tree.nodes;
 
 import javax.swing.tree.DefaultMutableTreeNode;
 
+import books.IReadable;
+import books.model.IShearable;
+import books.model.IShearchMatch;
 import books.model.IText;
 
-public class TextBookNode extends DefaultMutableTreeNode {
+public class TextBookNode extends DefaultMutableTreeNode 
+implements IReadable,IShearable{
 
 	/**
 	 * 
@@ -25,6 +29,16 @@ public class TextBookNode extends DefaultMutableTreeNode {
 	@Override
 	public String toString(){
 		return this.text.getName();
+	}
+
+	@Override
+	public String read() {
+		return this.text.read();
+	}
+
+	@Override
+	public IShearchMatch[] shearch(String regex) {
+		return this.text.shearch(regex);
 	}
 
 }

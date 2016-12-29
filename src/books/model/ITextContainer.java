@@ -1,6 +1,8 @@
 package books.model;
 
-public interface ITextContainer {
+import books.IReadable;
+
+public interface ITextContainer extends IReadable{
 	
 	public IText[] getTexts();
 	

@@ -12,6 +12,8 @@ public interface IPropertiesUsed {
 	
 	public static final String KEY_HIERARCHY = "hierarchy";
 	
+	public static final String KEY_ORDER = "order";
+	
 	public void loadInfo() throws NoPropetiesException;
 
 }

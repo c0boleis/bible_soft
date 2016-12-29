@@ -5,11 +5,16 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.Properties;
 
+import com.thoughtworks.xstream.annotations.XStreamAlias;
+
 import books.exceptions.NoPropetiesException;
 
+@XStreamAlias("Book")
 public class Book implements IBook {
 
 	private String abv = null;
@@ -18,7 +23,11 @@ public class Book implements IBook {
 
 	private String folderPath = null;
 	
-	private String[] hierarchy = null;
+	private String hierarchy = null;
+	
+	private boolean load = false;
+	
+	private boolean save = true;
 	
 	private List<ISubDivision> subDivisions = new ArrayList<ISubDivision>();
 
@@ -46,16 +55,7 @@ public class Book implements IBook {
 			pr.load(new FileReader(file));
 			this.name = pr.getProperty(KEY_NAME);
 			this.abv = pr.getProperty(KEY_ABV);
-			String ha = pr.getProperty(KEY_HIERARCHY);
-			String[] tmp = ha.split(";");
-			List<String> listTmp = new ArrayList<String>();
-			for(String st : tmp){
-				String mot = st.trim();
-				if(mot.length()>0){
-					listTmp.add(mot);
-				}
-			}
-			this.hierarchy = listTmp.toArray(new String[0]);
+			this.hierarchy = pr.getProperty(KEY_HIERARCHY);
 		} catch (FileNotFoundException e) {
 			throw new NoPropetiesException();
 		} catch (IOException e) {
@@ -74,11 +74,25 @@ public class Book implements IBook {
 		}
 		File[] files = folder.listFiles();
 		for(File file :files){
-			ISubDivision div = new SubDivision(file.getAbsolutePath());
+			ISubDivision div = new SubDivision(this,file.getAbsolutePath());
 			try {
 				div.loadInfo();
 				this.subDivisions.add(div);
 			} catch (NoPropetiesException e) {}
+		}
+		boolean sortByName = false;
+		for(ISubDivision div : this.subDivisions){
+			if(div.getOrder()<0){
+				sortByName = true;
+				break;
+			}
+		}
+		if(sortByName){
+			Collections.sort(subDivisions,
+					new SubDivisionNameComparator());
+		}else{
+			Collections.sort(subDivisions,
+					new OrderObjectComparator());
 		}
 	}
 
@@ -113,6 +127,53 @@ public class Book implements IBook {
 			}
 		}
 		return true;
+	}
+
+	@Override
+	public IShearchMatch[] shearch(String regex) {
+		List<IShearchMatch> listOut = new ArrayList<IShearchMatch>();
+		ISubDivision[] tabDiv = getSubDivisions();
+		for(ISubDivision division : tabDiv){
+			listOut.addAll(Arrays.asList(division.shearch(regex)));
+		}
+		return	listOut.toArray(new IShearchMatch[0]);
+	}
+
+	@Override
+	public boolean isSave() {
+		return this.save;
+	}
+
+	@Override
+	public void Save() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public boolean isLoad() {
+		return this.load;
+	}
+
+	@Override
+	public void load() throws IOException {
+		if(this.isLoad()){
+			return;
+		}
+		this.loadSubDivisions();
+		boolean loadTest = true;
+		for(ISubDivision div : this.subDivisions){
+			div.load();
+			if(!div.isLoad()){
+				loadTest=false;
+			}
+		}
+		this.load = loadTest;
+	}
+
+	@Override
+	public String getFolderName() {
+		return folderPath;
 	}
 
 }

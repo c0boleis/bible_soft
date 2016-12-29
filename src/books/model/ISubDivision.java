@@ -10,12 +10,27 @@ package books.model;
  * some text
  *
  */
-public interface ISubDivision extends IOrderedObject,ITextContainer, IPropertiesUsed,ISubDivisonContainer{
+public interface ISubDivision extends IOrderedObject,ITextContainer,
+IPropertiesUsed,ISubDivisonContainer, IShearable, ILoadSaveObject{
 	
 	public String getName();
 	
 	public String getAbv();
 	
 	public String getHierarchy();
+	
+	/**
+	 * 
+	 * @return the subDivision if isn't a book
+	 * else return null
+	 */
+	public ISubDivision getSubdivions();
+	
+	/**
+	 * 
+	 * @return the book of the subdivision
+	 * the book can't be null
+	 */
+	public IBook getBook();
 
 }

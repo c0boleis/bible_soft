@@ -22,8 +22,6 @@ public class MenuBarWindow extends JMenuBar {
 	 */
 	private static final long serialVersionUID = 6093430319447253057L;
 	
-	private static MenuBarWindow INSTANCE = new MenuBarWindow();
-	
 	/*
 	 * les menus
 	 */
@@ -39,12 +37,8 @@ public class MenuBarWindow extends JMenuBar {
 	
 	private static JMenuItem menuItemSave;
 	
-	private MenuBarWindow(){
+	public MenuBarWindow(){
 		this.add(getMenuFile());
-	}
-	
-	public static MenuBarWindow get(){
-		return INSTANCE;
 	}
 
 	/**
@@ -74,7 +68,7 @@ public class MenuBarWindow extends JMenuBar {
 				
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					// TODO Auto-generated method stub
+					Window.save();
 					
 				}
 			});
@@ -115,8 +109,10 @@ public class MenuBarWindow extends JMenuBar {
 					JFileChooser chooser = new JFileChooser();
 					chooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
 					chooser.setMultiSelectionEnabled(false);
-					chooser.showOpenDialog(Window.get());
-					
+					int rep = chooser.showOpenDialog(Window.get());
+					if(rep  != JFileChooser.APPROVE_OPTION ){
+						return;
+					}
 					File file = chooser.getSelectedFile();
 					if(file == null){
 						return;
@@ -129,12 +125,17 @@ public class MenuBarWindow extends JMenuBar {
 						JOptionPane.showMessageDialog(Window.get(), e1.getMessage(), "ERREUR", JOptionPane.ERROR_MESSAGE);
 						e1.printStackTrace();
 					}
-					
+					Window.needSave();
 				}
 			});
 			
 		}
 		return menuItemLoadBook;
+	}
+
+	public void init(Object object) {
+		getMenuItemSave().setEnabled(!Window.isSave());
+		
 	}
 
 }

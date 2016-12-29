@@ -5,10 +5,12 @@ import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreePath;
 
 import books.model.IBook;
+import books.model.IShearable;
+import books.model.IShearchMatch;
 import books.model.ISubDivision;
 import ihm.Window;
 
-public class BookNode extends DefaultMutableTreeNode {
+public class BookNode extends DefaultMutableTreeNode implements IShearable {
 
 	/**
 	 * 
@@ -42,10 +44,7 @@ public class BookNode extends DefaultMutableTreeNode {
 		for(ISubDivision div : tab){
 			node = new SubBookDivisionNode(div);
 
-			Window.getTreeBooks().getPersoModel().insertNodeInto(node, this, 0);
-		}
-		if(node!=null){
-			Window.getTreeBooks().scrollPathToVisible(new TreePath(node.getPath()));
+			Window.getTreeBooks().getPersoModel().insertNodeInto(node, this, this.getChildCount());
 		}
 	}
 	
@@ -56,6 +55,11 @@ public class BookNode extends DefaultMutableTreeNode {
 	@Override
 	public String toString(){
 		return book.getName();
+	}
+
+	@Override
+	public IShearchMatch[] shearch(String regex) {
+		return this.book.shearch(regex);
 	}
 
 }

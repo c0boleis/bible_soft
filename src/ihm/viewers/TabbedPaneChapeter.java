@@ -19,17 +19,11 @@ public class TabbedPaneChapeter extends JTabbedPane {
 	 */
 	private static final long serialVersionUID = 1112642137816667715L;
 	
-	private static TabbedPaneChapeter INSTANCE = new TabbedPaneChapeter();
-	
 	private static JPanel paneEmpty;
 	
-	private TabbedPaneChapeter(){
+	public TabbedPaneChapeter(){
 		this.setMinimumSize(new Dimension(100, 150));
 		this.add("Empty", getPaneEmpty());
-	}
-	
-	public static TabbedPaneChapeter get(){
-		return INSTANCE;
 	}
 
 	/**

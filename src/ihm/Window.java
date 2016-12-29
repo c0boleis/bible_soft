@@ -4,14 +4,21 @@
 package ihm;
 
 import java.awt.Dimension;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Properties;
 
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JSplitPane;
 
+import books.exceptions.NoPropetiesException;
 import ihm.tree.TreeBookCellRenderer;
 import ihm.tree.TreeBooks;
 import ihm.viewers.TabbedPaneChapeter;
+import ihm.workspace.Workspace;
 
 /**
  * @author bata
@@ -23,14 +30,24 @@ public class Window extends JFrame {
 	 * 
 	 */
 	private static final long serialVersionUID = -9203348546932805145L;
-	
+
 	private static Window INSTANCE = new Window();
-	
+
 	private static JSplitPane mainSplit;
-	
+
 	private static JScrollPane scrollPaneTree;
-	
+
 	private static TreeBooks treeBooks;
+
+	private static TabbedPaneChapeter tabbedPaneChapeter;
+
+	private static Workspace workspace;
+
+	private static MenuBarWindow menuBarWindow;
+
+	private static final File FOLDER_PROPERTIES = new File("setting.properties");
+
+	private static boolean save = true;
 
 	private Window(){
 		super();
@@ -38,19 +55,36 @@ public class Window extends JFrame {
 		this.setMinimumSize(new Dimension(300, 200));
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setExtendedState(JFrame.MAXIMIZED_BOTH);
-		this.setJMenuBar(MenuBarWindow.get());
+		this.setJMenuBar(getMenuBarWindow());
 		this.setContentPane(getMainSplit());
 	}
-	
+
 	public static void main(String[] args) {
 		open();
 	}
-	
+
 	public static Window get(){
 		return INSTANCE;
 	}
-	
+
 	public static void open(){
+		Properties properties = new Properties();
+		try {
+			properties.load(new FileReader(FOLDER_PROPERTIES));
+			String workspaceFolder = properties.getProperty("workspace","default");
+			if(!workspaceFolder.equals("default")){
+				getWorkspace().setFolder_path(workspaceFolder);
+			}
+			getWorkspace().load();
+			save = true;
+			getMenuBarWindow().init(null);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (NoPropetiesException e) {
+			e.printStackTrace();
+		}
 		INSTANCE.setVisible(true);
 	}
 
@@ -64,7 +98,7 @@ public class Window extends JFrame {
 		}
 		return scrollPaneTree;
 	}
-	
+
 	/**
 	 * @return the mainSplit
 	 */
@@ -72,7 +106,7 @@ public class Window extends JFrame {
 		if(mainSplit==null){
 			mainSplit = new  JSplitPane();
 			mainSplit.setLeftComponent(getScrollPaneTree());
-			mainSplit.setRightComponent(TabbedPaneChapeter.get());
+			mainSplit.setRightComponent(getTabbedPaneChapeter());
 			mainSplit.setDividerLocation(150);
 		}
 		return mainSplit;
@@ -86,6 +120,55 @@ public class Window extends JFrame {
 			treeBooks = new TreeBooks();
 		}
 		return treeBooks;
+	}
+
+	/**
+	 * @return the tabbedPaneChapeter
+	 */
+	public static TabbedPaneChapeter getTabbedPaneChapeter() {
+		if(tabbedPaneChapeter==null){
+			tabbedPaneChapeter = new TabbedPaneChapeter();
+		}
+		return tabbedPaneChapeter;
+	}
+
+	/**
+	 * @return the workspace
+	 */
+	public static Workspace getWorkspace() {
+		if(workspace==null){
+			workspace = new Workspace();
+		}
+		return workspace;
+	}
+
+	public static void save() {
+		try {
+			getWorkspace().save();
+			save = true;
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+	}
+
+	/**
+	 * @return the save
+	 */
+	public static boolean isSave() {
+		return save;
+	}
+
+	public static void needSave(){
+		save = false;
+		getMenuBarWindow().init(null);
+	}
+
+	public static MenuBarWindow getMenuBarWindow(){
+		if(menuBarWindow == null){
+			menuBarWindow = new MenuBarWindow();
+		}
+		return menuBarWindow;
 	}
 
 }
