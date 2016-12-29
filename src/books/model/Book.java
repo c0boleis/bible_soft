@@ -56,6 +56,10 @@ public class Book implements IBook {
 			this.name = pr.getProperty(KEY_NAME);
 			this.abv = pr.getProperty(KEY_ABV);
 			this.hierarchy = pr.getProperty(KEY_HIERARCHY);
+			boolean autoOpen = Boolean.parseBoolean(pr.getProperty(KEY_AUTO_OPEN, "false"));
+			if(autoOpen){
+				this.loadSubDivisions();
+			}
 		} catch (FileNotFoundException e) {
 			throw new NoPropetiesException();
 		} catch (IOException e) {

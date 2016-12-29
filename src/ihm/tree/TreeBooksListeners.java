@@ -43,13 +43,13 @@ public class TreeBooksListeners implements MouseListener,TreeSelectionListener{
 			((BookNode) selection[0]).init();
 			System.out.println("BookNode load: "
 					+((BookNode) selection[0]).getChildCount());
-			tree.getPersoModel().reload((BookNode) selection[0]);
+			tree.getTreeBooksModel().reload((BookNode) selection[0]);
 			//			tree.setModel(new TreeBooksModel(tree,tree.getRootNode()));
 			//			tree.getPersoModel().reload((TreeNode) tree.getModel().getRoot());
 
 		}else if(selection[0] instanceof SubBookDivisionNode){
 			((SubBookDivisionNode) selection[0]).init();
-			tree.getPersoModel().reload(((SubBookDivisionNode) selection[0]));
+			tree.getTreeBooksModel().reload(((SubBookDivisionNode) selection[0]));
 			tree.repaint();
 		}
 	}

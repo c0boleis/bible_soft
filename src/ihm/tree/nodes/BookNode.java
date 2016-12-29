@@ -23,7 +23,7 @@ public class BookNode extends DefaultMutableTreeNode implements IShearable {
 		super();
 		this.book = b;
 //		this.setAllowsChildren(true);
-//		init();
+		init(false);
 	}
 	
 	/* (non-Javadoc)
@@ -33,18 +33,24 @@ public class BookNode extends DefaultMutableTreeNode implements IShearable {
 //	public boolean isLeaf() {
 //		return !book.isEmpty();
 //	}
-
+	
 	public final void init(){
+		init(true);
+	}
+
+	public final void init(boolean load){
 		if(this.getChildCount()>0){
 			return;
 		}
-		this.book.loadSubDivisions();
+		if(load){
+			this.book.loadSubDivisions();
+		}
 		ISubDivision[] tab = this.book.getSubDivisions();
 		SubBookDivisionNode node =null;
 		for(ISubDivision div : tab){
 			node = new SubBookDivisionNode(div);
 
-			Window.getTreeBooks().getPersoModel().insertNodeInto(node, this, this.getChildCount());
+			Window.getTreeBooks().getTreeBooksModel().insertNodeInto(node, this, this.getChildCount());
 		}
 	}
 	

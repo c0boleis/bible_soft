@@ -81,6 +81,11 @@ public class SubDivision implements ISubDivision {
 			this.abv = pr.getProperty(KEY_ABV);
 			this.hierarchy = pr.getProperty(KEY_HIERARCHY);
 			this.order = Integer.parseInt(pr.getProperty(KEY_ORDER, "-1"));
+			boolean autoOpen = Boolean.parseBoolean(pr.getProperty(KEY_AUTO_OPEN, "false"));
+			if(autoOpen){
+				this.loadSubDivisions();
+				this.loadTexts();
+			}
 		} catch (FileNotFoundException e) {
 			throw new NoPropetiesException();
 		} catch (IOException e) {

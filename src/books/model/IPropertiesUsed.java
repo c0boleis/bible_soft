@@ -14,6 +14,8 @@ public interface IPropertiesUsed {
 	
 	public static final String KEY_ORDER = "order";
 	
+	public static final String KEY_AUTO_OPEN = "auto_open";
+	
 	public void loadInfo() throws NoPropetiesException;
 
 }

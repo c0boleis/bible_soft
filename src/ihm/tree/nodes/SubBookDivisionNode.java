@@ -27,28 +27,35 @@ implements IReadable,IShearable{
 	public SubBookDivisionNode(ISubDivision div){
 		super();
 		this.subDivision = div;
-		//		init();
+		init(false);
+	}
+	
+	public final void init(){
+		init(true);
 	}
 
-	public final void init(){
+	public final void init(boolean load){
 		if(this.getChildCount()>0){
 			return;
 		}
-		this.subDivision.loadSubDivisions();
+		if(load){
+			this.subDivision.loadSubDivisions();
+		}
+		
 		ISubDivision[] tab = this.subDivision.getSubDivisions();
 		if(tab.length>0){
-			Window.getTreeBooks().getPersoModel().insertNodeInto(getNodeSubDivision(), this, 0);
+			Window.getTreeBooks().getTreeBooksModel().insertNodeInto(getNodeSubDivision(), this, 0);
 			for(ISubDivision div : tab){
 				SubBookDivisionNode node = new SubBookDivisionNode(div);
-				Window.getTreeBooks().getPersoModel().insertNodeInto(node, getNodeSubDivision(), getNodeSubDivision().getChildCount());
+				Window.getTreeBooks().getTreeBooksModel().insertNodeInto(node, getNodeSubDivision(), getNodeSubDivision().getChildCount());
 			}
 		}
 		this.subDivision.loadTexts();
 		IText[] tab1 = this.subDivision.getTexts();
 		if(tab1.length>0){
-			Window.getTreeBooks().getPersoModel().insertNodeInto(getNodeText(), this, this.getChildCount());
+			Window.getTreeBooks().getTreeBooksModel().insertNodeInto(getNodeText(), this, this.getChildCount());
 			for(IText text : tab1){
-				Window.getTreeBooks().getPersoModel().insertNodeInto(new TextBookNode(text), getNodeText(),  getNodeText().getChildCount());
+				Window.getTreeBooks().getTreeBooksModel().insertNodeInto(new TextBookNode(text), getNodeText(),  getNodeText().getChildCount());
 			}
 		}
 	}

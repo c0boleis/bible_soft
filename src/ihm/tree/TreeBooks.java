@@ -32,8 +32,8 @@ public class TreeBooks extends JTree {
 	public TreeBooks(){
 		super();
 		this.setMinimumSize(new Dimension(50, 150));
-		this.setModel(getPersoModel());
-		this.setRootVisible(true);
+		this.setModel(getTreeBooksModel());
+		this.setRootVisible(false);
 		this.addTreeSelectionListener(getTreeBooksListeners());
 		this.addMouseListener(getTreeBooksListeners());
 		this.setComponentPopupMenu(getTreeBooksPopupMenu());
@@ -54,7 +54,7 @@ public class TreeBooks extends JTree {
 		//TODO
 	}
 
-	public TreeBooksModel getPersoModel() {
+	public TreeBooksModel getTreeBooksModel() {
 		if(model==null){
 			model = new TreeBooksModel(this,root);
 		}
