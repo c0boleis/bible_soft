@@ -109,4 +109,14 @@ implements IReadable,IShearable{
 		return this.subDivision.shearch(regex);
 	}
 
+	@Override
+	public IShearchMatch[] shearch(String regex, String translation) {
+		return this.subDivision.shearch(regex, translation);
+	}
+
+	@Override
+	public String read(String translation) {
+		return this.subDivision.read(translation);
+	}
+
 }

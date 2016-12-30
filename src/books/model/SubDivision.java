@@ -224,17 +224,7 @@ public class SubDivision implements ISubDivision {
 
 	@Override
 	public String read() {
-		String text = "";
-		boolean first = true;
-		IText[] texts = this.getTexts();
-		for(IText t : texts){
-			if(!first){
-				text+="\n";
-			}
-			first = false;
-			text+=t.getName()+":\t"+t.getText();
-		}
-		return text;
+		return read(null);
 	}
 
 	@Override
@@ -301,6 +291,32 @@ public class SubDivision implements ISubDivision {
 			return this.subDivision.getBook();
 		}
 		return this.book;
+	}
+
+	@Override
+	public String read(String trad) {
+		String text = "";
+		boolean first = true;
+		IText[] texts = this.getTexts();
+		for(IText t : texts){
+			if(!first){
+				text+="\n";
+			}
+			first = false;
+			if(trad==null){
+				text+=t.getName()+":\t"+t.getText(trad);
+			}else{
+				text+=t.getName()+":\t"+t.getText(t.getDefaultTranslation());
+			}
+			
+		}
+		return text;
+	}
+
+	@Override
+	public IShearchMatch[] shearch(String regex, String translation) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

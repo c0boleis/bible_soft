@@ -14,11 +14,14 @@ import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JSplitPane;
 
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
+
 import books.exceptions.NoPropetiesException;
-import ihm.tree.TreeBookCellRenderer;
 import ihm.tree.TreeBooks;
 import ihm.viewers.TabbedPaneChapeter;
 import ihm.workspace.Workspace;
+import lancement.Main;
 
 /**
  * @author bata
@@ -30,6 +33,8 @@ public class Window extends JFrame {
 	 * 
 	 */
 	private static final long serialVersionUID = -9203348546932805145L;
+	
+	static final Logger LOGGER = Logger.getLogger(Main.class);
 
 	private static Window INSTANCE = new Window();
 
@@ -60,6 +65,8 @@ public class Window extends JFrame {
 	}
 
 	public static void main(String[] args) {
+		PropertyConfigurator.configure("log4Jconfig.properties");
+		LOGGER.info("Start programme");
 		open();
 	}
 

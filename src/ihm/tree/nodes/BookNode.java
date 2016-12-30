@@ -68,4 +68,9 @@ public class BookNode extends DefaultMutableTreeNode implements IShearable {
 		return this.book.shearch(regex);
 	}
 
+	@Override
+	public IShearchMatch[] shearch(String regex, String translation) {
+		return this.book.shearch(regex, translation);
+	}
+
 }

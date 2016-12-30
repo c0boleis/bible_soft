@@ -135,12 +135,7 @@ public class Book implements IBook {
 
 	@Override
 	public IShearchMatch[] shearch(String regex) {
-		List<IShearchMatch> listOut = new ArrayList<IShearchMatch>();
-		ISubDivision[] tabDiv = getSubDivisions();
-		for(ISubDivision division : tabDiv){
-			listOut.addAll(Arrays.asList(division.shearch(regex)));
-		}
-		return	listOut.toArray(new IShearchMatch[0]);
+		return shearch(regex, null);
 	}
 
 	@Override
@@ -178,6 +173,16 @@ public class Book implements IBook {
 	@Override
 	public String getFolderName() {
 		return folderPath;
+	}
+
+	@Override
+	public IShearchMatch[] shearch(String regex, String translation) {
+		List<IShearchMatch> listOut = new ArrayList<IShearchMatch>();
+		ISubDivision[] tabDiv = getSubDivisions();
+		for(ISubDivision division : tabDiv){
+			listOut.addAll(Arrays.asList(division.shearch(regex,translation)));
+		}
+		return	listOut.toArray(new IShearchMatch[0]);
 	}
 
 }

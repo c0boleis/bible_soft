@@ -1,10 +1,12 @@
 package lancement;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import org.apache.log4j.Logger;
 
 import com.sun.org.apache.bcel.internal.generic.NEWARRAY;
 
@@ -24,11 +26,14 @@ public class Main {
 	static CompteurDeMots compteurDeMots = new CompteurDeMots();
 	static List<Thread> ths = new ArrayList<Thread>();
 	static HashMap<String, Integer> maps = new HashMap<String, Integer>();
-	
-	
+	static final Logger LOGGER = Logger.getLogger(Main.class);
+
 	public static void main(String[] args) {
-//		System.out.println(CompteurDeMots.sansAccent("Cœur").split("[\\W&&[^œ]]")[0]);
-//		VerbeCollector.loadVerbe();
+		//init logger
+		System.setProperty("log4j.configuration", "log4Jconfig.properties");
+		LOGGER.info("Start programme");
+		//		System.out.println(CompteurDeMots.sansAccent("Cœur").split("[\\W&&[^œ]]")[0]);
+		//		VerbeCollector.loadVerbe();
 		/**********************/
 		/** ANCIEN TESTAMENT **/
 		/**********************/
@@ -314,13 +319,13 @@ public class Main {
 								//								ver.load();
 								//								nbrMot+=ver.compteMotRegex(mot);
 								nbrMot+=ver.compteMotRegex(mot);
-//								String[] tab = ver.getMots();
-//								for(String st : tab){
-//									compteurDeMots.addMots(st);
-//								}
+								//								String[] tab = ver.getMots();
+								//								for(String st : tab){
+								//									compteurDeMots.addMots(st);
+								//								}
 							}
 						}
-//						System.out.println("#### "+liv.getNom()+" à "+chapitres.length +" Chapitres et "+k+" versets");
+						//						System.out.println("#### "+liv.getNom()+" à "+chapitres.length +" Chapitres et "+k+" versets");
 
 					} catch (Exception e) {
 						e.printStackTrace();
@@ -353,13 +358,13 @@ public class Main {
 							for(Verset ver : versets){
 								//															ver.load();
 								nbrMot+=ver.compteMotRegex(mot);
-//								String[] tab = ver.getMots();
-//								for(String st : tab){
-//									compteurDeMots.addMots(st);
-//								}
+								//								String[] tab = ver.getMots();
+								//								for(String st : tab){
+								//									compteurDeMots.addMots(st);
+								//								}
 							}
 						}
-//						System.out.println("#### "+liv.getNom()+" à "+liv.getChapitres().length +" Chapitres et "+k+" versets");
+						//						System.out.println("#### "+liv.getNom()+" à "+liv.getChapitres().length +" Chapitres et "+k+" versets");
 					} catch (Exception e) {
 						e.printStackTrace();
 						System.err.println("#### ERREUR : "+liv.getNom());

@@ -8,10 +8,13 @@ public class TextMatch implements IShearchMatch{
 	private String wordMatch;
 	
 	private IText objectMatch;
+	
+	private String translationName;
 
-	public TextMatch(String word,IText text) {
+	public TextMatch(String word,IText text,String translation) {
 		this.wordMatch = word;
 		this.objectMatch = text;
+		this.translationName = translation;
 	}
 
 	/*
@@ -29,7 +32,7 @@ public class TextMatch implements IShearchMatch{
 	 */
 	@Override
 	public String toString(){
-		return this.objectMatch.getRefference()+"\"" +wordMatch+"\"\n"+this.objectMatch.getText();
+		return this.objectMatch.getRefference()+"\"" +wordMatch+"\"\n"+this.objectMatch.getText(this.translationName);
 	}
 
 	/*
@@ -39,6 +42,11 @@ public class TextMatch implements IShearchMatch{
 	@Override
 	public String getMatchWord() {
 		return this.wordMatch;
+	}
+
+	@Override
+	public String getTranslationName() {
+		return this.translationName;
 	}
 
 }

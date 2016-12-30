@@ -13,12 +13,24 @@ import books.IReadable;
  */
 public interface IText extends IOrderedObject,IReadable,
 IShearable,ILoadSaveObject{
+	
+	public static final String KEY_TRANSLATIONS = "translations";
+	
+	public static final String TRANSLATIONS_SEPARATOR = ";";
+	
+	public static final String KEY_TEXT = "text";
+	
+	public static final String NAME_DEFAULT_TRANSLATION = "default";
 
 	public String getName();
 	
-	public String getText();
+	public String[] getTraductions();
 	
-	public void setText(String t);
+	public String getDefaultTranslation();
+	
+	public String getText(String trad);
+	
+	public void setText(String t,String trad);
 
 	public String getRefference();
 	

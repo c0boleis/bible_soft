@@ -6,9 +6,12 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import org.apache.log4j.Logger;
 
 import books.model.shearch.TextMatch;
 
@@ -19,7 +22,9 @@ import books.model.shearch.TextMatch;
  */
 public class Text implements IText, IOrderedObject {
 	
-	private String text;
+	private static final Logger LOGGER = Logger.getLogger(Text.class);
+	
+	private HashMap<String, String> texts = new HashMap<String,String>();
 	
 	private String name;
 	
@@ -33,6 +38,7 @@ public class Text implements IText, IOrderedObject {
 	
 	private ISubDivision subDivision;
 
+	private String defaultTranslation = NAME_DEFAULT_TRANSLATION;
 
 	public Text(ISubDivision div,String text,String name) {
 		if(div==null){
@@ -40,7 +46,7 @@ public class Text implements IText, IOrderedObject {
 					"la subdivition d'un text ne peut pas etre null");
 		}
 		this.subDivision = div;
-		this.text = text;
+		this.setText(text, defaultTranslation);
 		this.name = name;
 	}
 	
@@ -90,8 +96,8 @@ public class Text implements IText, IOrderedObject {
 	 * @see books.model.IText#getText()
 	 */
 	@Override
-	public String getText() {
-		return this.text;
+	public String getText(String trad) {
+		return this.texts.get(trad);
 	}
 
 	/*
@@ -99,8 +105,8 @@ public class Text implements IText, IOrderedObject {
 	 * @see books.model.IText#setText()
 	 */
 	@Override
-	public void setText(String t) {
-		this.text = t;
+	public void setText(String t,String trad) {
+		this.texts.put(trad, t);//TODO vérifier
 	}
 
 	/**
@@ -112,19 +118,17 @@ public class Text implements IText, IOrderedObject {
 
 	@Override
 	public String read() {
-		return this.text;
+		return this.getText(defaultTranslation);
+	}
+	
+	@Override
+	public String read(String trad) {
+		return this.texts.get(trad);
 	}
 
 	@Override
 	public IShearchMatch[] shearch(String regex) {
-		List<IShearchMatch> listOut = new ArrayList<IShearchMatch>();
-		Pattern pattern = Pattern.compile(regex);
-		Matcher matcher = pattern.matcher(text);
-		// Check all occurrences
-		while (matcher.find()) {
-			listOut.add(new TextMatch(matcher.group(), this));
-		}
-		return	listOut.toArray(new IShearchMatch[0]);
+		return shearch(regex,this.defaultTranslation);
 	}
 
 	@Override
@@ -158,19 +162,125 @@ public class Text implements IText, IOrderedObject {
 		this.name = file.getName();
 		BufferedReader buf = new BufferedReader(new FileReader(file));
 		String line = buf.readLine();
-		this.text ="";
+		String text ="";
 		while(line!=null){
-			this.text+=line.trim()+"\n";
+			text+=line+"\n";
 			line = buf.readLine();
 		}
 		buf.close();
+		String[] translations = getZoneTranslations(text);
+		if(translations.length<=0){
+			return;
+		}
+		this.defaultTranslation = translations[0];
+		String zoneText = getZoneText(text);
+		if(zoneText==null){
+			this.load = false;
+			return;
+		}
+		for(String trans : translations){
+			try{
+				String textTranslation = getTranslationZoneText(zoneText, trans);
+				this.texts.put(trans, textTranslation);
+			}catch(IllegalArgumentException e){
+				LOGGER.error(e.getMessage());
+			}
+		}
 		this.load = true;
+	}
+	
+	private String getTranslationZoneText(String text,String translation){
+		String textStart = "<"+translation+">";
+		String textEnd ="</"+translation+">"; 
+		int indexStart = text.indexOf(textStart);
+		int indexEnd = text.indexOf(textEnd);
+		if(indexEnd<0 && indexStart<0){
+			throw new IllegalArgumentException("les balises "+textStart+" n'ont pas été trouvées.");
+		}else if(indexEnd>=0 && indexStart<0){
+			throw new IllegalArgumentException("la balise de début "+textStart+" n'a pas été trouvée.");
+		}else if(indexEnd<0 && indexStart>=0){
+			throw new IllegalArgumentException("la balise de fin "+textEnd+" n'a pas été trouvée.");
+		}else if((indexStart+textStart.length())>indexEnd){
+			throw new IllegalArgumentException("les balises "+textStart+" ne sont pas dans le bonne ordre.");
+		}
+		String translations = text.substring(indexStart+textStart.length(), indexEnd);
+		return translations.trim();
+	}
+	
+	private String getZoneText(String text){
+		String textStart = "<"+KEY_TEXT+">";
+		String textEnd ="</"+KEY_TEXT+">"; 
+		int indexStart = text.indexOf(textStart);
+		int indexEnd = text.indexOf(textEnd);
+		if(indexEnd<0 && indexStart<0){
+			throw new IllegalArgumentException("les balises "+textStart+" n'ont pas été trouvées.");
+		}else if(indexEnd>=0 && indexStart<0){
+			throw new IllegalArgumentException("la balise de début "+textStart+" n'a pas été trouvée.");
+		}else if(indexEnd<0 && indexStart>=0){
+			throw new IllegalArgumentException("la balise de fin "+textEnd+" n'a pas été trouvée.");
+		}else if((indexStart+textStart.length())>indexEnd){
+			throw new IllegalArgumentException("les balises "+textStart+" ne sont pas dans le bonne ordre.");
+		}
+		String translations = text.substring(indexStart+textStart.length(), indexEnd);
+		translations =  translations.trim();
+		if(translations.length()==0){
+			return null;
+		}
+		return translations;
+	}
+	
+	private String[] getZoneTranslations(String text){
+		String textStart = "<"+KEY_TRANSLATIONS+">";
+		String textEnd ="</"+KEY_TRANSLATIONS+">"; 
+		int indexStart = text.indexOf(textStart);
+		int indexEnd = text.indexOf(textEnd);
+		if(indexEnd<0 && indexStart<0){
+			throw new IllegalArgumentException("les balises "+textStart+" n'ont pas été trouvées.");
+		}else if(indexEnd>=0 && indexStart<0){
+			throw new IllegalArgumentException("la balise de début "+textStart+" n'a pas été trouvée.");
+		}else if(indexEnd<0 && indexStart>=0){
+			throw new IllegalArgumentException("la balise de fin "+textEnd+" n'a pas été trouvée.");
+		}else if((indexStart+textStart.length())>indexEnd){
+			throw new IllegalArgumentException("les balises "+textStart+" ne sont pas dans le bonne ordre.");
+		}
+		String translations = text.substring(indexStart+textStart.length(), indexEnd);
+		String info[] = translations.split(TRANSLATIONS_SEPARATOR);
+		List<String> trans = new ArrayList<String>();
+		for(String t : info){
+			String st =t.trim();
+			if(st.length()>0){
+				trans.add(st);
+			}
+		}
+		return trans.toArray(new String[0]);
 	}
 
 	@Override
 	public ISubDivision getSubDivision() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public IShearchMatch[] shearch(String regex, String translation) {
+		List<IShearchMatch> listOut = new ArrayList<IShearchMatch>();
+		Pattern pattern = Pattern.compile(regex);
+		Matcher matcher = pattern.matcher(getText(translation));
+		// Check all occurrences
+		while (matcher.find()) {
+			listOut.add(new TextMatch(matcher.group(), this,translation));
+		}
+		return	listOut.toArray(new IShearchMatch[0]);
+	}
+
+	@Override
+	public String[] getTraductions() {
+		return texts.keySet().toArray(new String[0]);
+	}
+
+	@Override
+	public String getDefaultTranslation() {
+		return this.defaultTranslation;
 	}
 
 }
