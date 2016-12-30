@@ -3,6 +3,7 @@
  */
 package ihm.viewers;
 
+import java.awt.Component;
 import java.awt.Dimension;
 
 import javax.swing.JPanel;
@@ -36,5 +37,16 @@ public class TabbedPaneChapeter extends JTabbedPane {
 			paneEmpty.setName("tab_empty");
 		}
 		return paneEmpty;
+	}
+
+	/* (non-Javadoc)
+	 * @see javax.swing.JTabbedPane#add(java.lang.String, java.awt.Component)
+	 */
+	@Override
+	public Component add(String arg0, Component arg1) {
+		this.remove(getPaneEmpty());
+		Component cmp =  super.add(arg0, arg1);
+		this.setSelectedIndex(this.getTabCount()-1);
+		return cmp;
 	}
 }
