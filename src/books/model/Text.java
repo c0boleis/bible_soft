@@ -2,7 +2,6 @@ package books.model;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -257,8 +256,7 @@ public class Text implements IText, IOrderedObject {
 
 	@Override
 	public ISubDivision getSubDivision() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.subDivision;
 	}
 
 	@Override

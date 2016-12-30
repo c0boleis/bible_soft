@@ -11,5 +11,7 @@ public interface ILoadSaveObject {
 	public boolean isLoad();
 	
 	public void load() throws IOException;
+	
+	public String getFilePath();
 
 }

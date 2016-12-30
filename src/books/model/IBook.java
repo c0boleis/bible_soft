@@ -7,6 +7,4 @@ ISubDivisonContainer, IShearable,ILoadSaveObject{
 	
 	public String getName();
 	
-	public String getFolderName();
-	
 }

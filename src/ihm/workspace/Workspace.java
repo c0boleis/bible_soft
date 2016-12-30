@@ -3,7 +3,6 @@ package ihm.workspace;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -54,7 +53,7 @@ public class Workspace {
 		BufferedWriter buf = new BufferedWriter(new FileWriter(new File(getFolder_path()+File.separator+FILE_BOOK_NAME)));
 		IBook[] books = Window.getTreeBooks().getBooks();
 		for(IBook book : books){
-			buf.write(book.getFolderName()+"\n");
+			buf.write(book.getFilePath()+"\n");
 		}
 		buf.close();
 	}

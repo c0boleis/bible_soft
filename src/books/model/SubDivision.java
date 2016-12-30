@@ -229,16 +229,7 @@ public class SubDivision implements ISubDivision {
 
 	@Override
 	public IShearchMatch[] shearch(String regex) {
-		List<IShearchMatch> listOut = new ArrayList<IShearchMatch>();
-		ISubDivision[] tabDiv = getSubDivisions();
-		for(ISubDivision division : tabDiv){
-			listOut.addAll(Arrays.asList(division.shearch(regex)));
-		}
-		IText[] tabText = getTexts();
-		for(IText text : tabText){
-			listOut.addAll(Arrays.asList(text.shearch(regex)));
-		}
-		return	listOut.toArray(new IShearchMatch[0]);
+		return shearch(regex, null);
 	}
 
 	@Override
@@ -315,8 +306,21 @@ public class SubDivision implements ISubDivision {
 
 	@Override
 	public IShearchMatch[] shearch(String regex, String translation) {
-		// TODO Auto-generated method stub
-		return null;
+		List<IShearchMatch> listOut = new ArrayList<IShearchMatch>();
+		ISubDivision[] tabDiv = getSubDivisions();
+		for(ISubDivision division : tabDiv){
+			listOut.addAll(Arrays.asList(division.shearch(regex,translation)));
+		}
+		IText[] tabText = getTexts();
+		for(IText text : tabText){
+			listOut.addAll(Arrays.asList(text.shearch(regex,translation)));
+		}
+		return	listOut.toArray(new IShearchMatch[0]);
+	}
+
+	@Override
+	public String getFilePath() {
+		return this.folderPath;
 	}
 
 }
