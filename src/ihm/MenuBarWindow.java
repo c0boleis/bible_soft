@@ -12,8 +12,7 @@ import javax.swing.JOptionPane;
 
 import books.exceptions.NoPropetiesException;
 import books.model.Book;
-import ihm.tree.TreeBookCellRenderer;
-import ihm.tree.TreeBooks;
+import books.model.Workspace;
 
 public class MenuBarWindow extends JMenuBar {
 
@@ -120,7 +119,7 @@ public class MenuBarWindow extends JMenuBar {
 					Book livre = new Book(file.getPath());
 					try {
 						livre.loadInfo();
-						Window.getTreeBooks().addBook(livre);
+						Workspace.get().addBook(livre);
 					} catch (NoPropetiesException e1) {
 						JOptionPane.showMessageDialog(Window.get(), e1.getMessage(), "ERREUR", JOptionPane.ERROR_MESSAGE);
 						e1.printStackTrace();

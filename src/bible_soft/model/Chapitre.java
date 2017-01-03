@@ -25,7 +25,7 @@ import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
-import books.model.IPropertiesUsed;
+import books.model.interfaces.IPropertiesUsed;
 
 
 public class Chapitre implements ILoadSave{

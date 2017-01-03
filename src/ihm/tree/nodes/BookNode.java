@@ -4,10 +4,10 @@ import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreePath;
 
-import books.model.IBook;
-import books.model.IShearable;
-import books.model.IShearchMatch;
-import books.model.ISubDivision;
+import books.model.interfaces.IBook;
+import books.model.interfaces.IShearable;
+import books.model.interfaces.IShearchMatch;
+import books.model.interfaces.ISubDivision;
 import ihm.Window;
 
 public class BookNode extends DefaultMutableTreeNode implements IShearable {

@@ -6,11 +6,12 @@ import java.awt.event.ActionListener;
 import javax.swing.JMenuItem;
 import javax.swing.JPopupMenu;
 
-import books.IReadable;
-import books.model.IShearable;
+import books.model.interfaces.IReadable;
+import books.model.interfaces.IShearable;
 import ihm.Window;
 import ihm.actions.ReadAction;
 import ihm.actions.ShearchAction;
+import ihm.tree.nodes.TextBookNode;
 
 public class TreeBooksPopupMenu extends JPopupMenu {
 
@@ -23,17 +24,24 @@ public class TreeBooksPopupMenu extends JPopupMenu {
 	
 	private JMenuItem menuItemShearch;
 	
+	private JMenuItem menuItemAddComment;
+	
 	public TreeBooksPopupMenu() {
 		super();
 		this.add(getMenuItemRead());
 		this.add(getMenuItemShearch());
+		this.add(getMenuItemAddComment());
 	}
 	
 	public void init(Object obj){
 		getMenuItemRead().setVisible(false);
 		getMenuItemRead().setEnabled(false);
+		
 		getMenuItemShearch().setVisible(false);
 		getMenuItemShearch().setEnabled(false);
+		
+		getMenuItemAddComment().setVisible(false);
+		getMenuItemAddComment().setEnabled(false);
 		
 		if(obj==null){
 			return;
@@ -45,6 +53,10 @@ public class TreeBooksPopupMenu extends JPopupMenu {
 		if(obj instanceof IShearable){
 			getMenuItemShearch().setVisible(true);
 			getMenuItemShearch().setEnabled(true);
+		}
+		if(obj instanceof TextBookNode){
+			getMenuItemAddComment().setVisible(true);
+			getMenuItemAddComment().setEnabled(true);
 		}
 	}
 
@@ -96,6 +108,25 @@ public class TreeBooksPopupMenu extends JPopupMenu {
 			});
 		}
 		return menuItemShearch;
+	}
+
+	/**
+	 * @return the menuItemAddComment
+	 */
+	private JMenuItem getMenuItemAddComment() {
+		if(menuItemAddComment==null){
+			menuItemAddComment = new JMenuItem("Ajouter un commentaire");
+			menuItemAddComment.setVisible(false);
+			menuItemAddComment.setEnabled(false);
+			menuItemAddComment.addActionListener(new ActionListener() {
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					
+				}
+			});
+		}
+		return menuItemAddComment;
 	}
 
 }

@@ -18,9 +18,10 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 
 import books.exceptions.NoPropetiesException;
+import books.model.Workspace;
+import books.model.interfaces.IBook;
 import ihm.tree.TreeBooks;
 import ihm.viewers.TabbedPaneChapeter;
-import ihm.workspace.Workspace;
 import lancement.Main;
 
 /**
@@ -33,7 +34,7 @@ public class Window extends JFrame {
 	 * 
 	 */
 	private static final long serialVersionUID = -9203348546932805145L;
-	
+
 	static final Logger LOGGER = Logger.getLogger(Main.class);
 
 	private static Window INSTANCE = new Window();
@@ -46,12 +47,12 @@ public class Window extends JFrame {
 
 	private static TabbedPaneChapeter tabbedPaneChapeter;
 
-	private static Workspace workspace;
-
 	private static MenuBarWindow menuBarWindow;
 
-	private static final File FOLDER_PROPERTIES = new File("setting.properties");
+	private static final File FILE_PROPERTIES = new File("setting.properties");
 
+	private static final String KEY_WORKSPACE_PROPERTIES = "workspace";
+	
 	private static boolean save = true;
 
 	private Window(){
@@ -75,14 +76,18 @@ public class Window extends JFrame {
 	}
 
 	public static void open(){
+		String defaultWorkspace = "default";
 		Properties properties = new Properties();
 		try {
-			properties.load(new FileReader(FOLDER_PROPERTIES));
-			String workspaceFolder = properties.getProperty("workspace","default");
-			if(!workspaceFolder.equals("default")){
-				getWorkspace().setFolder_path(workspaceFolder);
+			properties.load(new FileReader(FILE_PROPERTIES));
+			String workspaceFolder = properties.getProperty(
+					KEY_WORKSPACE_PROPERTIES,defaultWorkspace);
+			if(!workspaceFolder.equals(defaultWorkspace)){
+				Workspace.get().setFolder_path(workspaceFolder);
 			}
-			getWorkspace().load();
+			Workspace.get().load();
+			getTreeBooks().initData();
+			conectListeners();
 			save = true;
 			getMenuBarWindow().init(null);
 		} catch (FileNotFoundException e) {
@@ -93,6 +98,10 @@ public class Window extends JFrame {
 			e.printStackTrace();
 		}
 		INSTANCE.setVisible(true);
+	}
+	
+	private static void conectListeners(){
+		getTreeBooks().conectListeners();
 	}
 
 	/**
@@ -139,19 +148,9 @@ public class Window extends JFrame {
 		return tabbedPaneChapeter;
 	}
 
-	/**
-	 * @return the workspace
-	 */
-	public static Workspace getWorkspace() {
-		if(workspace==null){
-			workspace = new Workspace();
-		}
-		return workspace;
-	}
-
 	public static void save() {
 		try {
-			getWorkspace().save();
+			Workspace.get().save();
 			save = true;
 		} catch (IOException e) {
 			e.printStackTrace();

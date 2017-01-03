@@ -1,7 +1,7 @@
 package books.model.shearch;
 
-import books.model.IShearchMatch;
-import books.model.IText;
+import books.model.interfaces.IShearchMatch;
+import books.model.interfaces.IText;
 
 public class TextMatch implements IShearchMatch{
 	

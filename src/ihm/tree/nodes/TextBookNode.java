@@ -2,10 +2,10 @@ package ihm.tree.nodes;
 
 import javax.swing.tree.DefaultMutableTreeNode;
 
-import books.IReadable;
-import books.model.IShearable;
-import books.model.IShearchMatch;
-import books.model.IText;
+import books.model.interfaces.IReadable;
+import books.model.interfaces.IShearable;
+import books.model.interfaces.IShearchMatch;
+import books.model.interfaces.IText;
 
 public class TextBookNode extends DefaultMutableTreeNode 
 implements IReadable,IShearable{

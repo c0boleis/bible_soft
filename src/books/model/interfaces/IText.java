@@ -1,6 +1,4 @@
-package books.model;
-
-import books.IReadable;
+package books.model.interfaces;
 
 /**
  * 
@@ -34,6 +32,10 @@ IShearable,ILoadSaveObject{
 
 	public String getRefference();
 	
+	public String getPath();
+	
 	public ISubDivision getSubDivision();
+	
+	public IBook getBook();
 
 }

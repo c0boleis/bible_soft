@@ -5,6 +5,8 @@ package books.model;
 
 import java.util.Comparator;
 
+import books.model.interfaces.IOrderedObject;
+
 /**
  * @author bata
  *

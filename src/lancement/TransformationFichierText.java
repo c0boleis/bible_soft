@@ -8,8 +8,8 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
-import books.model.IPropertiesUsed;
-import books.model.IText;
+import books.model.interfaces.IPropertiesUsed;
+import books.model.interfaces.IText;
 
 public class TransformationFichierText {
 

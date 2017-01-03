@@ -1,4 +1,4 @@
-package books;
+package books.model.interfaces;
 
 public interface IReadable {
 	

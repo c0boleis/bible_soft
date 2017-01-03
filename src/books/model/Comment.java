@@ -8,11 +8,17 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import books.model.interfaces.IComment;
+import books.model.interfaces.ILoadSaveObject;
+import books.model.interfaces.IText;
+
 /**
  * @author Corentin Boleis
  *
  */
 public class Comment implements IComment,ILoadSaveObject {
+	
+	private String name;
 	
 	private List<IText> textsRefferenced;
 	
@@ -26,20 +32,26 @@ public class Comment implements IComment,ILoadSaveObject {
 	
 	private String filePath = null;
 	
-	public Comment(IText[] ref,String comment) {
+	public Comment(String name, IText[] ref,String comment) {
 		textsRefferenced = new ArrayList<IText>();
 		textsRefferenced.addAll(Arrays.asList(ref));
 		
 		commentTexts = new ArrayList<IText>();
 		this.comment = comment;
+		this.name = name;
 	}
 	
-	public Comment(IText[] ref,IText[] comment) {
+	public Comment(String name, IText[] ref,IText[] comment) {
 		textsRefferenced = new ArrayList<IText>();
 		textsRefferenced.addAll(Arrays.asList(ref));
 		
 		commentTexts = new ArrayList<IText>();
 		commentTexts.addAll(Arrays.asList(comment));
+		this.name = name;
+	}
+
+	public Comment(String filePath) {
+		// TODO Auto-generated constructor stub
 	}
 
 	/* (non-Javadoc)
@@ -101,6 +113,11 @@ public class Comment implements IComment,ILoadSaveObject {
 	@Override
 	public String getFilePath() {
 		return this.filePath;
+	}
+
+	@Override
+	public String getName() {
+		return this.name;
 	}
 
 }

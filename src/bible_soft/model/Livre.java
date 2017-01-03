@@ -18,7 +18,7 @@ import javax.xml.parsers.ParserConfigurationException;
 import org.apache.commons.io.IOUtils;
 import org.xml.sax.SAXException;
 
-import books.model.IPropertiesUsed;
+import books.model.interfaces.IPropertiesUsed;
 
 public class Livre implements ILoadSave{
 

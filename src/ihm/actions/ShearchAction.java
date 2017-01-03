@@ -2,8 +2,8 @@ package ihm.actions;
 
 import javax.swing.JOptionPane;
 
-import books.model.IShearable;
-import books.model.IShearchMatch;
+import books.model.interfaces.IShearable;
+import books.model.interfaces.IShearchMatch;
 import ihm.Window;
 
 public class ShearchAction implements ActionPerso{

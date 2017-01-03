@@ -12,6 +12,11 @@ import java.util.regex.Pattern;
 
 import org.apache.log4j.Logger;
 
+import books.model.interfaces.IBook;
+import books.model.interfaces.IOrderedObject;
+import books.model.interfaces.IShearchMatch;
+import books.model.interfaces.ISubDivision;
+import books.model.interfaces.IText;
 import books.model.shearch.TextMatch;
 
 /**
@@ -279,6 +284,22 @@ public class Text implements IText, IOrderedObject {
 	@Override
 	public String getDefaultTranslation() {
 		return this.defaultTranslation;
+	}
+
+	@Override
+	public String getPath() {
+		String pt = this.getName();
+		ISubDivision div = getSubDivision();
+		while(div!=null){
+			pt+=div.getName()+"/"+pt;
+		}
+		pt+=getBook().getName()+"/"+pt;
+		return pt;
+	}
+
+	@Override
+	public IBook getBook() {
+		return getSubDivision().getBook();
 	}
 
 }

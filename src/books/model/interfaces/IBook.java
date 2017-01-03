@@ -1,4 +1,4 @@
-package books.model;
+package books.model.interfaces;
 
 public interface IBook extends IPropertiesUsed,
 ISubDivisonContainer, IShearable,ILoadSaveObject{

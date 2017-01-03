@@ -2,7 +2,7 @@ package ihm.reader;
 
 import javax.swing.JTextArea;
 
-import books.IReadable;
+import books.model.interfaces.IReadable;
 
 public class Reader extends JTextArea{
 

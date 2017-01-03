@@ -2,6 +2,8 @@ package books.model;
 
 import java.util.Comparator;
 
+import books.model.interfaces.IText;
+
 public class TextNameComparator implements Comparator<IText> {
 
 	/*

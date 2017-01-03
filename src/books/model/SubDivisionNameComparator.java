@@ -2,6 +2,8 @@ package books.model;
 
 import java.util.Comparator;
 
+import books.model.interfaces.ISubDivision;
+
 public class SubDivisionNameComparator implements Comparator<ISubDivision> {
 
 	/*

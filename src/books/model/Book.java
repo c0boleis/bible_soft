@@ -13,6 +13,10 @@ import java.util.Properties;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
 import books.exceptions.NoPropetiesException;
+import books.model.interfaces.IBook;
+import books.model.interfaces.IPropertiesUsed;
+import books.model.interfaces.IShearchMatch;
+import books.model.interfaces.ISubDivision;
 
 @XStreamAlias("Book")
 public class Book implements IBook {

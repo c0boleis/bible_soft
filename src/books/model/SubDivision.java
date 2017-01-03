@@ -11,6 +11,11 @@ import java.util.List;
 import java.util.Properties;
 
 import books.exceptions.NoPropetiesException;
+import books.model.interfaces.IBook;
+import books.model.interfaces.IPropertiesUsed;
+import books.model.interfaces.IShearchMatch;
+import books.model.interfaces.ISubDivision;
+import books.model.interfaces.IText;
 
 public class SubDivision implements ISubDivision {
 

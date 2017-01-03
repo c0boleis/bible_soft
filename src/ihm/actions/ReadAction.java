@@ -2,7 +2,7 @@ package ihm.actions;
 
 import javax.swing.JScrollPane;
 
-import books.IReadable;
+import books.model.interfaces.IReadable;
 import ihm.Window;
 import ihm.reader.Reader;
 

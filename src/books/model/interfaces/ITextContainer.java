@@ -1,6 +1,4 @@
-package books.model;
-
-import books.IReadable;
+package books.model.interfaces;
 
 public interface ITextContainer extends IReadable{
 	
