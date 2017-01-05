@@ -1,6 +1,6 @@
 package books.model.interfaces;
 
-public interface IComment {
+public interface IComment extends ILoadSaveObject,IReadable {
 	
 	public String KEY_REFFERENCED_TEXT = "refference_text";
 	

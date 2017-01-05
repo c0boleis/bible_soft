@@ -11,26 +11,33 @@ import java.util.List;
 
 import javax.swing.Icon;
 
+import org.apache.log4j.Logger;
+
 import bible_soft.model.ILoadSave;
 import books.exceptions.NoPropetiesException;
 import books.model.interfaces.IBook;
 import books.model.interfaces.IComment;
+import books.model.interfaces.ISubDivision;
+import books.model.interfaces.ISubDivisonContainer;
 import books.model.interfaces.IText;
 import books.model.listener.WorkspaceListener;
 import ihm.Window;
 
 public class Workspace implements ILoadSave{
+	
+	private static final Logger LOGGER = Logger.getLogger(Workspace.class);
 
 	public static final String KEY_BOOKS = "book";
 
 	public static final String KEY_COMMENT = "comment";
 
 	public static final String KEY_SEPARATOR = "=";
-
+	
+	public static final String KEY_WORkSPACE = "{workspace}";
 	/**
 	 * define from the workspace folder
 	 */
-	public static final String DEFAULT_COMMENT_FOLDER_PATH = "comment";
+	public static final String DEFAULT_COMMENT_FOLDER_PATH = KEY_WORkSPACE+File.separator+"comment";
 
 	private static String folderCommentPath = null;
 
@@ -57,7 +64,10 @@ public class Workspace implements ILoadSave{
 	 */
 	public static String getFolderCommentPath() {
 		if(folderCommentPath == null){
-			folderCommentPath = DEFAULT_COMMENT_FOLDER_PATH;
+			folderCommentPath = 
+					DEFAULT_COMMENT_FOLDER_PATH
+					.replace(KEY_WORkSPACE, get().getFolder_path())
+					.replace(File.separator+File.separator, File.separator);
 		}
 		return folderCommentPath;
 	}
@@ -79,7 +89,9 @@ public class Workspace implements ILoadSave{
 			return false;
 		}
 		Workspace.books.add(book);
+		Workspace.save = false;
 		this.fireBookAdd(book);
+		this.fireSaveChange();
 		return true;
 	}
 
@@ -88,7 +100,9 @@ public class Workspace implements ILoadSave{
 			return false;
 		}
 		Workspace.comments.add(comment);
+		Workspace.save = false;
 		this.fireCommentAdd(comment);
+		this.fireSaveChange();
 		return true;
 	}
 
@@ -123,6 +137,13 @@ public class Workspace implements ILoadSave{
 		WorkspaceListener[] listeners = Workspace.get().getWorkspaceListeners();
 		for(WorkspaceListener listener : listeners){
 			listener.commentRemove(comment);
+		}
+	}
+	
+	private void fireSaveChange(){
+		WorkspaceListener[] listeners = Workspace.get().getWorkspaceListeners();
+		for(WorkspaceListener listener : listeners){
+			listener.saveChange(save);
 		}
 	}
 
@@ -200,9 +221,16 @@ public class Workspace implements ILoadSave{
 						book.loadInfo();
 						books.add(book);
 					}else if(info[0].trim().equals(KEY_COMMENT)){
-						Comment com = new Comment(info[1].trim());
-
-						comments.add(com);
+						Comment newComment = new Comment(info[1].trim());
+						try{
+							newComment.load();
+							if(!newComment.isLoad()){
+								LOGGER.warn("le commentaire : "+info[1].trim()+" n'a pas été chargé.");
+							}
+							Workspace.comments.add(newComment);
+						}catch(IOException e){
+							LOGGER.error("le commentaire : "+info[1].trim()+" n'a pas été chargé.", e);
+						}
 					}
 				}
 
@@ -210,22 +238,8 @@ public class Workspace implements ILoadSave{
 			line = buf.readLine();
 		}
 		buf.close();
-		/*
-		 * load comment
-		 */
-		File folderComment = new File(getFolderCommentPath());
-		File[] filesComment = folderComment.listFiles();
-		for(File com : filesComment){
-			IComment newComment = loadComment(com);
-			
-			
-		}
 		save = true;
-	}
-	
-	private static IComment loadComment(File file){
-		//TODO
-		return null;
+		this.fireSaveChange();
 	}
 
 	public void removeWorkspaceListener(WorkspaceListener listener){
@@ -242,47 +256,34 @@ public class Workspace implements ILoadSave{
 		 * save the books path
 		 */
 		BufferedWriter buf = new BufferedWriter(new FileWriter(new File(getFolder_path()+File.separator+FILE_BOOK_NAME)));
-		IBook[] books = Window.getTreeBooks().getBooks();
-		for(IBook book : books){
-			buf.write(book.getFilePath()+"\n");
+		for(IBook book : Workspace.books){
+			buf.write(KEY_BOOKS+KEY_SEPARATOR+book.getFilePath()+"\n");
 		}
-		buf.close();
 		/*
-		 * save the comment
+		 * the get folder comment is use to create the folder
+		 * if necessary
 		 */
-		for(IComment comment : comments){
-			saveComment(comment);
-		}
-		save = true;
-	}
-
-	private static void saveComment(IComment comment) throws IOException{
-		String path = getFolderCommentPath()+File.separator+comment.getName();
-		File file = new File(path);
-		BufferedWriter buf = new BufferedWriter(new FileWriter(file));
-
-		buf.write("<"+IComment.KEY_REFFERENCED_TEXT+">\n");
-		IText[] tmp = comment.getRefferencedTexts();
-		for(IText text : tmp){
-			buf.write(text.getPath()+"\n");
-		}
-		buf.write("</"+IComment.KEY_REFFERENCED_TEXT+">\n");
-
-
-		tmp = comment.getCommentText();
-		if(tmp.length>0){
-			buf.write("<"+IComment.KEY_COMMENT_TEXT+">\n");
-			for(IText text : tmp){
-				buf.write(text.getPath()+"\n");
+		getFolderComment();
+		for(IComment com : Workspace.comments){
+			if(com.getFilePath()==null){
+				com.setFilePath(getFolderCommentPath()+File.separator+com.getName());
 			}
-			buf.write("</"+IComment.KEY_COMMENT_TEXT+">\n");
+			buf.write(KEY_COMMENT+KEY_SEPARATOR+com.getFilePath()+"\n");
+			try{
+				com.save();
+				if(!com.isSave()){
+					LOGGER.warn("Le commentaire["+com.getName()
+					+"] : "+com.getFilePath()+" n'a pas été enregistré.");
+				}
+			}catch(IOException e){
+				LOGGER.error("Le commentaire["+com.getName()
+				+"] : "+com.getFilePath()+" n'a pas été enregistré.",e);
+			}
+			
 		}
-		String comm = comment.getCommentString();
-		buf.write("<"+IComment.KEY_COMMENT_STRING+">\n");
-		buf.write(comm+"\n");
-		buf.write("</"+IComment.KEY_COMMENT_STRING+">\n");
-
 		buf.close();
+		save = true;
+		this.fireSaveChange();
 	}
 
 	/**
@@ -297,6 +298,29 @@ public class Workspace implements ILoadSave{
 	 */
 	public void setFolder_path(String folder_path) {
 		Workspace.folder_path = folder_path;
+	}
+	
+	public static IText getText(String path){
+		String[] info = path.split("/");
+		ISubDivisonContainer div = getBook(info[0]);
+		for(int index=1;index<info.length;index++){
+			if(index==(info.length-1)){
+				return ((ISubDivision) div).getText(info[index]);
+			}
+			else{
+				div = div.getSubDivision(info[index]);
+			}
+		}
+		return null;
+	}
+	
+	public static IBook getBook(String name){
+		for(IBook book : Workspace.books){
+			if(book.getName().equals(name)){
+				return book;
+			}
+		}
+		return null;
 	}
 
 }

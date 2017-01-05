@@ -8,7 +8,9 @@ import javax.swing.JPopupMenu;
 
 import books.model.interfaces.IReadable;
 import books.model.interfaces.IShearable;
+import books.model.interfaces.IText;
 import ihm.Window;
+import ihm.actions.AddCommentAction;
 import ihm.actions.ReadAction;
 import ihm.actions.ShearchAction;
 import ihm.tree.nodes.TextBookNode;
@@ -122,7 +124,13 @@ public class TreeBooksPopupMenu extends JPopupMenu {
 				
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					
+					Object[] tab = Window.getTreeBooks().getTreeBooksListeners().getSelection();
+					if(tab.length<=0){
+						return;
+					}
+					AddCommentAction action = new AddCommentAction(
+							((TextBookNode) tab[0]).getIText());
+					action.doAction();
 				}
 			});
 		}

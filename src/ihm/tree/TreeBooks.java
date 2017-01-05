@@ -1,19 +1,20 @@
 package ihm.tree;
 
 import java.awt.Dimension;
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.swing.JTree;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeNode;
 
+import org.apache.log4j.Logger;
+
 import books.model.Workspace;
 import books.model.interfaces.IBook;
 import books.model.interfaces.IComment;
 import books.model.listener.WorkspaceListener;
 import ihm.tree.nodes.BookNode;
+import ihm.tree.nodes.CommentNode;
 
 public class TreeBooks extends JTree {
 
@@ -21,8 +22,8 @@ public class TreeBooks extends JTree {
 	 * 
 	 */
 	private static final long serialVersionUID = 3845549423235655074L;
-
-	private List<IBook> books = new ArrayList<IBook>();
+	
+	private static final Logger LOGGER = Logger.getLogger(TreeBooks.class);
 
 	private DefaultMutableTreeNode root;
 	
@@ -37,6 +38,8 @@ public class TreeBooks extends JTree {
 	private TreeBooksPopupMenu treeBooksPopupMenu;
 	
 	private WorkspaceListener workspaceListener;
+	
+	private boolean listenerIsConnect = false;
 
 	public TreeBooks(){
 		super();
@@ -49,13 +52,16 @@ public class TreeBooks extends JTree {
 	}
 
 	private void addBook(IBook book){
-		if(books.contains(book)){
-			return;
-		}
-		books.add(book);
 		BookNode node = new BookNode(book);
 		((DefaultTreeModel) this.getModel()).insertNodeInto(node, getNodeBook(), getNodeBook().getChildCount());
-		((DefaultTreeModel) this.getModel()).reload(root);
+		((DefaultTreeModel) this.getModel()).reload( getNodeBook());
+		this.repaint();
+	}
+	
+	private void addComment(IComment book){
+		CommentNode node = new CommentNode(book);
+		((DefaultTreeModel) this.getModel()).insertNodeInto(node, getNodeComment(), getNodeComment().getChildCount());
+		((DefaultTreeModel) this.getModel()).reload(getNodeComment());
 		this.repaint();
 	}
 
@@ -95,13 +101,6 @@ public class TreeBooks extends JTree {
 	}
 
 	/**
-	 * @return the books
-	 */
-	public IBook[] getBooks() {
-		return books.toArray(new IBook[0]);
-	}
-
-	/**
 	 * @return the workspaceListener
 	 */
 	private WorkspaceListener getWorkspaceListener() {
@@ -116,8 +115,7 @@ public class TreeBooks extends JTree {
 				
 				@Override
 				public void commentAdd(IComment commentAdd) {
-					// TODO Auto-generated method stub
-					
+					addComment(commentAdd);
 				}
 				
 				@Override
@@ -129,6 +127,12 @@ public class TreeBooks extends JTree {
 				@Override
 				public void bookAdd(IBook bookAdd) {
 					addBook(bookAdd);
+					
+				}
+
+				@Override
+				public void saveChange(boolean newValue) {
+					// TODO Auto-generated method stub
 					
 				}
 			};
@@ -165,16 +169,28 @@ public class TreeBooks extends JTree {
 		return root;
 	}
 
+	/**
+	 * initialize the tree
+	 */
 	public void initData() {
 		IBook[] tabBook = Workspace.get().getBooks();
 		for(IBook book : tabBook){
 			addBook(book);
 		}
+		IComment[] tabComment = Workspace.get().getComments();
+		for(IComment com : tabComment){
+			addComment(com);
+		}
 		
 	}
 
 	public void conectListeners() {
-		Workspace.get().addWorkspaceListener(getWorkspaceListener());
-		
+		if(!listenerIsConnect){
+			Workspace.get().addWorkspaceListener(getWorkspaceListener());
+			this.listenerIsConnect = true;
+			LOGGER.info("workspaceListener du TreeBooks conecté.");
+		}else{
+			LOGGER.warn("le workspaceListener du TreeBooks est déjà conecté.");
+		}
 	}
 }

@@ -148,7 +148,7 @@ public class Book implements IBook {
 	}
 
 	@Override
-	public void Save() {
+	public void save() {
 		// TODO Auto-generated method stub
 		
 	}
@@ -187,6 +187,21 @@ public class Book implements IBook {
 	@Override
 	public String getFilePath() {
 		return this.folderPath;
+	}
+
+	@Override
+	public void setFilePath(String path) {
+		this.folderPath = path;
+	}
+
+	@Override
+	public ISubDivision getSubDivision(String name) {
+		for(ISubDivision div : this.subDivisions){
+			if(div.getName().equals(name)){
+				return div;
+			}
+		}
+		return null;
 	}
 
 }

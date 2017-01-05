@@ -124,7 +124,6 @@ public class MenuBarWindow extends JMenuBar {
 						JOptionPane.showMessageDialog(Window.get(), e1.getMessage(), "ERREUR", JOptionPane.ERROR_MESSAGE);
 						e1.printStackTrace();
 					}
-					Window.needSave();
 				}
 			});
 			
@@ -133,7 +132,7 @@ public class MenuBarWindow extends JMenuBar {
 	}
 
 	public void init(Object object) {
-		getMenuItemSave().setEnabled(!Window.isSave());
+		getMenuItemSave().setEnabled(!Workspace.get().isSave());
 		
 	}
 

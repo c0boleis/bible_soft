@@ -7,5 +7,7 @@ public interface ISubDivisonContainer {
 	public void loadSubDivisions();
 	
 	public boolean isSubDivisionEmpty();
+	
+	public ISubDivision getSubDivision(String name);
 
 }

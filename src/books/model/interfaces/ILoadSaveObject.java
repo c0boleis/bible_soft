@@ -6,12 +6,14 @@ public interface ILoadSaveObject {
 	
 	public boolean isSave();
 	
-	public void Save() throws IOException;
+	public void save() throws IOException;
 	
 	public boolean isLoad();
 	
 	public void load() throws IOException;
 	
 	public String getFilePath();
+	
+	public void setFilePath(String path);
 
 }

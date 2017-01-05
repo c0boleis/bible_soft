@@ -2,22 +2,20 @@ package ihm.tree.nodes;
 
 import javax.swing.tree.DefaultMutableTreeNode;
 
+import books.model.interfaces.IComment;
 import books.model.interfaces.IReadable;
-import books.model.interfaces.IShearable;
-import books.model.interfaces.IShearchMatch;
-import books.model.interfaces.IText;
 
-public class TextBookNode extends DefaultMutableTreeNode 
-implements IReadable,IShearable{
+public class CommentNode extends DefaultMutableTreeNode 
+implements IReadable{
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 8285219244193209931L;
 	
-	private IText text;
+	private IComment text;
 	
-	public TextBookNode(IText t){
+	public CommentNode(IComment t){
 		super();
 		this.text = t;
 	}
@@ -37,21 +35,11 @@ implements IReadable,IShearable{
 	}
 
 	@Override
-	public IShearchMatch[] shearch(String regex) {
-		return this.text.shearch(regex);
-	}
-
-	@Override
-	public IShearchMatch[] shearch(String regex, String translation) {
-		return this.text.shearch(regex, translation);
-	}
-
-	@Override
 	public String read(String translation) {
 		return this.text.read(translation);
 	}
 	
-	public IText getIText(){
+	public IComment getIComment(){
 		return text;
 	}
 

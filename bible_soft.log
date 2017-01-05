@@ -12,3 +12,65 @@ INFO main lancement.Main - Start programme
 INFO main lancement.Main - Start programme
 INFO main lancement.Main - Start programme
 INFO main lancement.Main - Start programme
+INFO main lancement.Main - Start programme
+INFO main lancement.Main - Start programme
+INFO main lancement.Main - Start programme
+INFO main lancement.Main - Start programme
+INFO main ihm.tree.TreeBooks - workspaceListener du TreeBooks conecté.
+INFO main lancement.Main - Start programme
+INFO main ihm.tree.TreeBooks - workspaceListener du TreeBooks conecté.
+INFO main lancement.Main - Start programme
+INFO main ihm.tree.TreeBooks - workspaceListener du TreeBooks conecté.
+INFO main lancement.Main - Start programme
+INFO main ihm.tree.TreeBooks - workspaceListener du TreeBooks conecté.
+INFO main lancement.Main - Start programme
+INFO main ihm.tree.TreeBooks - workspaceListener du TreeBooks conecté.
+WARN AWT-EventQueue-0 books.model.Workspace - Le commentaire[test] : comment/test n'a pas été chargé.
+INFO main lancement.Main - Start programme
+INFO main ihm.tree.TreeBooks - workspaceListener du TreeBooks conecté.
+INFO main lancement.Main - Start programme
+ERROR main books.model.Workspace - le commentaire : null n'a pas été chargé.
+java.io.FileNotFoundException: null (Aucun fichier ou dossier de ce type)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at java.io.FileReader.<init>(FileReader.java:72)
+	at books.model.Comment.load(Comment.java:142)
+	at books.model.Workspace.load(Workspace.java:221)
+	at ihm.Window.open(Window.java:90)
+	at ihm.Window.main(Window.java:73)
+INFO main ihm.tree.TreeBooks - workspaceListener du TreeBooks conecté.
+INFO main lancement.Main - Start programme
+INFO main ihm.tree.TreeBooks - workspaceListener du TreeBooks conecté.
+INFO main lancement.Main - Start programme
+INFO main ihm.tree.TreeBooks - workspaceListener du TreeBooks conecté.
+INFO main lancement.Main - Start programme
+INFO main ihm.tree.TreeBooks - workspaceListener du TreeBooks conecté.
+INFO main lancement.Main - Start programme
+INFO main ihm.tree.TreeBooks - workspaceListener du TreeBooks conecté.
+INFO main lancement.Main - Start programme
+INFO main ihm.tree.TreeBooks - workspaceListener du TreeBooks conecté.
+INFO main lancement.Main - Start programme
+INFO main ihm.tree.TreeBooks - workspaceListener du TreeBooks conecté.
+INFO main lancement.Main - Start programme
+INFO main ihm.tree.TreeBooks - workspaceListener du TreeBooks conecté.
+INFO main lancement.Main - Start programme
+WARN main books.model.Comment - L'IText[] n'a pas été trouvé.
+WARN main books.model.Comment - L'IText[Bible/Ancien Testament/Baruch/1/0002] n'a pas été trouvé.
+INFO main ihm.tree.TreeBooks - workspaceListener du TreeBooks conecté.
+INFO main lancement.Main - Start programme
+WARN main books.model.Comment - L'IText[Bible/Ancien Testament/Baruch/1/0002] n'a pas été trouvé.
+INFO main ihm.tree.TreeBooks - workspaceListener du TreeBooks conecté.
+INFO main lancement.Main - Start programme
+INFO main lancement.Main - Start programme
+INFO main lancement.Main - Start programme
+INFO main lancement.Main - Start programme
+INFO main ihm.tree.TreeBooks - workspaceListener du TreeBooks conecté.
+INFO main lancement.Main - Start programme
+INFO main ihm.tree.TreeBooks - workspaceListener du TreeBooks conecté.
+INFO main lancement.Main - Start programme
+INFO main ihm.tree.TreeBooks - workspaceListener du TreeBooks conecté.
+INFO main lancement.Main - Start programme
+INFO main ihm.tree.TreeBooks - workspaceListener du TreeBooks conecté.
+INFO main lancement.Main - Start programme
+INFO main ihm.tree.TreeBooks - workspaceListener du TreeBooks conecté.

@@ -10,6 +10,8 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Properties;
 
+import org.apache.log4j.Logger;
+
 import books.exceptions.NoPropetiesException;
 import books.model.interfaces.IBook;
 import books.model.interfaces.IPropertiesUsed;
@@ -18,6 +20,8 @@ import books.model.interfaces.ISubDivision;
 import books.model.interfaces.IText;
 
 public class SubDivision implements ISubDivision {
+	
+	private static final Logger LOGGER = Logger.getLogger(ISubDivision.class);
 
 	private String abv = null;
 
@@ -243,7 +247,7 @@ public class SubDivision implements ISubDivision {
 	}
 
 	@Override
-	public void Save() {
+	public void save() {
 		// TODO Auto-generated method stub
 		
 	}
@@ -277,7 +281,7 @@ public class SubDivision implements ISubDivision {
 	}
 
 	@Override
-	public ISubDivision getSubdivions() {
+	public ISubDivision getSubDivision() {
 		return this.subDivision;
 	}
 
@@ -326,6 +330,38 @@ public class SubDivision implements ISubDivision {
 	@Override
 	public String getFilePath() {
 		return this.folderPath;
+	}
+
+	@Override
+	public void setFilePath(String path) {
+		this.folderPath = path;
+	}
+
+	@Override
+	public ISubDivision getSubDivision(String name) {
+		if(this.subDivisions.isEmpty()){
+			try {
+				load();
+			} catch (IOException e) {
+				LOGGER.error("get subDivision avec son nom", e);
+			}
+		}
+		for(ISubDivision div : this.subDivisions){
+			if(div.getName().equals(name)){
+				return div;
+			}
+		}
+		return null;
+	}
+
+	@Override
+	public IText getText(String name) {
+		for(IText te : this.texts){
+			if(te.getName().equals(name)){
+				return te;
+			}
+		}
+		return null;
 	}
 
 }

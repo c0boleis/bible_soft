@@ -17,5 +17,7 @@ public interface WorkspaceListener {
 	public void commentAdd(IComment commentAdd);
 	
 	public void commentRemove(IComment commentRemove);
+	
+	public void saveChange(boolean newValue);
 
 }

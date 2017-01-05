@@ -24,7 +24,7 @@ IPropertiesUsed,ISubDivisonContainer, IShearable, ILoadSaveObject{
 	 * @return the subDivision if isn't a book
 	 * else return null
 	 */
-	public ISubDivision getSubdivions();
+	public ISubDivision getSubDivision();
 	
 	/**
 	 * 
@@ -32,5 +32,7 @@ IPropertiesUsed,ISubDivisonContainer, IShearable, ILoadSaveObject{
 	 * the book can't be null
 	 */
 	public IBook getBook();
+	
+	public IText getText(String name);
 
 }

@@ -20,6 +20,8 @@ import org.apache.log4j.PropertyConfigurator;
 import books.exceptions.NoPropetiesException;
 import books.model.Workspace;
 import books.model.interfaces.IBook;
+import books.model.interfaces.IComment;
+import books.model.listener.WorkspaceListener;
 import ihm.tree.TreeBooks;
 import ihm.viewers.TabbedPaneChapeter;
 import lancement.Main;
@@ -53,8 +55,8 @@ public class Window extends JFrame {
 
 	private static final String KEY_WORKSPACE_PROPERTIES = "workspace";
 	
-	private static boolean save = true;
-
+	private static WorkspaceListener workspaceListener;
+	
 	private Window(){
 		super();
 		this.setTitle("Bible soft");
@@ -88,7 +90,6 @@ public class Window extends JFrame {
 			Workspace.get().load();
 			getTreeBooks().initData();
 			conectListeners();
-			save = true;
 			getMenuBarWindow().init(null);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
@@ -102,6 +103,7 @@ public class Window extends JFrame {
 	
 	private static void conectListeners(){
 		getTreeBooks().conectListeners();
+		Workspace.get().addWorkspaceListener(getWorkspaceListener());
 	}
 
 	/**
@@ -151,24 +153,16 @@ public class Window extends JFrame {
 	public static void save() {
 		try {
 			Workspace.get().save();
-			save = true;
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 
 	}
 
-	/**
-	 * @return the save
-	 */
-	public static boolean isSave() {
-		return save;
-	}
-
-	public static void needSave(){
-		save = false;
-		getMenuBarWindow().init(null);
-	}
+//	public static void needSave(){
+//		save = false;
+//		getMenuBarWindow().init(null);
+//	}
 
 	public static MenuBarWindow getMenuBarWindow(){
 		if(menuBarWindow == null){
@@ -176,5 +170,47 @@ public class Window extends JFrame {
 		}
 		return menuBarWindow;
 	}
+
+	/**
+	 * @return the workspaceListener
+	 */
+	private static WorkspaceListener getWorkspaceListener() {
+		if(workspaceListener == null){
+			workspaceListener = new WorkspaceListener() {
+				
+				@Override
+				public void saveChange(boolean newValue) {
+					getMenuBarWindow().init(null);
+				}
+				
+				@Override
+				public void commentRemove(IComment commentRemove) {
+					// TODO Auto-generated method stub
+					
+				}
+				
+				@Override
+				public void commentAdd(IComment commentAdd) {
+					// TODO Auto-generated method stub
+					
+				}
+				
+				@Override
+				public void bookRemove(IBook bookRemove) {
+					// TODO Auto-generated method stub
+					
+				}
+				
+				@Override
+				public void bookAdd(IBook bookAdd) {
+					// TODO Auto-generated method stub
+					
+				}
+			};
+		}
+		return workspaceListener;
+	}
+	
+	
 
 }

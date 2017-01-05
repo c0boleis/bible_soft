@@ -147,7 +147,7 @@ public class Text implements IText, IOrderedObject {
 	}
 
 	@Override
-	public void Save() {
+	public void save() {
 		// TODO Auto-generated method stub
 		
 	}
@@ -291,15 +291,22 @@ public class Text implements IText, IOrderedObject {
 		String pt = this.getName();
 		ISubDivision div = getSubDivision();
 		while(div!=null){
-			pt+=div.getName()+"/"+pt;
+			String name = div.getName();
+			pt=name+"/"+pt;
+			div = div.getSubDivision();
 		}
-		pt+=getBook().getName()+"/"+pt;
+		pt=getBook().getName()+"/"+pt;
 		return pt;
 	}
 
 	@Override
 	public IBook getBook() {
 		return getSubDivision().getBook();
+	}
+
+	@Override
+	public void setFilePath(String path) {
+		this.filePath = path;
 	}
 
 }
