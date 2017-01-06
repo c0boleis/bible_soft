@@ -1,14 +1,17 @@
 package ihm.tree.nodes;
 
+import java.io.IOException;
+
 import javax.swing.tree.DefaultMutableTreeNode;
 
+import books.model.interfaces.ILoadSaveObject;
 import books.model.interfaces.IReadable;
 import books.model.interfaces.IShearable;
 import books.model.interfaces.IShearchMatch;
 import books.model.interfaces.IText;
 
 public class TextBookNode extends DefaultMutableTreeNode 
-implements IReadable,IShearable{
+implements IReadable,IShearable,ILoadSaveObject{
 
 	/**
 	 * 
@@ -53,6 +56,40 @@ implements IReadable,IShearable{
 	
 	public IText getIText(){
 		return text;
+	}
+
+	@Override
+	public boolean isSave() {
+		return this.text.isSave();
+	}
+
+	@Override
+	public void save() throws IOException {
+		this.text.save();
+		
+	}
+
+	@Override
+	public boolean isLoad() {
+		return this.text.isLoad();
+	}
+
+	@Override
+	public void load() throws IOException {
+		this.text.load();
+		
+	}
+
+	@Override
+	public String getFilePath() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setFilePath(String path) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

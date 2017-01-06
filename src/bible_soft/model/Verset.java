@@ -12,7 +12,7 @@ import java.util.regex.Pattern;
 
 import bible_soft.recherche.CompteurDeMots;
 
-public class Verset implements ILoadSave{
+public class Verset implements ILoadSaveOld{
 
 	private Chapitre chapitre;
 
@@ -111,7 +111,7 @@ public class Verset implements ILoadSave{
 				text +=line;
 				line = buf.readLine();
 			}
-			text = text.trim();
+			text = getTranslationZoneText(text.trim(),"nouvelle traduction");
 			buf.close();
 			isLoad = true;
 			isSave = true;
@@ -119,6 +119,24 @@ public class Verset implements ILoadSave{
 			e.printStackTrace();
 		}
 
+	}
+	
+	private String getTranslationZoneText(String text,String translation){
+		String textStart = "<"+translation+">";
+		String textEnd ="</"+translation+">"; 
+		int indexStart = text.indexOf(textStart);
+		int indexEnd = text.indexOf(textEnd);
+		if(indexEnd<0 && indexStart<0){
+			throw new IllegalArgumentException("les balises "+textStart+" n'ont pas été trouvées.");
+		}else if(indexEnd>=0 && indexStart<0){
+			throw new IllegalArgumentException("la balise de début "+textStart+" n'a pas été trouvée.");
+		}else if(indexEnd<0 && indexStart>=0){
+			throw new IllegalArgumentException("la balise de fin "+textEnd+" n'a pas été trouvée.");
+		}else if((indexStart+textStart.length())>indexEnd){
+			throw new IllegalArgumentException("les balises "+textStart+" ne sont pas dans le bonne ordre.");
+		}
+		String translations = text.substring(indexStart+textStart.length(), indexEnd);
+		return translations.trim();
 	}
 
 	@Override

@@ -22,7 +22,7 @@ public class Main {
 	static int nbrVersetAT = 0;
 	static int nbrVersetNT = 0;
 	static int nbrMot = 0;
-	static String mot = "[\\W][E|e]mmanuel";
+	static String mot = "[\\W][V|v]êtement";
 	static CompteurDeMots compteurDeMots = new CompteurDeMots();
 	static List<Thread> ths = new ArrayList<Thread>();
 	static HashMap<String, Integer> maps = new HashMap<String, Integer>();

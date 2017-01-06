@@ -19,6 +19,8 @@ IPropertiesUsed,ISubDivisonContainer, IShearable, ILoadSaveObject{
 	
 	public String getHierarchy();
 	
+	public String getPath();
+	
 	/**
 	 * 
 	 * @return the subDivision if isn't a book

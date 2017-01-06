@@ -277,6 +277,7 @@ public class SubDivision implements ISubDivision {
 				loadTest = false;
 			}
 		}
+		LOGGER.info("["+name+"] load =>"+loadTest);
 		this.load = loadTest;
 	}
 
@@ -303,7 +304,7 @@ public class SubDivision implements ISubDivision {
 				text+="\n";
 			}
 			first = false;
-			if(trad==null){
+			if(trad!=null){
 				text+=t.getName()+":\t"+t.getText(trad);
 			}else{
 				text+=t.getName()+":\t"+t.getText(t.getDefaultTranslation());
@@ -362,6 +363,32 @@ public class SubDivision implements ISubDivision {
 			}
 		}
 		return null;
+	}
+	
+	/*
+	 * (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString(){
+		return getPath();
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * @see books.model.interfaces.ISubDivision#getPath()
+	 */
+	@Override
+	public String getPath() {
+		String pt = this.getName();
+		ISubDivision div = getSubDivision();
+		while(div!=null){
+			String name = div.getName();
+			pt=name+"/"+pt;
+			div = div.getSubDivision();
+		}
+		pt=getBook().getName()+"/"+pt;
+		return pt;
 	}
 
 }

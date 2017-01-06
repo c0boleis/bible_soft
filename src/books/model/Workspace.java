@@ -13,7 +13,7 @@ import javax.swing.Icon;
 
 import org.apache.log4j.Logger;
 
-import bible_soft.model.ILoadSave;
+import bible_soft.model.ILoadSaveOld;
 import books.exceptions.NoPropetiesException;
 import books.model.interfaces.IBook;
 import books.model.interfaces.IComment;
@@ -23,7 +23,7 @@ import books.model.interfaces.IText;
 import books.model.listener.WorkspaceListener;
 import ihm.Window;
 
-public class Workspace implements ILoadSave{
+public class Workspace implements ILoadSaveOld{
 	
 	private static final Logger LOGGER = Logger.getLogger(Workspace.class);
 

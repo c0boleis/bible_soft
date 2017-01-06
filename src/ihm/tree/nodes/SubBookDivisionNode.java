@@ -1,8 +1,16 @@
 package ihm.tree.nodes;
 
-import javax.swing.tree.DefaultMutableTreeNode;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
+import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.MutableTreeNode;
+import javax.swing.tree.TreeNode;
+
+import bible_soft.model.ILoadSaveOld;
 import books.model.SubDivision;
+import books.model.interfaces.ILoadSaveObject;
 import books.model.interfaces.IReadable;
 import books.model.interfaces.IShearable;
 import books.model.interfaces.IShearchMatch;
@@ -11,7 +19,7 @@ import books.model.interfaces.IText;
 import ihm.Window;
 
 public class SubBookDivisionNode extends DefaultMutableTreeNode 
-implements IReadable,IShearable{
+implements IReadable,IShearable,ILoadSaveObject{
 
 	/**
 	 * 
@@ -59,6 +67,23 @@ implements IReadable,IShearable{
 			}
 		}
 	}
+
+	
+	public final void refresh(){
+		int size = getChildCount();
+		List<TreeNode> nodes = new ArrayList<TreeNode>();
+		for(int index = 0; index<size;index++){
+			TreeNode node = getChildAt(index);
+			nodes.add(node);
+		}
+		for(TreeNode node : nodes){
+			Window.getTreeBooks().getTreeBooksModel().removeNodeFromParent((MutableTreeNode) node);
+		}
+		Window.getTreeBooks().getTreeBooksModel().reload(this);
+		init(false);
+		Window.getTreeBooks().getTreeBooksModel().reload(this);
+	}
+	
 	/**
 	 * @return the nodeText
 	 */
@@ -117,6 +142,40 @@ implements IReadable,IShearable{
 	@Override
 	public String read(String translation) {
 		return this.subDivision.read(translation);
+	}
+
+	@Override
+	public boolean isSave() {
+		return this.subDivision.isSave();
+	}
+
+	@Override
+	public void save() throws IOException {
+		this.subDivision.save();
+		
+	}
+
+	@Override
+	public boolean isLoad() {
+		return this.subDivision.isLoad();
+	}
+
+	@Override
+	public void load() throws IOException {
+		this.subDivision.save();
+		
+	}
+
+	@Override
+	public String getFilePath() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setFilePath(String path) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

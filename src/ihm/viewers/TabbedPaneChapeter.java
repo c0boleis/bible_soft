@@ -25,6 +25,7 @@ public class TabbedPaneChapeter extends JTabbedPane {
 	public TabbedPaneChapeter(){
 		this.setMinimumSize(new Dimension(100, 150));
 		this.add("Empty", getPaneEmpty());
+		this.setTabLayoutPolicy(SCROLL_TAB_LAYOUT);
 	}
 
 	/**

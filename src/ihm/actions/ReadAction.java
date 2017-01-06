@@ -5,6 +5,8 @@ import javax.swing.JScrollPane;
 import books.model.interfaces.IReadable;
 import ihm.Window;
 import ihm.reader.Reader;
+import ihm.tree.nodes.SubBookDivisionNode;
+import ihm.tree.nodes.TextBookNode;
 
 public class ReadAction implements ActionPerso{
 	
@@ -12,6 +14,13 @@ public class ReadAction implements ActionPerso{
 
 	public ReadAction(IReadable read) {
 		this.readable = read;
+		if(this.readable instanceof SubBookDivisionNode){
+			this.readable = 
+					((SubBookDivisionNode) this.readable).getSubDivision();
+		}else if(this.readable instanceof TextBookNode){
+			this.readable = 
+					((TextBookNode) this.readable).getIText();
+		}
 	}
 
 	@Override

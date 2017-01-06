@@ -163,7 +163,7 @@ public class Text implements IText, IOrderedObject {
 			return;
 		}
 		File file = new File(filePath);
-		this.name = file.getName();
+		this.name = loadName(file.getName());
 		BufferedReader buf = new BufferedReader(new FileReader(file));
 		String line = buf.readLine();
 		String text ="";
@@ -209,6 +209,24 @@ public class Text implements IText, IOrderedObject {
 		}
 		String translations = text.substring(indexStart+textStart.length(), indexEnd);
 		return translations.trim();
+	}
+	
+	private String loadName(String st){
+		char[] tab = st.toCharArray();
+		String nbr = "";
+		String text = "";
+		for(int index = 0;index<tab.length;index++){
+			char c = tab[index];
+			if(Character.isDigit(c)){
+				nbr+=String.valueOf(c);
+			}else{
+				text+=String.valueOf(c);
+			}
+		}
+		if(nbr.length()==0){
+			return text;
+		}
+		return Integer.valueOf(nbr).toString()+text;
 	}
 	
 	private String getZoneText(String text){
@@ -307,6 +325,15 @@ public class Text implements IText, IOrderedObject {
 	@Override
 	public void setFilePath(String path) {
 		this.filePath = path;
+	}
+	
+	/*
+	 * (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString(){
+		return getPath();
 	}
 
 }

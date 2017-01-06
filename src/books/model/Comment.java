@@ -11,6 +11,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 
 import org.apache.log4j.Logger;
@@ -40,6 +41,8 @@ public class Comment implements IComment{
 	private boolean load = true;
 	
 	private String filePath = null;
+	
+	private static final HashMap<String, Class<?>> editableAttributes = new HashMap<String, Class<?>>();
 	
 	public Comment(String name, IText[] ref,String comment) {
 		textsRefferenced = new ArrayList<IText>();
@@ -264,6 +267,36 @@ public class Comment implements IComment{
 	@Override
 	public String read(String translation) {
 		return read();
+	}
+
+	@Override
+	public String[] getEditableAttributes() {
+		return getEditableattributes().keySet().toArray(new String[0]);
+	}
+
+	@Override
+	public String isEditable(String key, String value) {
+		Class<?> c = getEditableattributes().get(key);
+//		if(c.equals(obj))
+		return null;
+	}
+
+	@Override
+	public boolean edit(String key, String value) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	/**
+	 * @return the editableattributes
+	 */
+	private static HashMap<String, Class<?>> getEditableattributes() {
+		if(editableAttributes.isEmpty()){
+			editableAttributes.put(ATTRIBUTE_REFFERENCED_TEXT, new ArrayList<IText>().getClass());
+			editableAttributes.put(ATTRIBUTE_COMMENT_TEXT, String.class);
+			editableAttributes.put(ATTRIBUTE_COMMENT_STRING, String.class);
+		}
+		return editableAttributes;
 	}
 
 }

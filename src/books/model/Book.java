@@ -10,6 +10,8 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Properties;
 
+import org.apache.log4j.Logger;
+
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
 import books.exceptions.NoPropetiesException;
@@ -20,6 +22,8 @@ import books.model.interfaces.ISubDivision;
 
 @XStreamAlias("Book")
 public class Book implements IBook {
+	
+	private static final Logger LOGGER = Logger.getLogger(Book.class);
 
 	private String abv = null;
 
@@ -79,6 +83,10 @@ public class Book implements IBook {
 		}
 		if(!folder.isDirectory()){
 			throw new IllegalArgumentException("le fichier n'est pas un dossier");
+		}
+		if(!this.subDivisions.isEmpty()){
+			LOGGER.warn("subDivisions already load");
+			return;
 		}
 		File[] files = folder.listFiles();
 		for(File file :files){

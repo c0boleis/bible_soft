@@ -28,7 +28,7 @@ import org.xml.sax.SAXException;
 import books.model.interfaces.IPropertiesUsed;
 
 
-public class Chapitre implements ILoadSave{
+public class Chapitre implements ILoadSaveOld{
 
 	private Livre livre;
 

@@ -4,7 +4,7 @@ import java.io.IOException;
 
 import books.exceptions.NoPropetiesException;
 
-public interface ILoadSave {
+public interface ILoadSaveOld {
 	
 	public void load() throws IOException, NoPropetiesException;
 	
