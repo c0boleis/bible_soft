@@ -147,9 +147,9 @@ public class SearhcPane {
 			return regex;
 		}
 		
-		if(getCheckCaseSensitive().isSelected() || getCheckWholeWord().isSelected()){
-			regex = StringUtil.sansAccent(regex);
-		}
+//		if(getCheckCaseSensitive().isSelected() || getCheckWholeWord().isSelected()){
+//			regex = StringUtil.sansAccent(regex);
+//		}
 		if(getCheckCaseSensitive().isSelected()){
 			regex = toStringCaseNotSensitive(regex);
 		}
