@@ -4,6 +4,7 @@
 package ihm;
 
 import java.awt.Dimension;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -46,7 +47,7 @@ public class Window extends JFrame {
 	private static Window INSTANCE = new Window();
 
 	private static JSplitPane mainSplit;
-	
+
 	private static JSplitPane secondSplit;
 
 	private static JScrollPane scrollPaneTree;
@@ -56,15 +57,15 @@ public class Window extends JFrame {
 	private static TabbedPaneChapeter tabbedPaneChapeter;
 
 	private static MenuBarWindow menuBarWindow;
-	
+
 	private static Consol consol;
 
 	private static File FILE_PROPERTIES;
 
 	private static final String KEY_WORKSPACE_PROPERTIES = "workspace";
-	
+
 	private static WorkspaceListener workspaceListener;
-	
+
 	private Window(){
 		super();
 		this.setTitle("Bible soft");
@@ -76,6 +77,33 @@ public class Window extends JFrame {
 	}
 
 	public static void main(String[] args) {
+		File file = new File("log4Jconfig.properties");
+		if(!file.exists()){
+			try {
+				file.createNewFile();
+				BufferedWriter buf = new BufferedWriter(new FileWriter(file));
+				buf.write("log4j.rootLogger=debug, stdout, R\n"
+
+						+"log4j.appender.stdout=org.apache.log4j.ConsoleAppender\n"
+						+"log4j.appender.stdout.layout=org.apache.log4j.PatternLayout\n"
+
+						+"# Pattern to output the caller's file name and line number.\n"
+						+"log4j.appender.stdout.layout.ConversionPattern=%5p [%t] (%F:%L) - %m%n\n"
+
+						+"log4j.appender.R=org.apache.log4j.RollingFileAppender\n"
+						+"log4j.appender.R.File=bible_soft.log\n"
+
+						+"log4j.appender.R.MaxFileSize=100KB\n"
+						+"# Keep one backup file\n"
+						+"log4j.appender.R.MaxBackupIndex=1\n"
+
+						+"log4j.appender.R.layout=org.apache.log4j.PatternLayout\n"
+						+"log4j.appender.R.layout.ConversionPattern=%p %t %c - %m%n");
+				buf.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
 		PropertyConfigurator.configure("log4Jconfig.properties");
 		LOGGER.info("Start programme");
 		open();
@@ -132,7 +160,7 @@ public class Window extends JFrame {
 		}
 		INSTANCE.setVisible(true);
 	}
-	
+
 	private static void conectListeners(){
 		getTreeBooks().conectListeners();
 		Workspace.get().addWorkspaceListener(getWorkspaceListener());
@@ -191,10 +219,10 @@ public class Window extends JFrame {
 
 	}
 
-//	public static void needSave(){
-//		save = false;
-//		getMenuBarWindow().init(null);
-//	}
+	//	public static void needSave(){
+	//		save = false;
+	//		getMenuBarWindow().init(null);
+	//	}
 
 	public static MenuBarWindow getMenuBarWindow(){
 		if(menuBarWindow == null){
@@ -209,34 +237,34 @@ public class Window extends JFrame {
 	private static WorkspaceListener getWorkspaceListener() {
 		if(workspaceListener == null){
 			workspaceListener = new WorkspaceListener() {
-				
+
 				@Override
 				public void saveChange(boolean newValue) {
 					getMenuBarWindow().init(null);
 				}
-				
+
 				@Override
 				public void commentRemove(IComment commentRemove) {
 					// TODO Auto-generated method stub
-					
+
 				}
-				
+
 				@Override
 				public void commentAdd(IComment commentAdd) {
 					// TODO Auto-generated method stub
-					
+
 				}
-				
+
 				@Override
 				public void bookRemove(IBook bookRemove) {
 					// TODO Auto-generated method stub
-					
+
 				}
-				
+
 				@Override
 				public void bookAdd(IBook bookAdd) {
 					// TODO Auto-generated method stub
-					
+
 				}
 			};
 		}
@@ -265,7 +293,7 @@ public class Window extends JFrame {
 		}
 		return secondSplit;
 	}
-	
+
 	private static File getFileProperties(){
 		if(FILE_PROPERTIES==null){
 			FILE_PROPERTIES = new File("setting.properties");
