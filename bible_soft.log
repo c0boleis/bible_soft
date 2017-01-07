@@ -440,3 +440,25 @@ INFO AWT-EventQueue-0 books.model.interfaces.ISubDivision - [Apocalypse] load =>
 INFO AWT-EventQueue-0 books.model.interfaces.ISubDivision - [Lettres Catholiques] load =>true
 INFO AWT-EventQueue-0 books.model.interfaces.ISubDivision - [Nouveau Testament] load =>true
 INFO AWT-EventQueue-0 ihm.actions.LoadObjectAction - Bible a été chargé.
+INFO main lancement.Main - Start programme
+INFO main ihm.tree.TreeBooks - workspaceListener du TreeBooks conecté.
+INFO main lancement.Main - Start programme
+INFO main ihm.tree.TreeBooks - workspaceListener du TreeBooks conecté.
+INFO main lancement.Main - Start programme
+INFO main ihm.tree.TreeBooks - workspaceListener du TreeBooks conecté.
+INFO main lancement.Main - Start programme
+INFO main ihm.tree.TreeBooks - workspaceListener du TreeBooks conecté.
+INFO main lancement.Main - Start programme
+INFO main ihm.tree.TreeBooks - workspaceListener du TreeBooks conecté.
+INFO main lancement.Main - Start programme
+INFO main ihm.tree.TreeBooks - workspaceListener du TreeBooks conecté.
+INFO main lancement.Main - Start programme
+INFO main ihm.tree.TreeBooks - workspaceListener du TreeBooks conecté.
+INFO main lancement.Main - Start programme
+INFO main ihm.tree.TreeBooks - workspaceListener du TreeBooks conecté.
+INFO main lancement.Main - Start programme
+INFO main ihm.tree.TreeBooks - workspaceListener du TreeBooks conecté.
+INFO main lancement.Main - Start programme
+INFO main ihm.tree.TreeBooks - workspaceListener du TreeBooks conecté.
+INFO main lancement.Main - Start programme
+INFO main ihm.tree.TreeBooks - workspaceListener du TreeBooks conecté.

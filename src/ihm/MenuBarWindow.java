@@ -26,11 +26,15 @@ public class MenuBarWindow extends JMenuBar {
 	 */
 	private static JMenu menuFile;
 	
+	private static JMenu menuHelp;
+	
 	/*
 	 * les menuItems
 	 */
 	
 	private static JMenuItem menuItemLoadBook;
+	
+	private static JMenuItem menuItemAbout;
 	
 	private static JMenuItem menuItemClose;
 	
@@ -38,6 +42,7 @@ public class MenuBarWindow extends JMenuBar {
 	
 	public MenuBarWindow(){
 		this.add(getMenuFile());
+		this.add(getMenuHelp());
 	}
 
 	/**
@@ -86,7 +91,7 @@ public class MenuBarWindow extends JMenuBar {
 				
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					// TODO Auto-generated method stub
+					Window.close();
 					
 				}
 			});
@@ -134,6 +139,39 @@ public class MenuBarWindow extends JMenuBar {
 	public void init(Object object) {
 		getMenuItemSave().setEnabled(!Workspace.get().isSave());
 		
+	}
+
+	/**
+	 * @return the menuItemAbout
+	 */
+	private static JMenuItem getMenuItemAbout() {
+		if(menuItemAbout == null){
+			menuItemAbout = new JMenuItem();
+			menuItemAbout.setText("A propos");
+			menuItemAbout.addActionListener(new ActionListener() {
+				
+				@Override
+				public void actionPerformed(ActionEvent arg0) {
+					JOptionPane.showMessageDialog(Window.get(),
+							"BibleSoft:\n"
+							+ "version : 0.0.1");
+					
+				}
+			});
+		}
+		return menuItemAbout;
+	}
+
+	/**
+	 * @return the menuHelp
+	 */
+	private static JMenu getMenuHelp() {
+		if(menuHelp == null){
+			menuHelp = new JMenu();
+			menuHelp.setText("Aide");
+			menuHelp.add(getMenuItemAbout());
+		}
+		return menuHelp;
 	}
 
 }

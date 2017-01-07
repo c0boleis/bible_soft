@@ -4,6 +4,8 @@
 package ihm;
 
 import java.awt.Dimension;
+import java.awt.GraphicsDevice;
+import java.awt.GraphicsEnvironment;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -158,6 +160,11 @@ public class Window extends JFrame {
 		} catch (NoPropetiesException e) {
 			e.printStackTrace();
 		}
+//		GraphicsDevice gd = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
+//		int height = gd.getDisplayMode().getHeight();
+//		getSecondSplit().setDividerLocation(height/4);
+//		getSecondSplit().setDividerLocation(0.75);
+//		getMainSplit().setDividerLocation(0.35);
 		INSTANCE.setVisible(true);
 	}
 
@@ -185,7 +192,6 @@ public class Window extends JFrame {
 			mainSplit = new  JSplitPane();
 			mainSplit.setLeftComponent(getScrollPaneTree());
 			mainSplit.setRightComponent(getSecondSplit());
-			mainSplit.setDividerLocation(150);
 		}
 		return mainSplit;
 	}
@@ -306,6 +312,10 @@ public class Window extends JFrame {
 			}
 		}
 		return FILE_PROPERTIES;
+	}
+
+	public static void close() {
+		System.exit(0);
 	}
 
 }
