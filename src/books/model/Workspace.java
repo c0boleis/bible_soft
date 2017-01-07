@@ -28,6 +28,8 @@ public class Workspace implements ILoadSaveOld{
 	private static final Logger LOGGER = Logger.getLogger(Workspace.class);
 
 	public static final String KEY_BOOKS = "book";
+	
+	public static final String KEY_AUTO_SAVE= "auto_save";
 
 	public static final String KEY_COMMENT = "comment";
 
@@ -54,6 +56,8 @@ public class Workspace implements ILoadSaveOld{
 	private static boolean save = false;
 
 	private static Workspace INSTANCE = new Workspace();
+	
+	private static boolean autoSave = true;
 
 	public static Workspace get(){
 		return INSTANCE;
@@ -91,7 +95,15 @@ public class Workspace implements ILoadSaveOld{
 		Workspace.books.add(book);
 		Workspace.save = false;
 		this.fireBookAdd(book);
-		this.fireSaveChange();
+		if(Workspace.isAutoSave()){
+			try {
+				Workspace.get().save();
+			} catch (IOException e) {
+				LOGGER.error("Echec de la sauvegarde", e);
+			}
+		}else{
+			this.fireSaveChange();
+		}
 		return true;
 	}
 
@@ -102,7 +114,15 @@ public class Workspace implements ILoadSaveOld{
 		Workspace.comments.add(comment);
 		Workspace.save = false;
 		this.fireCommentAdd(comment);
-		this.fireSaveChange();
+		if(Workspace.isAutoSave()){
+			try {
+				Workspace.get().save();
+			} catch (IOException e) {
+				LOGGER.error("Echec de la sauvegarde", e);
+			}
+		}else{
+			this.fireSaveChange();
+		}
 		return true;
 	}
 
@@ -321,6 +341,20 @@ public class Workspace implements ILoadSaveOld{
 			}
 		}
 		return null;
+	}
+
+	/**
+	 * @return the autoSave
+	 */
+	public static boolean isAutoSave() {
+		return autoSave;
+	}
+
+	/**
+	 * @param autoSave the autoSave to set
+	 */
+	public static void setAutoSave(boolean autoSave) {
+		Workspace.autoSave = autoSave;
 	}
 
 }

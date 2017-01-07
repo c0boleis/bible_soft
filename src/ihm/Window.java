@@ -7,10 +7,13 @@ import java.awt.Dimension;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Properties;
 
+import javax.swing.JFileChooser;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.JSplitPane;
 
@@ -56,7 +59,7 @@ public class Window extends JFrame {
 	
 	private static Consol consol;
 
-	private static final File FILE_PROPERTIES = new File("setting.properties");
+	private static File FILE_PROPERTIES;
 
 	private static final String KEY_WORKSPACE_PROPERTIES = "workspace";
 	
@@ -86,9 +89,33 @@ public class Window extends JFrame {
 		String defaultWorkspace = "default";
 		Properties properties = new Properties();
 		try {
-			properties.load(new FileReader(FILE_PROPERTIES));
+			properties.load(new FileReader(getFileProperties()));
 			String workspaceFolder = properties.getProperty(
 					KEY_WORKSPACE_PROPERTIES,defaultWorkspace);
+			File folder = new File(workspaceFolder);
+			if(!folder.exists()){
+				File file = null;
+				while(file==null){
+					JFileChooser choose = new JFileChooser();
+					choose.setMultiSelectionEnabled(false);
+					choose.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+					choose.showOpenDialog(INSTANCE);
+					file = choose.getSelectedFile();
+					if(file==null){
+						int rep = JOptionPane.showConfirmDialog(
+								INSTANCE,
+								"le fichier est null voulez-vous quiter le logiciel?", 
+								"Workspace", JOptionPane.INFORMATION_MESSAGE);
+						if(rep==JOptionPane.OK_OPTION){
+							System.exit(0);
+						}
+					}
+				}
+				workspaceFolder = file.getPath();
+				properties.setProperty(KEY_WORKSPACE_PROPERTIES,
+						workspaceFolder);
+				properties.store(new FileWriter(getFileProperties()), null);
+			}
 			if(!workspaceFolder.equals(defaultWorkspace)){
 				Workspace.get().setFolder_path(workspaceFolder);
 			}
@@ -237,6 +264,20 @@ public class Window extends JFrame {
 			secondSplit.setRightComponent(getConsol());
 		}
 		return secondSplit;
+	}
+	
+	private static File getFileProperties(){
+		if(FILE_PROPERTIES==null){
+			FILE_PROPERTIES = new File("setting.properties");
+			if(!FILE_PROPERTIES.exists()){
+				try {
+					FILE_PROPERTIES.createNewFile();
+				} catch (IOException e) {
+					LOGGER.error("le fichier de propriété n'a pas été créé", e);
+				}
+			}
+		}
+		return FILE_PROPERTIES;
 	}
 
 }

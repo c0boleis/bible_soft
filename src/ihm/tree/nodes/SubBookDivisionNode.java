@@ -8,8 +8,6 @@ import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.MutableTreeNode;
 import javax.swing.tree.TreeNode;
 
-import bible_soft.model.ILoadSaveOld;
-import books.model.SubDivision;
 import books.model.interfaces.ILoadSaveObject;
 import books.model.interfaces.IOrderedObject;
 import books.model.interfaces.IReadable;
@@ -78,8 +76,18 @@ implements IReadable,IShearable,ILoadSaveObject,IOrderedObject{
 
 	
 	public final void refresh(){
-		int size = getChildCount();
+		int size = getNodeSubDivision().getChildCount();
 		List<TreeNode> nodes = new ArrayList<TreeNode>();
+		for(int index = 0; index<size;index++){
+			TreeNode node = getNodeSubDivision().getChildAt(index);
+			nodes.add(node);
+		}
+		for(TreeNode node : nodes){
+			Window.getTreeBooks().getTreeBooksModel().removeNodeFromParent((MutableTreeNode) node);
+		}
+		
+		size = getChildCount();
+		nodes.clear();
 		for(int index = 0; index<size;index++){
 			TreeNode node = getChildAt(index);
 			nodes.add(node);
@@ -87,6 +95,7 @@ implements IReadable,IShearable,ILoadSaveObject,IOrderedObject{
 		for(TreeNode node : nodes){
 			Window.getTreeBooks().getTreeBooksModel().removeNodeFromParent((MutableTreeNode) node);
 		}
+		
 		Window.getTreeBooks().getTreeBooksModel().reload(this);
 		init(false);
 		Window.getTreeBooks().getTreeBooksModel().reload(this);
@@ -175,7 +184,7 @@ implements IReadable,IShearable,ILoadSaveObject,IOrderedObject{
 
 	@Override
 	public void load() throws IOException {
-		this.subDivision.save();
+		this.subDivision.load();
 		
 	}
 
