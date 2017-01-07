@@ -137,8 +137,15 @@ public class Text implements IText, IOrderedObject {
 
 	@Override
 	public String getRefference() {
-		// TODO Auto-generated method stub
-		return "N/A";
+		ISubDivision subDirect = getSubDivision();
+		if(subDirect==null){
+			return getBook().getName()+"/"+getName();
+		}
+		ISubDivision subSecond = subDirect.getSubDivision();
+		if(subSecond==null){
+			return getBook().getName()+"/"+subDirect.getAbv()+"/"+getName();
+		}
+		return subSecond.getAbv()+" "+subDirect.getAbv()+", "+getName();
 	}
 
 	@Override
@@ -284,6 +291,9 @@ public class Text implements IText, IOrderedObject {
 
 	@Override
 	public IShearchMatch[] shearch(String regex, String translation) {
+		if(translation==null){
+			translation = getDefaultTranslation();
+		}
 		List<IShearchMatch> listOut = new ArrayList<IShearchMatch>();
 		Pattern pattern = Pattern.compile(regex);
 		Matcher matcher = pattern.matcher(getText(translation));

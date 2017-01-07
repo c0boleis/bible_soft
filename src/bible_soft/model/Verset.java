@@ -11,6 +11,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import bible_soft.recherche.CompteurDeMots;
+import util.StringUtil;
 
 public class Verset implements ILoadSaveOld{
 
@@ -222,8 +223,7 @@ public class Verset implements ILoadSaveOld{
 	}
 
 	public String[] getMots(){
-		String textTmp = CompteurDeMots.sansAccent(text);
-		textTmp = textTmp.replaceAll("œ", "oe");
+		String textTmp = StringUtil.sansAccent(text);
 		return textTmp.split("\\W");
 	}
 

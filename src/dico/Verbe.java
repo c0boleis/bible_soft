@@ -20,6 +20,7 @@ import org.apache.commons.io.IOUtils;
 import bible_soft.model.Verset;
 import bible_soft.recherche.CompteurDeMots;
 import bible_soft.recherche.Mot;
+import util.StringUtil;
 
 public class Verbe extends Mot{
 
@@ -152,7 +153,7 @@ public class Verbe extends Mot{
 //		String baliseDeb = "<b>";
 //		String baliseFin = "</b>";
 		String split = "<br";
-		String[] tab = CompteurDeMots.sansAccent(text).split(split);
+		String[] tab = StringUtil.sansAccent(text).split(split);
 		for(String st : tab){
 			int k  = st.indexOf('>');
 			if(k>0){

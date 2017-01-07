@@ -3,7 +3,9 @@ package books.model;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.sql.Savepoint;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -18,6 +20,7 @@ import books.model.interfaces.IPropertiesUsed;
 import books.model.interfaces.IShearchMatch;
 import books.model.interfaces.ISubDivision;
 import books.model.interfaces.IText;
+import books.model.listener.OrderedObjectListener;
 
 public class SubDivision implements ISubDivision {
 	
@@ -42,7 +45,13 @@ public class SubDivision implements ISubDivision {
 	private List<IText> texts = new ArrayList<IText>();
 
 	private int order = -1;
+	
+	private boolean autoOpen = false;
+	
+	private List<OrderedObjectListener> orderedObjectListeners = new ArrayList<OrderedObjectListener>();
 
+	private boolean allowListener = false;
+	
 	private List<ISubDivision> subDivisions = new ArrayList<ISubDivision>();
 
 	public SubDivision(ISubDivision div,String fPtah){
@@ -76,7 +85,7 @@ public class SubDivision implements ISubDivision {
 	 * @see books.model.IPropertiesUsed#load()
 	 */
 	@Override
-	public void loadInfo() throws NoPropetiesException {
+	public Properties loadInfo() throws NoPropetiesException {
 		if(this.folderPath==null){
 			throw new NullPointerException();
 		}
@@ -88,13 +97,14 @@ public class SubDivision implements ISubDivision {
 			pr.load(new FileReader(file));
 			this.name = pr.getProperty(KEY_NAME);
 			this.abv = pr.getProperty(KEY_ABV);
-			this.hierarchy = pr.getProperty(KEY_HIERARCHY);
+			this.hierarchy = pr.getProperty(KEY_HIERARCHY,DEFAULT_HIERARCHY);
 			this.order = Integer.parseInt(pr.getProperty(KEY_ORDER, "-1"));
-			boolean autoOpen = Boolean.parseBoolean(pr.getProperty(KEY_AUTO_OPEN, "false"));
+			autoOpen = Boolean.parseBoolean(pr.getProperty(KEY_AUTO_OPEN, "false"));
 			if(autoOpen){
 				this.loadSubDivisions();
 				this.loadTexts();
 			}
+			return pr;
 		} catch (FileNotFoundException e) {
 			throw new NoPropetiesException();
 		} catch (IOException e) {
@@ -102,7 +112,6 @@ public class SubDivision implements ISubDivision {
 		} catch (NumberFormatException e) {
 			throw new NoPropetiesException("L'ordre est male écrit dans les propriétés");
 		}
-
 	}
 
 	@Override
@@ -127,20 +136,10 @@ public class SubDivision implements ISubDivision {
 				} catch (NoPropetiesException e) {}
 			}
 		}
-		boolean sortByName = false;
-		for(ISubDivision div : this.subDivisions){
-			if(div.getOrder()<0){
-				sortByName = true;
-				break;
-			}
-		}
-		if(sortByName){
-			Collections.sort(subDivisions,
-					new SubDivisionNameComparator());
-		}else{
-			Collections.sort(subDivisions,
-					new OrderObjectComparator());
-		}
+		/*
+		 * we sort the subDivision
+		 */
+		this.sortSubdivisions();
 	}
 
 	@Override
@@ -165,7 +164,20 @@ public class SubDivision implements ISubDivision {
 
 	@Override
 	public void setOrder(int order) {
+		int oldOrder = this.order;
 		this.order = order;
+		if(oldOrder!=this.order){
+			if(this.getSubDivision()!=null){
+				this.getSubDivision().sortSubdivisions();
+			}else{
+				this.getBook().sortSubdivisions();
+			}
+			
+			save = false;
+			this.save();
+			this.fireOrderChange(this.order, oldOrder);
+		}
+		
 	}
 
 	@Override
@@ -205,20 +217,7 @@ public class SubDivision implements ISubDivision {
 				}
 			}
 		}
-		boolean sortByName = false;
-		for(IText div : this.texts){
-			if(div.getOrder()<0){
-				sortByName = true;
-				break;
-			}
-		}
-		if(sortByName){
-			Collections.sort(texts,
-					new TextNameComparator());
-		}else{
-			Collections.sort(texts,
-					new OrderObjectComparator());
-		}
+		this.sortTexts();
 	}
 
 	@Override
@@ -248,8 +247,12 @@ public class SubDivision implements ISubDivision {
 
 	@Override
 	public void save() {
-		// TODO Auto-generated method stub
-		
+		try {
+			saveInfo();
+			this.save = true;
+		} catch (NoPropetiesException e) {
+			LOGGER.error("les informations n'ont pas été enregistrés", e);
+		}
 	}
 
 	@Override
@@ -389,6 +392,112 @@ public class SubDivision implements ISubDivision {
 		}
 		pt=getBook().getName()+"/"+pt;
 		return pt;
+	}
+
+	@Override
+	public Properties saveInfo() throws NoPropetiesException {
+		if(this.folderPath==null){
+			throw new NullPointerException();
+		}
+		String infoPath = this.folderPath+File.separator+PROPERTIES_FILE_NAME;
+		File file = new File(infoPath);
+		Properties pr = new Properties();
+		try {
+			pr.load(new FileReader(file));
+			pr.setProperty(KEY_NAME,this.name);
+			if(this.abv!=null){
+				pr.setProperty(KEY_ABV,this.abv);
+			}
+			pr.setProperty(KEY_HIERARCHY,this.hierarchy);
+			if(this.order>=0){
+				pr.setProperty(KEY_ORDER, String.valueOf(this.order));
+			}
+			pr.setProperty(KEY_AUTO_OPEN, this.autoOpen?"true":"false");
+			pr.store(new FileWriter(file), null);
+			return pr;
+		} catch (FileNotFoundException e) {
+			throw new NoPropetiesException();
+		} catch (IOException e) {
+			throw new NoPropetiesException(e.getMessage());
+		} catch (NumberFormatException e) {
+			throw new NoPropetiesException("L'ordre est male écrit dans les propriétés");
+		}
+	}
+
+	@Override
+	public OrderedObjectListener[] getOrderListeners() {
+		return this.orderedObjectListeners.toArray(new OrderedObjectListener[0]);
+	}
+
+	@Override
+	public void addOrderListener(OrderedObjectListener listener) {
+		if(!this.orderedObjectListeners.contains(listener)){
+			this.orderedObjectListeners.add(listener);
+		}
+		
+	}
+
+	@Override
+	public void removeOrderListener(OrderedObjectListener listener) {
+		this.orderedObjectListeners.remove(listener);
+		
+	}
+
+	@Override
+	public boolean allowListener() {
+		return this.allowListener;
+	}
+
+	@Override
+	public void setAllowListener(boolean allow) {
+		this.allowListener = allow;
+	}
+	
+	private void fireOrderChange(int newOrder,int oldOrder){
+		if(!this.allowListener){
+			return;
+		}
+		OrderedObjectListener[] tab = getOrderListeners();
+		for(OrderedObjectListener listener : tab){
+			listener.orderChange(newOrder, oldOrder);
+		}
+	}
+
+	@Override
+	public void sortTexts() {
+		boolean sortByName = false;
+		for(IText div : this.texts){
+			if(div.getOrder()<0){
+				sortByName = true;
+				break;
+			}
+		}
+		if(sortByName){
+			Collections.sort(texts,
+					new TextNameComparator());
+		}else{
+			Collections.sort(texts,
+					new OrderObjectComparator());
+		}
+		
+	}
+
+	@Override
+	public void sortSubdivisions() {
+		boolean sortByName = true;
+		for(ISubDivision div : this.subDivisions){
+			if(div.getOrder()>0){
+				sortByName = false;
+				break;
+			}
+		}
+		if(sortByName){
+			Collections.sort(subDivisions,
+					new SubDivisionNameComparator());
+		}else{
+			Collections.sort(subDivisions,
+					new OrderObjectComparator());
+		}
 	}
 
 }

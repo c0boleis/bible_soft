@@ -1,5 +1,7 @@
 package books.model.interfaces;
 
+import java.util.Properties;
+
 import books.exceptions.NoPropetiesException;
 
 public interface IPropertiesUsed {
@@ -16,6 +18,8 @@ public interface IPropertiesUsed {
 	
 	public static final String KEY_AUTO_OPEN = "auto_open";
 	
-	public void loadInfo() throws NoPropetiesException;
+	public Properties loadInfo() throws NoPropetiesException;
+	
+	public Properties saveInfo() throws NoPropetiesException;
 
 }

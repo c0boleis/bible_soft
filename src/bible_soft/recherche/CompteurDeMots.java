@@ -79,12 +79,6 @@ public class CompteurDeMots {
 		return mots.size();
 	}
 
-	public static String sansAccent(String s) 
-	{
 
-		String strTemp = Normalizer.normalize(s, Normalizer.Form.NFD);
-		Pattern pattern = Pattern.compile("\\p{InCombiningDiacriticalMarks}+");
-		return pattern.matcher(strTemp).replaceAll("");
-	}
 
 }

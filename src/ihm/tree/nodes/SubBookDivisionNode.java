@@ -11,15 +11,18 @@ import javax.swing.tree.TreeNode;
 import bible_soft.model.ILoadSaveOld;
 import books.model.SubDivision;
 import books.model.interfaces.ILoadSaveObject;
+import books.model.interfaces.IOrderedObject;
 import books.model.interfaces.IReadable;
 import books.model.interfaces.IShearable;
 import books.model.interfaces.IShearchMatch;
 import books.model.interfaces.ISubDivision;
+import books.model.interfaces.ISubDivisonContainer;
 import books.model.interfaces.IText;
+import books.model.listener.OrderedObjectListener;
 import ihm.Window;
 
 public class SubBookDivisionNode extends DefaultMutableTreeNode 
-implements IReadable,IShearable,ILoadSaveObject{
+implements IReadable,IShearable,ILoadSaveObject,IOrderedObject{
 
 	/**
 	 * 
@@ -31,10 +34,13 @@ implements IReadable,IShearable,ILoadSaveObject{
 	private DefaultMutableTreeNode nodeSubDivision;
 
 	private DefaultMutableTreeNode nodeText;
+	
+	private OrderedObjectListener orderedObjectListener;
 
 	public SubBookDivisionNode(ISubDivision div){
 		super();
 		this.subDivision = div;
+		this.subDivision.addOrderListener(getOrderedObjectListener());
 		init(false);
 	}
 	
@@ -52,7 +58,9 @@ implements IReadable,IShearable,ILoadSaveObject{
 		
 		ISubDivision[] tab = this.subDivision.getSubDivisions();
 		if(tab.length>0){
-			Window.getTreeBooks().getTreeBooksModel().insertNodeInto(getNodeSubDivision(), this, 0);
+			if(!this.subDivision.getHierarchy().equals(ISubDivisonContainer.DEFAULT_HIERARCHY)){
+				Window.getTreeBooks().getTreeBooksModel().insertNodeInto(getNodeSubDivision(), this, 0);
+			}
 			for(ISubDivision div : tab){
 				SubBookDivisionNode node = new SubBookDivisionNode(div);
 				Window.getTreeBooks().getTreeBooksModel().insertNodeInto(node, getNodeSubDivision(), getNodeSubDivision().getChildCount());
@@ -106,7 +114,12 @@ implements IReadable,IShearable,ILoadSaveObject{
 	 */
 	private DefaultMutableTreeNode getNodeSubDivision() {
 		if(nodeSubDivision == null){
-			nodeSubDivision = new DefaultMutableTreeNode(this.subDivision.getHierarchy());//TODO properties
+			if(subDivision.getHierarchy().equals(ISubDivisonContainer.DEFAULT_HIERARCHY)){
+				nodeSubDivision = this;
+				
+			}else{
+				nodeSubDivision = new DefaultMutableTreeNode(this.subDivision.getHierarchy());
+			}
 		}
 		return nodeSubDivision;
 	}
@@ -176,6 +189,47 @@ implements IReadable,IShearable,ILoadSaveObject{
 	public void setFilePath(String path) {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public int getOrder() {
+		return this.subDivision.getOrder();
+	}
+
+	@Override
+	public void setOrder(int order) {
+		this.subDivision.setOrder(order);
+		
+	}
+
+	/**
+	 * @return the orderedObjectListener
+	 */
+	private OrderedObjectListener getOrderedObjectListener() {
+		if(orderedObjectListener == null){
+			orderedObjectListener = new OrderedObjectListener() {
+				
+				@Override
+				public void orderChange(int newOrder, int oldOrder) {
+					Object obj = getParent();
+					while(obj!=null){
+						if(obj instanceof BookNode){
+							((BookNode) obj).refresh();
+							return;
+						}else if(obj instanceof SubBookDivisionNode){
+							((SubBookDivisionNode) obj).refresh();
+							return;
+						}else if(obj instanceof TreeNode){
+							obj = ((TreeNode) obj).getParent();
+						}else{
+							obj = null;
+						}
+					}
+					
+				}
+			};
+		}
+		return orderedObjectListener;
 	}
 
 }

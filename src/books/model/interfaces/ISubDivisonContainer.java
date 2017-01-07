@@ -2,7 +2,11 @@ package books.model.interfaces;
 
 public interface ISubDivisonContainer {
 	
+	public static final String DEFAULT_HIERARCHY = "<folder>";
+	
 	public ISubDivision[] getSubDivisions();
+	
+	public void sortSubdivisions();
 	
 	public void loadSubDivisions();
 	

@@ -48,12 +48,12 @@ public class Book implements IBook {
 	 * @see books.model.IPropertiesUsed#load()
 	 */
 	@Override
-	public void loadInfo() throws NoPropetiesException {
+	public Properties loadInfo() throws NoPropetiesException {
 		if(this.folderPath==null){
 			throw new NullPointerException();
 		}
 		if(!this.subDivisions.isEmpty()){
-			return;
+			return null;
 		}
 		String infoPath = this.folderPath+File.separator+PROPERTIES_FILE_NAME;
 		File file = new File(infoPath);
@@ -68,6 +68,7 @@ public class Book implements IBook {
 			if(autoOpen){
 				this.loadSubDivisions();
 			}
+			return pr;
 		} catch (FileNotFoundException e) {
 			throw new NoPropetiesException();
 		} catch (IOException e) {
@@ -96,20 +97,7 @@ public class Book implements IBook {
 				this.subDivisions.add(div);
 			} catch (NoPropetiesException e) {}
 		}
-		boolean sortByName = false;
-		for(ISubDivision div : this.subDivisions){
-			if(div.getOrder()<0){
-				sortByName = true;
-				break;
-			}
-		}
-		if(sortByName){
-			Collections.sort(subDivisions,
-					new SubDivisionNameComparator());
-		}else{
-			Collections.sort(subDivisions,
-					new OrderObjectComparator());
-		}
+		this.sortSubdivisions();
 	}
 
 	@Override
@@ -210,6 +198,30 @@ public class Book implements IBook {
 			}
 		}
 		return null;
+	}
+
+	@Override
+	public Properties saveInfo() throws NoPropetiesException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void sortSubdivisions() {
+		boolean sortByName = true;
+		for(ISubDivision div : this.subDivisions){
+			if(div.getOrder()>0){
+				sortByName = false;
+				break;
+			}
+		}
+		if(sortByName){
+			Collections.sort(subDivisions,
+					new SubDivisionNameComparator());
+		}else{
+			Collections.sort(subDivisions,
+					new OrderObjectComparator());
+		}
 	}
 
 }

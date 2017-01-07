@@ -1,5 +1,7 @@
 package books.model.interfaces;
 
+import books.model.listener.OrderedObjectListener;
+
 /**
  * 
  * @author Corentin Boleis
@@ -36,5 +38,15 @@ IPropertiesUsed,ISubDivisonContainer, IShearable, ILoadSaveObject{
 	public IBook getBook();
 	
 	public IText getText(String name);
+	
+	public OrderedObjectListener[] getOrderListeners();
+	
+	public void addOrderListener(OrderedObjectListener listener);
+	
+	public void removeOrderListener(OrderedObjectListener listener);
+	
+	public boolean allowListener();
+	
+	public void setAllowListener(boolean allow);
 
 }

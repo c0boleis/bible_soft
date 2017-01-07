@@ -1,9 +1,8 @@
 package ihm.actions;
 
-import javax.swing.JOptionPane;
-
 import books.model.interfaces.IShearable;
 import books.model.interfaces.IShearchMatch;
+import ihm.SearhcPane;
 import ihm.Window;
 
 public class ShearchAction implements ActionPerso{
@@ -16,13 +15,14 @@ public class ShearchAction implements ActionPerso{
 
 	@Override
 	public void doAction() {
-		String regex = JOptionPane.showInputDialog(Window.get(), "Entrez le regex recherché:");
+		String regex = SearhcPane.getSearchRegex();
 		if(regex==null){
 			return;
 		}
-		//TODO check regex
 		IShearchMatch[] tab = this.shearable.shearch(regex);
-		//TODO Print result
+		for(IShearchMatch result : tab){
+			Window.getConsol().println(result.toString());
+		}
 		System.out.println(tab.length+" résultats trouvés");
 	}
 

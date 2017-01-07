@@ -18,6 +18,7 @@ import org.xml.sax.SAXException;
 
 import bible_soft.recherche.CompteurDeMots;
 import bible_soft.recherche.Mot;
+import util.StringUtil;
 
 public class Dictionaire {
 
@@ -94,7 +95,7 @@ public class Dictionaire {
 							}
 							System.out.println("\tTerme: "+nodeName.getTextContent());
 
-							Verbe v = new Verbe(CompteurDeMots.sansAccent(nodeName.getTextContent().toLowerCase().trim()));
+							Verbe v = new Verbe(StringUtil.sansAccent(nodeName.getTextContent().toLowerCase().trim()));
 							try{
 								v.fetchFromInternet();
 								v.save();

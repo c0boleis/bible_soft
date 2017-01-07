@@ -7,12 +7,15 @@ import javax.swing.JMenuItem;
 import javax.swing.JPopupMenu;
 
 import books.model.interfaces.ILoadSaveObject;
+import books.model.interfaces.IOrderedObject;
 import books.model.interfaces.IReadable;
 import books.model.interfaces.IShearable;
 import ihm.Window;
 import ihm.actions.AddCommentAction;
 import ihm.actions.LoadObjectAction;
 import ihm.actions.ReadAction;
+import ihm.actions.SaveObjectAction;
+import ihm.actions.SetOrderAction;
 import ihm.actions.ShearchAction;
 import ihm.tree.nodes.TextBookNode;
 
@@ -31,12 +34,18 @@ public class TreeBooksPopupMenu extends JPopupMenu {
 	
 	private JMenuItem menuItemLoad;
 	
+	private JMenuItem menuItemSave;
+	
+	private JMenuItem menuItemSetOrder;
+	
 	public TreeBooksPopupMenu() {
 		super();
 		this.add(getMenuItemRead());
 		this.add(getMenuItemLoad());
+		this.add(getMenuItemSave());
 		this.add(getMenuItemShearch());
 		this.add(getMenuItemAddComment());
+		this.add(getMenuItemSetOrder());
 	}
 	
 	public void init(Object obj){
@@ -51,6 +60,12 @@ public class TreeBooksPopupMenu extends JPopupMenu {
 		
 		getMenuItemLoad().setVisible(false);
 		getMenuItemLoad().setEnabled(false);
+		
+		getMenuItemSave().setVisible(false);
+		getMenuItemSave().setEnabled(false);
+		
+		getMenuItemSetOrder().setVisible(false);
+		getMenuItemSetOrder().setEnabled(false);
 		
 		if(obj==null){
 			return;
@@ -68,8 +83,16 @@ public class TreeBooksPopupMenu extends JPopupMenu {
 			getMenuItemAddComment().setEnabled(true);
 		}
 		if(obj instanceof ILoadSaveObject){
+			
 			getMenuItemLoad().setVisible(true);
 			getMenuItemLoad().setEnabled(true);
+			
+			getMenuItemSave().setVisible(true);
+			getMenuItemSave().setEnabled(!((ILoadSaveObject) obj).isSave());
+		}
+		if(obj instanceof IOrderedObject){
+			getMenuItemSetOrder().setVisible(true);
+			getMenuItemSetOrder().setEnabled(true);
 		}
 	}
 
@@ -171,6 +194,56 @@ public class TreeBooksPopupMenu extends JPopupMenu {
 			});
 		}
 		return menuItemLoad;
+	}
+
+	/**
+	 * @return the menuItemSetOrder
+	 */
+	private JMenuItem getMenuItemSetOrder() {
+		if(menuItemSetOrder==null){
+			menuItemSetOrder = new JMenuItem("Modifier l'ordre");
+			menuItemSetOrder.setVisible(false);
+			menuItemSetOrder.setEnabled(false);
+			menuItemSetOrder.addActionListener(new ActionListener() {
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					Object[] tab = Window.getTreeBooks().getTreeBooksListeners().getSelection();
+					if(tab.length<=0){
+						return;
+					}
+					SetOrderAction action = new SetOrderAction(
+							(IOrderedObject) tab[0]);
+					action.doAction();
+				}
+			});
+		}
+		return menuItemSetOrder;
+	}
+
+	/**
+	 * @return the menuItemSave
+	 */
+	private JMenuItem getMenuItemSave() {
+		if(menuItemSave==null){
+			menuItemSave = new JMenuItem("Enregistrer");
+			menuItemSave.setVisible(false);
+			menuItemSave.setEnabled(false);
+			menuItemSave.addActionListener(new ActionListener() {
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					Object[] tab = Window.getTreeBooks().getTreeBooksListeners().getSelection();
+					if(tab.length<=0){
+						return;
+					}
+					SaveObjectAction action = new SaveObjectAction(
+							(ILoadSaveObject) tab[0]);
+					action.doAction();
+				}
+			});
+		}
+		return menuItemSave;
 	}
 
 }

@@ -5,13 +5,14 @@ import java.io.IOException;
 import javax.swing.tree.DefaultMutableTreeNode;
 
 import books.model.interfaces.ILoadSaveObject;
+import books.model.interfaces.IOrderedObject;
 import books.model.interfaces.IReadable;
 import books.model.interfaces.IShearable;
 import books.model.interfaces.IShearchMatch;
 import books.model.interfaces.IText;
 
 public class TextBookNode extends DefaultMutableTreeNode 
-implements IReadable,IShearable,ILoadSaveObject{
+implements IReadable,IShearable,ILoadSaveObject,IOrderedObject{
 
 	/**
 	 * 
@@ -90,6 +91,16 @@ implements IReadable,IShearable,ILoadSaveObject{
 	public void setFilePath(String path) {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public int getOrder() {
+		return this.text.getOrder();
+	}
+
+	@Override
+	public void setOrder(int order) {
+		this.text.setOrder(order);
 	}
 
 }

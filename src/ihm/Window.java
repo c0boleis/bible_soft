@@ -22,6 +22,7 @@ import books.model.Workspace;
 import books.model.interfaces.IBook;
 import books.model.interfaces.IComment;
 import books.model.listener.WorkspaceListener;
+import ihm.consol.Consol;
 import ihm.tree.TreeBooks;
 import ihm.viewers.TabbedPaneChapeter;
 import lancement.Main;
@@ -42,6 +43,8 @@ public class Window extends JFrame {
 	private static Window INSTANCE = new Window();
 
 	private static JSplitPane mainSplit;
+	
+	private static JSplitPane secondSplit;
 
 	private static JScrollPane scrollPaneTree;
 
@@ -50,6 +53,8 @@ public class Window extends JFrame {
 	private static TabbedPaneChapeter tabbedPaneChapeter;
 
 	private static MenuBarWindow menuBarWindow;
+	
+	private static Consol consol;
 
 	private static final File FILE_PROPERTIES = new File("setting.properties");
 
@@ -124,7 +129,7 @@ public class Window extends JFrame {
 		if(mainSplit==null){
 			mainSplit = new  JSplitPane();
 			mainSplit.setLeftComponent(getScrollPaneTree());
-			mainSplit.setRightComponent(getTabbedPaneChapeter());
+			mainSplit.setRightComponent(getSecondSplit());
 			mainSplit.setDividerLocation(150);
 		}
 		return mainSplit;
@@ -210,7 +215,28 @@ public class Window extends JFrame {
 		}
 		return workspaceListener;
 	}
-	
-	
+
+	/**
+	 * @return the consol
+	 */
+	public static Consol getConsol() {
+		if(consol == null){
+			consol = new Consol();
+		}
+		return consol;
+	}
+
+	/**
+	 * @return the secondSplit
+	 */
+	private static JSplitPane getSecondSplit() {
+		if(secondSplit == null){
+			secondSplit = new JSplitPane();
+			secondSplit.setOrientation(JSplitPane.VERTICAL_SPLIT);
+			secondSplit.setLeftComponent(getTabbedPaneChapeter());
+			secondSplit.setRightComponent(getConsol());
+		}
+		return secondSplit;
+	}
 
 }

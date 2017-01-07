@@ -25,6 +25,13 @@ public class OrderObjectComparator implements Comparator<IOrderedObject> {
 	 */
 	@Override
 	public int compare(IOrderedObject o1, IOrderedObject o2) {
+		if(o1.getOrder()<0 && o2.getOrder()>=0){
+			return 1;
+		}else if(o1.getOrder()>=0 && o2.getOrder()<0){
+			return -1;
+		}else if(o1.getOrder()<0 && o2.getOrder()<0){
+			return o1.toString().compareTo(o2.toString());
+		}
 		return Integer.compare(o1.getOrder(), o2.getOrder());
 	}
 
