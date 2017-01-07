@@ -100,7 +100,7 @@ public class MenuBarWindow extends JMenuBar {
 	private static JMenuItem getMenuItemLoadBook() {
 		if(menuItemLoadBook==null){
 			menuItemLoadBook = new JMenuItem();
-			menuItemLoadBook.setText("Load book");
+			menuItemLoadBook.setText("Charger un livre");
 			menuItemLoadBook.addActionListener(new ActionListener() {
 				
 				@Override
