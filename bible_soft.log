@@ -526,3 +526,53 @@ DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament
 DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Malachie/3/23, matches: 0
 DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Malachie/3/24, matches: 0
 DEBUG Thread-0 ihm.actions.ShearchAction - La recherche est fini
+DEBUG main lancement.Main - Start programme
+DEBUG main ihm.tree.TreeBooks - workspaceListener du TreeBooks conecté.
+DEBUG main lancement.Main - Start programme
+DEBUG main ihm.tree.TreeBooks - workspaceListener du TreeBooks conecté.
+DEBUG AWT-EventQueue-0 ihm.tree.TreeBooksPopupMenu - init treePopupMenu for one object
+DEBUG AWT-EventQueue-0 ihm.tree.TreeBooksPopupMenu - init treePopupMenu for one object
+DEBUG AWT-EventQueue-0 ihm.tree.TreeBooksPopupMenu - init treePopupMenu for one object
+DEBUG AWT-EventQueue-0 ihm.tree.TreeBooksPopupMenu - init treePopupMenu for one object
+DEBUG AWT-EventQueue-0 ihm.tree.TreeBooksPopupMenu - init treePopupMenu for one object
+DEBUG AWT-EventQueue-0 ihm.tree.TreeBooksPopupMenu - init treePopupMenu for several object
+DEBUG main lancement.Main - Start programme
+DEBUG main ihm.tree.TreeBooks - workspaceListener du TreeBooks conecté.
+DEBUG AWT-EventQueue-0 ihm.tree.TreeBooksListeners - path select : [root, Livres]
+DEBUG AWT-EventQueue-0 ihm.tree.TreeBooksPopupMenu - init treePopupMenu for one object
+DEBUG AWT-EventQueue-0 ihm.tree.TreeBooksListeners - path select : [root, Livres]
+DEBUG AWT-EventQueue-0 ihm.tree.TreeBooksListeners - path select : [root, Commentaires]
+DEBUG AWT-EventQueue-0 ihm.tree.TreeBooksPopupMenu - init treePopupMenu for several object
+DEBUG AWT-EventQueue-0 ihm.tree.TreeBooksListeners - path select : [root, Livres]
+DEBUG AWT-EventQueue-0 ihm.tree.TreeBooksPopupMenu - init treePopupMenu for one object
+DEBUG AWT-EventQueue-0 ihm.tree.TreeBooksListeners - path select : [root, Livres, Bible, Ancien Testament]
+DEBUG AWT-EventQueue-0 ihm.tree.TreeBooksPopupMenu - init treePopupMenu for one object
+DEBUG AWT-EventQueue-0 ihm.tree.TreeBooksListeners - path select : [root, Livres, Bible, Ancien Testament]
+DEBUG AWT-EventQueue-0 ihm.tree.TreeBooksListeners - path select : [root, Livres, Bible, Nouveau Testament]
+DEBUG AWT-EventQueue-0 ihm.tree.TreeBooksPopupMenu - init treePopupMenu for several object
+DEBUG AWT-EventQueue-0 ihm.tree.TreeBooksListeners - path select : [root, Livres, Bible, Nouveau Testament, Evangiles]
+DEBUG AWT-EventQueue-0 ihm.tree.TreeBooksPopupMenu - init treePopupMenu for one object
+DEBUG AWT-EventQueue-0 ihm.tree.TreeBooksListeners - path select : [root, Livres, Bible, Nouveau Testament, Evangiles]
+DEBUG AWT-EventQueue-0 ihm.tree.TreeBooksListeners - path select : [root, Livres, Bible, Nouveau Testament, Lettres Pauliniennes]
+DEBUG AWT-EventQueue-0 ihm.tree.TreeBooksListeners - path select : [root, Livres, Bible, Nouveau Testament, Lettres Catholiques]
+DEBUG AWT-EventQueue-0 ihm.tree.TreeBooksPopupMenu - init treePopupMenu for several object
+DEBUG AWT-EventQueue-0 ihm.tree.TreeBooksListeners - path select : [root, Livres, Bible, Nouveau Testament, Evangiles]
+DEBUG AWT-EventQueue-0 ihm.tree.TreeBooksListeners - path select : [root, Livres, Bible, Nouveau Testament, Lettres Pauliniennes]
+DEBUG AWT-EventQueue-0 ihm.tree.TreeBooksListeners - path select : [root, Livres, Bible, Nouveau Testament, Lettres Catholiques]
+DEBUG AWT-EventQueue-0 ihm.tree.TreeBooksListeners - path select : [root, Livres, Bible]
+DEBUG AWT-EventQueue-0 ihm.tree.TreeBooksPopupMenu - init treePopupMenu for several object
+DEBUG AWT-EventQueue-0 ihm.tree.TreeBooksListeners - path select : [root, Livres, Bible, Nouveau Testament, Evangiles]
+DEBUG AWT-EventQueue-0 ihm.tree.TreeBooksListeners - path select : [root, Livres, Bible, Nouveau Testament, Lettres Pauliniennes]
+DEBUG AWT-EventQueue-0 ihm.tree.TreeBooksListeners - path select : [root, Livres, Bible, Nouveau Testament, Lettres Catholiques]
+DEBUG AWT-EventQueue-0 ihm.tree.TreeBooksListeners - path select : [root, Livres, Bible]
+DEBUG AWT-EventQueue-0 ihm.tree.TreeBooksListeners - path select : [root, Livres]
+DEBUG AWT-EventQueue-0 ihm.tree.TreeBooksPopupMenu - init treePopupMenu for several object
+DEBUG AWT-EventQueue-0 ihm.tree.TreeBooksListeners - path select : [root, Livres, Bible, Nouveau Testament, Lettres Pauliniennes]
+DEBUG AWT-EventQueue-0 ihm.tree.TreeBooksListeners - path select : [root, Livres]
+DEBUG AWT-EventQueue-0 ihm.tree.TreeBooksListeners - path select : [root, Livres, Bible, Nouveau Testament, Lettres Catholiques]
+DEBUG AWT-EventQueue-0 ihm.tree.TreeBooksListeners - path select : [root, Livres, Bible, Nouveau Testament, Evangiles]
+DEBUG AWT-EventQueue-0 ihm.tree.TreeBooksPopupMenu - init treePopupMenu for several object
+DEBUG AWT-EventQueue-0 ihm.tree.TreeBooksListeners - path select : [root, Livres, Bible, Nouveau Testament, Lettres Pauliniennes]
+DEBUG AWT-EventQueue-0 ihm.tree.TreeBooksListeners - path select : [root, Livres, Bible, Nouveau Testament, Lettres Catholiques]
+DEBUG AWT-EventQueue-0 ihm.tree.TreeBooksListeners - path select : [root, Livres, Bible, Nouveau Testament, Evangiles]
+DEBUG AWT-EventQueue-0 ihm.tree.TreeBooksPopupMenu - init treePopupMenu for several object

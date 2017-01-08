@@ -13,10 +13,14 @@ import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreePath;
 
+import org.apache.log4j.Logger;
+
 import ihm.tree.nodes.BookNode;
 import ihm.tree.nodes.SubBookDivisionNode;
 
 public class TreeBooksListeners implements MouseListener,TreeSelectionListener{
+
+	private static final Logger LOGGER = Logger.getLogger(TreeBooksListeners.class);
 
 	private TreeBooks tree;
 
@@ -25,7 +29,7 @@ public class TreeBooksListeners implements MouseListener,TreeSelectionListener{
 	public TreeBooksListeners(TreeBooks t) {
 		this.tree = t;
 	}
-	
+
 	public Object[] getSelection(){
 		return selection;
 	}
@@ -80,7 +84,7 @@ public class TreeBooksListeners implements MouseListener,TreeSelectionListener{
 
 	@Override
 	public void valueChanged(TreeSelectionEvent e) {
-		TreePath[] paths = e.getPaths();
+		TreePath[] paths = tree.getSelectionPaths();
 		List<Object> sel = new ArrayList<Object>();
 		for(TreePath path : paths){
 			sel.add(path.getLastPathComponent());
@@ -89,12 +93,11 @@ public class TreeBooksListeners implements MouseListener,TreeSelectionListener{
 			selection = new Object[0];
 			return;
 		}
-		if(sel.size()>1){
-			sel.remove(sel.size()-1);
-		}
 		selection = sel.toArray(new Object[0]);
 		if(selection.length==1){
 			this.tree.getTreeBooksPopupMenu().init(selection[0]);
+		}else{
+			this.tree.getTreeBooksPopupMenu().init(selection);
 		}
 	}
 

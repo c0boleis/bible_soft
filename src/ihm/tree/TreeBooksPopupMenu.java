@@ -6,6 +6,8 @@ import java.awt.event.ActionListener;
 import javax.swing.JMenuItem;
 import javax.swing.JPopupMenu;
 
+import org.apache.log4j.Logger;
+
 import books.model.Searcher;
 import books.model.interfaces.ILoadSaveObject;
 import books.model.interfaces.IOrderedObject;
@@ -26,6 +28,8 @@ public class TreeBooksPopupMenu extends JPopupMenu {
 	 * 
 	 */
 	private static final long serialVersionUID = -3024111508441250165L;
+	
+	private static final Logger LOGGER = Logger.getLogger(TreeBooksPopupMenu.class);
 
 	private JMenuItem menuItemRead;
 
@@ -50,7 +54,7 @@ public class TreeBooksPopupMenu extends JPopupMenu {
 	}
 
 	public void init(Object[] tab){
-
+		LOGGER.debug("init treePopupMenu for several object");
 		if(tab==null){
 			return;
 		}
@@ -72,6 +76,7 @@ public class TreeBooksPopupMenu extends JPopupMenu {
 		getMenuItemSetOrder().setVisible(true);
 		getMenuItemSetOrder().setEnabled(true);
 		
+		boolean needSave = false;
 		for(Object obj : tab){
 			if(!(obj instanceof IReadable)){
 				getMenuItemRead().setVisible(false);
@@ -92,17 +97,25 @@ public class TreeBooksPopupMenu extends JPopupMenu {
 				getMenuItemLoad().setEnabled(false);
 
 				getMenuItemSave().setVisible(false);//TODO
-				getMenuItemSave().setEnabled(!((ILoadSaveObject) obj).isSave());
+				getMenuItemSave().setEnabled(false);
+			}else{
+				if(!((ILoadSaveObject) obj).isSave()){
+					needSave = true;
+				}
 			}
 			if(!(obj instanceof IOrderedObject)){
 				getMenuItemSetOrder().setVisible(false);
 				getMenuItemSetOrder().setEnabled(false);
 			}
 		}
+		if(getMenuItemSave().isEnabled()){
+			getMenuItemSave().setEnabled(needSave);
+		}
 
 	}
 
 	public void init(Object obj){
+		LOGGER.debug("init treePopupMenu for one object");
 		getMenuItemRead().setVisible(false);
 		getMenuItemRead().setEnabled(false);
 
