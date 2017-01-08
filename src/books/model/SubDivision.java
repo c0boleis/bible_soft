@@ -280,7 +280,7 @@ public class SubDivision implements ISubDivision {
 				loadTest = false;
 			}
 		}
-		LOGGER.info("["+name+"] load =>"+loadTest);
+		LOGGER.debug("["+name+"] load =>"+loadTest);
 		this.load = loadTest;
 	}
 

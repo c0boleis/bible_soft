@@ -66,6 +66,8 @@ public class Window extends JFrame {
 
 	private static final String KEY_WORKSPACE_PROPERTIES = "workspace";
 
+	protected static final String SOFT_VERSION = "0.0.2";
+
 	private static WorkspaceListener workspaceListener;
 
 	private Window(){
@@ -107,7 +109,7 @@ public class Window extends JFrame {
 			}
 		}
 		PropertyConfigurator.configure("log4Jconfig.properties");
-		LOGGER.info("Start programme");
+		LOGGER.debug("Start programme");
 		open();
 	}
 

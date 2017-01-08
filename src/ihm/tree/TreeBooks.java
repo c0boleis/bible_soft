@@ -188,7 +188,7 @@ public class TreeBooks extends JTree {
 		if(!listenerIsConnect){
 			Workspace.get().addWorkspaceListener(getWorkspaceListener());
 			this.listenerIsConnect = true;
-			LOGGER.info("workspaceListener du TreeBooks conecté.");
+			LOGGER.debug("workspaceListener du TreeBooks conecté.");
 		}else{
 			LOGGER.warn("le workspaceListener du TreeBooks est déjà conecté.");
 		}

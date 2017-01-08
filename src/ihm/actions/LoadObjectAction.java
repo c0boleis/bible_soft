@@ -26,7 +26,7 @@ public class LoadObjectAction implements ActionPerso{
 	public void doAction() {
 		try {
 			this.readable.load();
-			LOGGER.info(this.readable.toString()+" a été chargé.");
+			LOGGER.debug(this.readable.toString()+" a été chargé.");
 			if(this.readable instanceof BookNode){
 				((BookNode) this.readable).refresh();
 			}else if(this.readable instanceof SubBookDivisionNode){

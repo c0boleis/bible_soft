@@ -135,18 +135,34 @@ public class SearhcPane {
 					JOptionPane.ERROR_MESSAGE);
 			return getSearchRegex();
 		}
+		String text = getRegex();
+		if(text.trim().length()==0){
+			JOptionPane.showMessageDialog(Window.get(), 
+					"Vous ne pouvez pas rechercher\n"
+					+ "un mot vide.",
+					"ATTENTION",
+					JOptionPane.INFORMATION_MESSAGE);
+			return getSearchRegex();
+		}
 		return getRegex();
 	}
 	
 	private static String getRegex(){
 		String regex = getTextField().getText();
 		if(regex.trim().length()==0){
-			return null;
+			return "";
 		}
 		if(getCheckRegularExpression().isSelected()){
 			return regex;
 		}
-		
+		/*
+		 * we replace all specific char
+		 */
+		regex = regex.replace(".", "\\.");
+		regex = regex.replace("[", "\\[");
+		regex = regex.replace("]", "\\]");
+		regex = regex.replace("*", "\\*");
+		regex = regex.replace("|", "\\|");
 //		if(getCheckCaseSensitive().isSelected() || getCheckWholeWord().isSelected()){
 //			regex = StringUtil.sansAccent(regex);
 //		}
@@ -210,13 +226,17 @@ public class SearhcPane {
 	 */
 	public static JLabel getLabelErreur() {
 		if(labelErreur == null){
-			labelErreur = new JLabel("ERREUR");
+			labelErreur = new JLabel("");
 		}
 		return labelErreur;
 	}
 	
 	private static void checkError(){
 		String regex = getRegex();
+		if(regex.trim().length()==0){
+			getLabelErreur().setText("");
+			return;
+		}
 		try{
 			Pattern.compile(regex);
 			error = false;

@@ -31,7 +31,7 @@ public class Main {
 	public static void main(String[] args) {
 		//init logger
 		System.setProperty("log4j.configuration", "log4Jconfig.properties");
-		LOGGER.info("Start programme");
+		LOGGER.debug("Start programme");
 		//		System.out.println(CompteurDeMots.sansAccent("Cœur").split("[\\W&&[^œ]]")[0]);
 		//		VerbeCollector.loadVerbe();
 		/**********************/

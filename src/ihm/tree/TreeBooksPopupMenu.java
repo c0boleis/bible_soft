@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JMenuItem;
 import javax.swing.JPopupMenu;
 
+import books.model.Searcher;
 import books.model.interfaces.ILoadSaveObject;
 import books.model.interfaces.IOrderedObject;
 import books.model.interfaces.IReadable;
@@ -27,17 +28,17 @@ public class TreeBooksPopupMenu extends JPopupMenu {
 	private static final long serialVersionUID = -3024111508441250165L;
 
 	private JMenuItem menuItemRead;
-	
+
 	private JMenuItem menuItemShearch;
-	
+
 	private JMenuItem menuItemAddComment;
-	
+
 	private JMenuItem menuItemLoad;
-	
+
 	private JMenuItem menuItemSave;
-	
+
 	private JMenuItem menuItemSetOrder;
-	
+
 	public TreeBooksPopupMenu() {
 		super();
 		this.add(getMenuItemRead());
@@ -47,26 +48,79 @@ public class TreeBooksPopupMenu extends JPopupMenu {
 		this.add(getMenuItemAddComment());
 		this.add(getMenuItemSetOrder());
 	}
-	
+
+	public void init(Object[] tab){
+
+		if(tab==null){
+			return;
+		}
+		getMenuItemRead().setVisible(true);
+		getMenuItemRead().setEnabled(true);
+
+		getMenuItemShearch().setVisible(true);
+		getMenuItemShearch().setEnabled(!Searcher.isInProcess());
+
+		getMenuItemAddComment().setVisible(true);
+		getMenuItemAddComment().setEnabled(true);
+
+		getMenuItemLoad().setVisible(true);
+		getMenuItemLoad().setEnabled(true);
+
+		getMenuItemSave().setVisible(true);
+		getMenuItemSave().setEnabled(true);
+
+		getMenuItemSetOrder().setVisible(true);
+		getMenuItemSetOrder().setEnabled(true);
+		
+		for(Object obj : tab){
+			if(!(obj instanceof IReadable)){
+				getMenuItemRead().setVisible(false);
+				getMenuItemRead().setEnabled(false);
+			}
+			if(!(obj instanceof IShearable)){
+				getMenuItemShearch().setVisible(false);
+				//we can't start tow search process at the same time.
+				getMenuItemShearch().setEnabled(false);
+			}
+			if(!(obj instanceof TextBookNode)){
+				getMenuItemAddComment().setVisible(false);
+				getMenuItemAddComment().setEnabled(false);
+			}
+			if(!(obj instanceof ILoadSaveObject)){
+
+				getMenuItemLoad().setVisible(false);
+				getMenuItemLoad().setEnabled(false);
+
+				getMenuItemSave().setVisible(false);//TODO
+				getMenuItemSave().setEnabled(!((ILoadSaveObject) obj).isSave());
+			}
+			if(!(obj instanceof IOrderedObject)){
+				getMenuItemSetOrder().setVisible(false);
+				getMenuItemSetOrder().setEnabled(false);
+			}
+		}
+
+	}
+
 	public void init(Object obj){
 		getMenuItemRead().setVisible(false);
 		getMenuItemRead().setEnabled(false);
-		
+
 		getMenuItemShearch().setVisible(false);
 		getMenuItemShearch().setEnabled(false);
-		
+
 		getMenuItemAddComment().setVisible(false);
 		getMenuItemAddComment().setEnabled(false);
-		
+
 		getMenuItemLoad().setVisible(false);
 		getMenuItemLoad().setEnabled(false);
-		
+
 		getMenuItemSave().setVisible(false);
 		getMenuItemSave().setEnabled(false);
-		
+
 		getMenuItemSetOrder().setVisible(false);
 		getMenuItemSetOrder().setEnabled(false);
-		
+
 		if(obj==null){
 			return;
 		}
@@ -76,17 +130,18 @@ public class TreeBooksPopupMenu extends JPopupMenu {
 		}
 		if(obj instanceof IShearable){
 			getMenuItemShearch().setVisible(true);
-			getMenuItemShearch().setEnabled(true);
+			//we can't start tow search process at the same time.
+			getMenuItemShearch().setEnabled(!Searcher.isInProcess());
 		}
 		if(obj instanceof TextBookNode){
 			getMenuItemAddComment().setVisible(true);
 			getMenuItemAddComment().setEnabled(true);
 		}
 		if(obj instanceof ILoadSaveObject){
-			
+
 			getMenuItemLoad().setVisible(true);
 			getMenuItemLoad().setEnabled(true);
-			
+
 			getMenuItemSave().setVisible(true);
 			getMenuItemSave().setEnabled(!((ILoadSaveObject) obj).isSave());
 		}
@@ -105,7 +160,7 @@ public class TreeBooksPopupMenu extends JPopupMenu {
 			menuItemRead.setVisible(false);
 			menuItemRead.setEnabled(false);
 			menuItemRead.addActionListener(new ActionListener() {
-				
+
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					Object[] tab = Window.getTreeBooks().getTreeBooksListeners().getSelection();
@@ -114,7 +169,7 @@ public class TreeBooksPopupMenu extends JPopupMenu {
 					}
 					ReadAction action = new ReadAction((IReadable) tab[0]);
 					action.doAction();
-					
+
 				}
 			});
 		}
@@ -130,7 +185,7 @@ public class TreeBooksPopupMenu extends JPopupMenu {
 			menuItemShearch.setVisible(false);
 			menuItemShearch.setEnabled(false);
 			menuItemShearch.addActionListener(new ActionListener() {
-				
+
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					Object[] tab = Window.getTreeBooks().getTreeBooksListeners().getSelection();
@@ -139,7 +194,7 @@ public class TreeBooksPopupMenu extends JPopupMenu {
 					}
 					ShearchAction action = new ShearchAction((IShearable) tab[0]);
 					action.doAction();
-					
+
 				}
 			});
 		}
@@ -155,7 +210,7 @@ public class TreeBooksPopupMenu extends JPopupMenu {
 			menuItemAddComment.setVisible(false);
 			menuItemAddComment.setEnabled(false);
 			menuItemAddComment.addActionListener(new ActionListener() {
-				
+
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					Object[] tab = Window.getTreeBooks().getTreeBooksListeners().getSelection();
@@ -180,7 +235,7 @@ public class TreeBooksPopupMenu extends JPopupMenu {
 			menuItemLoad.setVisible(false);
 			menuItemLoad.setEnabled(false);
 			menuItemLoad.addActionListener(new ActionListener() {
-				
+
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					Object[] tab = Window.getTreeBooks().getTreeBooksListeners().getSelection();
@@ -205,7 +260,7 @@ public class TreeBooksPopupMenu extends JPopupMenu {
 			menuItemSetOrder.setVisible(false);
 			menuItemSetOrder.setEnabled(false);
 			menuItemSetOrder.addActionListener(new ActionListener() {
-				
+
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					Object[] tab = Window.getTreeBooks().getTreeBooksListeners().getSelection();
@@ -230,7 +285,7 @@ public class TreeBooksPopupMenu extends JPopupMenu {
 			menuItemSave.setVisible(false);
 			menuItemSave.setEnabled(false);
 			menuItemSave.addActionListener(new ActionListener() {
-				
+
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					Object[] tab = Window.getTreeBooks().getTreeBooksListeners().getSelection();

@@ -299,8 +299,11 @@ public class Text implements IText, IOrderedObject {
 		Matcher matcher = pattern.matcher(getText(translation));
 		// Check all occurrences
 		while (matcher.find()) {
-			listOut.add(new TextMatch(matcher.group(), this,translation));
+			IShearchMatch match = new TextMatch(matcher.group(), this,translation);
+			listOut.add(match);
+			Searcher.addIShearchMatch(match);
 		}
+		LOGGER.debug("recherche dans le text: "+getPath()+", matches: "+listOut.size());
 		return	listOut.toArray(new IShearchMatch[0]);
 	}
 

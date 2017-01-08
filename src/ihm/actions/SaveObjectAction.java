@@ -25,7 +25,7 @@ public class SaveObjectAction implements ActionPerso{
 	public void doAction() {
 		try {
 			this.saveObject.save();
-			LOGGER.info(this.saveObject.toString()+" a été enregistré.");
+			LOGGER.debug(this.saveObject.toString()+" a été enregistré.");
 			if(this.saveObject instanceof BookNode){
 				((BookNode) this.saveObject).refresh();
 			}else if(this.saveObject instanceof SubBookDivisionNode){

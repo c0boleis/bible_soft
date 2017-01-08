@@ -154,7 +154,7 @@ public class MenuBarWindow extends JMenuBar {
 				public void actionPerformed(ActionEvent arg0) {
 					JOptionPane.showMessageDialog(Window.get(),
 							"BibleSoft:\n"
-							+ "version : 0.0.1");
+							+ "version : "+Window.SOFT_VERSION);
 					
 				}
 			});

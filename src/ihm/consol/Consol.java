@@ -171,5 +171,9 @@ public class Consol extends JPanel{
 	public void println(String st){
 		this.getPanelDisplay().setText(this.getPanelDisplay().getText()+st+"\n");
 	}
+	
+	public void clear(){
+		this.getPanelDisplay().setText("");
+	}
 
 }
