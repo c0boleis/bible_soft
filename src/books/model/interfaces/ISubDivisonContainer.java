@@ -13,5 +13,11 @@ public interface ISubDivisonContainer {
 	public boolean isSubDivisionEmpty();
 	
 	public ISubDivision getSubDivision(String name);
+	
+	public int getNbrOfTexts();
+	
+	public int calculNbrOfTexts();
+	
+	public boolean isAutoOpen();
 
 }

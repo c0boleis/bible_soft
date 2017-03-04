@@ -11,6 +11,11 @@ import books.model.interfaces.IShearable;
 import books.model.interfaces.IShearchMatch;
 import books.model.interfaces.IText;
 
+/**
+ * 
+ * @author C.B.
+ *
+ */
 public class TextBookNode extends DefaultMutableTreeNode 
 implements IReadable,IShearable,ILoadSaveObject,IOrderedObject{
 
@@ -87,20 +92,42 @@ implements IReadable,IShearable,ILoadSaveObject,IOrderedObject{
 		return null;
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * @see books.model.interfaces.ILoadSaveObject#setFilePath(java.lang.String)
+	 */
 	@Override
 	public void setFilePath(String path) {
 		// TODO Auto-generated method stub
 		
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * @see books.model.interfaces.IOrderedObject#getOrder()
+	 */
 	@Override
 	public int getOrder() {
 		return this.text.getOrder();
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * @see books.model.interfaces.IOrderedObject#setOrder(int)
+	 */
 	@Override
 	public void setOrder(int order) {
 		this.text.setOrder(order);
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * @see books.model.interfaces.ILoadSaveObject#saveAll()
+	 */
+	@Override
+	public void saveAll() throws IOException {
+		this.saveAll();
+		
 	}
 
 }

@@ -1,4 +1,4 @@
-package ihm;
+package ihm.window;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -40,6 +40,8 @@ public class MenuBarWindow extends JMenuBar {
 	
 	private static JMenuItem menuItemSave;
 	
+	private static JMenuItem menuItemSaveAll;
+	
 	public MenuBarWindow(){
 		this.add(getMenuFile());
 		this.add(getMenuHelp());
@@ -54,6 +56,7 @@ public class MenuBarWindow extends JMenuBar {
 			menuFile.setText("Fichier");
 			menuFile.add(getMenuItemLoadBook());
 			menuFile.add(getMenuItemSave());
+			menuFile.add(getMenuItemSaveAll());
 			menuFile.addSeparator();
 			menuFile.add(getMenuItemClose());
 		}
@@ -78,6 +81,26 @@ public class MenuBarWindow extends JMenuBar {
 			});
 		}
 		return menuItemSave;
+	}
+	
+	/**
+	 * @return the menuItemSaveAll
+	 */
+	private static JMenuItem getMenuItemSaveAll() {
+		if(menuItemSaveAll==null){
+			menuItemSaveAll = new JMenuItem();
+			menuItemSaveAll.setText("Enregistrer Tout");
+			menuItemSaveAll.setEnabled(true);
+			menuItemSaveAll.addActionListener(new ActionListener() {
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					Window.saveAll();
+					
+				}
+			});
+		}
+		return menuItemSaveAll;
 	}
 	
 	/**

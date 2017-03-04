@@ -21,7 +21,7 @@ import books.model.shearch.TextMatch;
 
 /**
  * 
- * @author Corentin Boleis
+ * @author C.B.
  *
  */
 public class Text implements IText, IOrderedObject {
@@ -307,16 +307,28 @@ public class Text implements IText, IOrderedObject {
 		return	listOut.toArray(new IShearchMatch[0]);
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * @see books.model.interfaces.IText#getTraductions()
+	 */
 	@Override
 	public String[] getTraductions() {
 		return texts.keySet().toArray(new String[0]);
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * @see books.model.interfaces.IText#getDefaultTranslation()
+	 */
 	@Override
 	public String getDefaultTranslation() {
 		return this.defaultTranslation;
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * @see books.model.interfaces.IText#getPath()
+	 */
 	@Override
 	public String getPath() {
 		String pt = this.getName();
@@ -347,6 +359,11 @@ public class Text implements IText, IOrderedObject {
 	@Override
 	public String toString(){
 		return getPath();
+	}
+
+	@Override
+	public void saveAll() throws IOException {
+		save();
 	}
 
 }

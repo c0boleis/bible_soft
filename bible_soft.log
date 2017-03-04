@@ -1,578 +1,344 @@
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Michée/3/10, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Michée/3/11, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Michée/3/12, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Michée/4/1, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Michée/4/2, matches: 1
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Michée/4/3, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Michée/4/4, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Michée/4/5, matches: 1
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Michée/4/6, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Michée/4/7, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Michée/4/8, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Michée/4/9, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Michée/4/10, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Michée/4/11, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Michée/4/12, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Michée/4/13, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Michée/4/14, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Michée/5/1, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Michée/5/2, matches: 1
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Michée/5/3, matches: 1
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Michée/5/4, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Michée/5/5, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Michée/5/6, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Michée/5/7, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Michée/5/8, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Michée/5/9, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Michée/5/10, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Michée/5/11, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Michée/5/12, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Michée/5/13, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Michée/5/14, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Michée/6/1, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Michée/6/2, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Michée/6/3, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Michée/6/4, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Michée/6/5, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Michée/6/6, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Michée/6/7, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Michée/6/8, matches: 1
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Michée/6/9, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Michée/6/10, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Michée/6/11, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Michée/6/12, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Michée/6/13, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Michée/6/14, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Michée/6/15, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Michée/6/16, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Michée/7/1, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Michée/7/2, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Michée/7/3, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Michée/7/4, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Michée/7/5, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Michée/7/6, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Michée/7/7, matches: 2
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Michée/7/8, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Michée/7/9, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Michée/7/10, matches: 1
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Michée/7/11, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Michée/7/12, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Michée/7/13, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Michée/7/14, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Michée/7/15, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Michée/7/16, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Michée/7/17, matches: 1
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Michée/7/18, matches: 2
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Michée/7/19, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Michée/7/20, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Nahum/1/1, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Nahum/1/2, matches: 1
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Nahum/1/3, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Nahum/1/4, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Nahum/1/5, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Nahum/1/6, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Nahum/1/7, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Nahum/1/8, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Nahum/1/9, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Nahum/1/10, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Nahum/1/11, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Nahum/1/12, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Nahum/1/13, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Nahum/1/14, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Nahum/2/1, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Nahum/2/2, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Nahum/2/3, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Nahum/2/4, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Nahum/2/5, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Nahum/2/6, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Nahum/2/7, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Nahum/2/8, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Nahum/2/9, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Nahum/2/10, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Nahum/2/11, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Nahum/2/12, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Nahum/2/13, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Nahum/2/14, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Nahum/3/1, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Nahum/3/2, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Nahum/3/3, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Nahum/3/4, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Nahum/3/5, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Nahum/3/6, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Nahum/3/7, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Nahum/3/8, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Nahum/3/9, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Nahum/3/10, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Nahum/3/11, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Nahum/3/12, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Nahum/3/13, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Nahum/3/14, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Nahum/3/15, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Nahum/3/16, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Nahum/3/17, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Nahum/3/18, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Nahum/3/19, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Habaquq/1/1, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Habaquq/1/2, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Habaquq/1/3, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Habaquq/1/4, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Habaquq/1/5, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Habaquq/1/6, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Habaquq/1/7, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Habaquq/1/8, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Habaquq/1/9, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Habaquq/1/10, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Habaquq/1/11, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Habaquq/1/12, matches: 1
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Habaquq/1/13, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Habaquq/1/14, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Habaquq/1/15, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Habaquq/1/16, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Habaquq/1/17, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Habaquq/2/1, matches: 1
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Habaquq/2/2, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Habaquq/2/3, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Habaquq/2/4, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Habaquq/2/5, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Habaquq/2/6, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Habaquq/2/7, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Habaquq/2/8, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Habaquq/2/9, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Habaquq/2/10, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Habaquq/2/11, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Habaquq/2/12, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Habaquq/2/13, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Habaquq/2/14, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Habaquq/2/15, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Habaquq/2/16, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Habaquq/2/17, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Habaquq/2/18, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Habaquq/2/19, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Habaquq/2/20, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Habaquq/3/1, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Habaquq/3/2, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Habaquq/3/3, matches: 1
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Habaquq/3/4, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Habaquq/3/5, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Habaquq/3/6, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Habaquq/3/7, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Habaquq/3/8, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Habaquq/3/9, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Habaquq/3/10, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Habaquq/3/11, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Habaquq/3/12, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Habaquq/3/13, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Habaquq/3/14, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Habaquq/3/15, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Habaquq/3/16, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Habaquq/3/17, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Habaquq/3/18, matches: 1
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Habaquq/3/19, matches: 1
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Sophonie/1/1, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Sophonie/1/2, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Sophonie/1/3, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Sophonie/1/4, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Sophonie/1/5, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Sophonie/1/6, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Sophonie/1/7, matches: 1
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Sophonie/1/8, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Sophonie/1/9, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Sophonie/1/10, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Sophonie/1/11, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Sophonie/1/12, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Sophonie/1/13, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Sophonie/1/14, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Sophonie/1/15, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Sophonie/1/16, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Sophonie/1/17, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Sophonie/1/18, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Sophonie/2/1, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Sophonie/2/2, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Sophonie/2/3, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Sophonie/2/4, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Sophonie/2/5, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Sophonie/2/6, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Sophonie/2/7, matches: 1
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Sophonie/2/8, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Sophonie/2/9, matches: 1
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Sophonie/2/10, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Sophonie/2/11, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Sophonie/2/12, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Sophonie/2/13, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Sophonie/2/14, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Sophonie/2/15, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Sophonie/3/1, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Sophonie/3/2, matches: 1
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Sophonie/3/3, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Sophonie/3/4, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Sophonie/3/5, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Sophonie/3/6, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Sophonie/3/7, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Sophonie/3/8, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Sophonie/3/9, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Sophonie/3/10, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Sophonie/3/11, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Sophonie/3/12, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Sophonie/3/13, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Sophonie/3/14, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Sophonie/3/15, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Sophonie/3/16, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Sophonie/3/17, matches: 1
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Sophonie/3/18, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Sophonie/3/19, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Sophonie/3/20, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Aggée/1/1, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Aggée/1/2, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Aggée/1/3, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Aggée/1/4, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Aggée/1/5, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Aggée/1/6, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Aggée/1/7, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Aggée/1/8, matches: 1
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Aggée/1/9, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Aggée/1/10, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Aggée/1/11, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Aggée/1/12, matches: 2
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Aggée/1/13, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Aggée/1/14, matches: 1
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Aggée/1/15, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Aggée/2/1, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Aggée/2/2, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Aggée/2/3, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Aggée/2/4, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Aggée/2/5, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Aggée/2/6, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Aggée/2/7, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Aggée/2/8, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Aggée/2/9, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Aggée/2/10, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Aggée/2/11, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Aggée/2/12, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Aggée/2/13, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Aggée/2/14, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Aggée/2/15, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Aggée/2/16, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Aggée/2/17, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Aggée/2/18, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Aggée/2/19, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Aggée/2/20, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Aggée/2/21, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Aggée/2/22, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Aggée/2/23, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/1/1, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/1/2, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/1/3, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/1/4, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/1/5, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/1/6, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/1/7, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/1/8, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/1/9, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/1/10, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/1/11, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/1/12, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/1/13, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/1/14, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/1/15, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/1/16, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/1/17, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/2/1, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/2/2, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/2/3, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/2/4, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/2/5, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/2/6, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/2/7, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/2/8, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/2/9, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/2/10, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/2/11, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/2/12, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/2/13, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/2/14, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/2/15, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/2/16, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/2/17, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/3/1, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/3/2, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/3/3, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/3/4, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/3/5, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/3/6, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/3/7, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/3/8, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/3/9, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/3/10, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/4/1, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/4/2, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/4/3, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/4/4, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/4/5, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/4/6, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/4/7, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/4/8, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/4/9, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/4/10, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/4/11, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/4/12, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/4/13, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/4/14, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/5/1, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/5/2, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/5/3, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/5/4, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/5/5, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/5/6, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/5/7, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/5/8, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/5/9, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/5/10, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/5/11, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/6/1, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/6/2, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/6/3, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/6/4, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/6/5, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/6/6, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/6/7, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/6/8, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/6/9, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/6/10, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/6/11, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/6/12, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/6/13, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/6/14, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/6/15, matches: 1
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/7/1, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/7/2, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/7/3, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/7/4, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/7/5, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/7/6, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/7/7, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/7/8, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/7/9, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/7/10, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/7/11, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/7/12, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/7/13, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/7/14, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/8/1, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/8/2, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/8/3, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/8/4, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/8/5, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/8/6, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/8/7, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/8/8, matches: 1
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/8/9, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/8/10, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/8/11, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/8/12, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/8/13, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/8/14, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/8/15, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/8/16, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/8/17, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/8/18, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/8/19, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/8/20, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/8/21, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/8/22, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/8/23, matches: 1
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/9/1, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/9/2, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/9/3, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/9/4, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/9/5, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/9/6, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/9/7, matches: 1
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/9/8, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/9/9, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/9/10, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/9/11, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/9/12, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/9/13, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/9/14, matches: 1
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/9/15, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/9/16, matches: 1
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/9/17, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/10/1, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/10/2, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/10/3, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/10/4, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/10/5, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/10/6, matches: 1
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/10/7, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/10/8, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/10/9, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/10/10, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/10/11, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/10/12, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/11/1, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/11/2, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/11/3, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/11/4, matches: 1
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/11/5, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/11/6, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/11/7, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/11/8, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/11/9, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/11/10, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/11/11, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/11/12, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/11/13, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/11/14, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/11/15, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/11/16, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/11/17, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/12/1, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/12/2, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/12/3, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/12/4, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/12/5, matches: 1
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/12/6, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/12/7, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/12/8, matches: 1
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/12/9, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/12/10, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/12/11, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/12/12, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/12/13, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/12/14, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/13/1, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/13/2, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/13/3, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/13/4, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/13/5, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/13/6, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/13/7, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/13/8, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/13/9, matches: 1
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/14/1, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/14/2, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/14/3, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/14/4, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/14/5, matches: 1
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/14/6, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/14/7, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/14/8, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/14/9, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/14/10, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/14/11, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/14/12, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/14/13, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/14/14, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/14/15, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/14/16, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/14/17, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/14/18, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/14/19, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/14/20, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Zacharie/14/21, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Malachie/1/1, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Malachie/1/2, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Malachie/1/3, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Malachie/1/4, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Malachie/1/5, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Malachie/1/6, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Malachie/1/7, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Malachie/1/8, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Malachie/1/9, matches: 1
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Malachie/1/10, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Malachie/1/11, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Malachie/1/12, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Malachie/1/13, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Malachie/1/14, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Malachie/2/1, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Malachie/2/2, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Malachie/2/3, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Malachie/2/4, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Malachie/2/5, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Malachie/2/6, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Malachie/2/7, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Malachie/2/8, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Malachie/2/9, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Malachie/2/10, matches: 1
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Malachie/2/11, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Malachie/2/12, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Malachie/2/13, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Malachie/2/14, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Malachie/2/15, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Malachie/2/16, matches: 1
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Malachie/2/17, matches: 1
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Malachie/3/1, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Malachie/3/2, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Malachie/3/3, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Malachie/3/4, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Malachie/3/5, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Malachie/3/6, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Malachie/3/7, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Malachie/3/8, matches: 1
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Malachie/3/9, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Malachie/3/10, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Malachie/3/11, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Malachie/3/12, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Malachie/3/13, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Malachie/3/14, matches: 1
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Malachie/3/15, matches: 1
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Malachie/3/16, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Malachie/3/17, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Malachie/3/18, matches: 1
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Malachie/3/19, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Malachie/3/20, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Malachie/3/21, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Malachie/3/22, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Malachie/3/23, matches: 0
-DEBUG Thread-0 books.model.Text - recherche dans le text: Bible/Ancien Testament/Livres prophétiques/Malachie/3/24, matches: 0
-DEBUG Thread-0 ihm.actions.ShearchAction - La recherche est fini
-DEBUG main lancement.Main - Start programme
-DEBUG main ihm.tree.TreeBooks - workspaceListener du TreeBooks conecté.
-DEBUG main lancement.Main - Start programme
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [14] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [15] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [16] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [17] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [18] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [19] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [20] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [21] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [22] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [23] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [24] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [Luc] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [1] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [2] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [3] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [4] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [5] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [6] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [7] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [8] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [9] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [10] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [11] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [12] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [13] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [14] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [15] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [16] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [17] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [18] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [19] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [20] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [21] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [Jean] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [1] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [2] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [3] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [4] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [5] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [6] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [7] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [8] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [9] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [10] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [11] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [12] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [13] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [14] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [15] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [16] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [17] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [18] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [19] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [20] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [21] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [22] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [23] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [24] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [25] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [26] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [27] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [28] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [Actes] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [Evangiles] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [1] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [2] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [3] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [4] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [5] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [6] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [7] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [8] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [9] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [10] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [11] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [12] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [13] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [14] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [15] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [16] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [Romains] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [1] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [2] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [3] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [4] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [5] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [6] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [7] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [8] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [9] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [10] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [11] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [12] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [13] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [14] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [15] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [16] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [1 Corinthiens] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [1] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [2] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [3] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [4] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [5] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [6] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [7] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [8] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [9] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [10] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [11] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [12] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [13] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [2 Corinthiens] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [1] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [2] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [3] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [4] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [5] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [6] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [Galates] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [1] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [2] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [3] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [4] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [5] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [6] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [Ephésiens] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [1] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [2] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [3] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [4] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [Philippiens] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [1] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [2] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [3] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [4] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [Colossiens] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [1] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [2] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [3] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [4] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [5] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [1 Thessaloniciens] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [1] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [2] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [3] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [2 Thessaloniciens] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [1] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [2] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [3] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [4] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [5] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [6] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [1 Timotée] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [1] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [2] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [3] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [4] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [2 Timotée] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [1] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [2] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [3] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [Tite] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [1] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [Philémon] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [1] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [2] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [3] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [4] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [5] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [6] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [7] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [8] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [9] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [10] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [11] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [12] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [13] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [Hébreux] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [Lettres Pauliniennes] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [1] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [2] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [3] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [4] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [5] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [Jacques] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [1] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [2] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [3] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [4] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [5] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [1 Pierre] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [1] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [2] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [3] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [2 Pierre] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [1] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [2] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [3] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [4] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [5] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [1 Jean] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [1] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [2 Jean] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [1] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [3 Jean] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [1] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [Jude] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [1] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [2] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [3] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [4] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [5] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [6] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [7] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [8] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [9] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [10] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [11] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [12] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [13] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [14] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [15] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [16] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [17] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [18] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [19] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [20] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [21] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [22] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [Apocalypse] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [Lettres Catholiques] load =>true
+DEBUG Thread-0 books.model.interfaces.ISubDivision - [Nouveau Testament] load =>true
+DEBUG Thread-0 ihm.actions.LoadObjectAction - Bible a été chargé.
+DEBUG AWT-EventQueue-0 ihm.tree.TreeBooksPopupMenu - init treePopupMenu for one object
+DEBUG AWT-EventQueue-0 ihm.tree.TreeBooksPopupMenu - init treePopupMenu for one object
+DEBUG AWT-EventQueue-0 ihm.tree.TreeBooksPopupMenu - init treePopupMenu for one object
+DEBUG main ihm.window.Window - Start programme
+DEBUG main books.model.interfaces.ISubDivision - [1] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [2] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [3] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [4] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [5] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [6] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [7] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [8] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [9] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [10] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [11] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [12] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [13] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [14] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [15] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [16] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [17] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [18] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [19] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [20] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [21] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [22] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [23] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [24] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [25] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [26] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [27] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [28] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [29] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [30] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [31] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [32] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [33] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [34] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [35] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [36] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [37] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [38] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [39] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [40] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [41] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [42] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [43] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [44] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [45] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [46] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [47] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [48] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [49] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [50] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [Genèse] load =>true
 DEBUG main ihm.tree.TreeBooks - workspaceListener du TreeBooks conecté.
 DEBUG AWT-EventQueue-0 ihm.tree.TreeBooksPopupMenu - init treePopupMenu for one object
-DEBUG AWT-EventQueue-0 ihm.tree.TreeBooksPopupMenu - init treePopupMenu for one object
-DEBUG AWT-EventQueue-0 ihm.tree.TreeBooksPopupMenu - init treePopupMenu for one object
-DEBUG AWT-EventQueue-0 ihm.tree.TreeBooksPopupMenu - init treePopupMenu for one object
-DEBUG AWT-EventQueue-0 ihm.tree.TreeBooksPopupMenu - init treePopupMenu for one object
-DEBUG AWT-EventQueue-0 ihm.tree.TreeBooksPopupMenu - init treePopupMenu for several object
-DEBUG main lancement.Main - Start programme
+DEBUG AWT-EventQueue-0 ihm.window.WindowProperties - Propriétés de la fenètre enregistrés
+DEBUG main ihm.window.Window - Start programme
+DEBUG main books.model.interfaces.ISubDivision - [/home/bata/livres/bible/AT/Pentateuque/Gn/0001] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [/home/bata/livres/bible/AT/Pentateuque/Gn/0002] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [/home/bata/livres/bible/AT/Pentateuque/Gn/0003] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [/home/bata/livres/bible/AT/Pentateuque/Gn/0004] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [/home/bata/livres/bible/AT/Pentateuque/Gn/0005] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [/home/bata/livres/bible/AT/Pentateuque/Gn/0006] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [/home/bata/livres/bible/AT/Pentateuque/Gn/0007] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [/home/bata/livres/bible/AT/Pentateuque/Gn/0008] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [/home/bata/livres/bible/AT/Pentateuque/Gn/0009] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [/home/bata/livres/bible/AT/Pentateuque/Gn/0010] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [/home/bata/livres/bible/AT/Pentateuque/Gn/0011] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [/home/bata/livres/bible/AT/Pentateuque/Gn/0012] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [/home/bata/livres/bible/AT/Pentateuque/Gn/0013] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [/home/bata/livres/bible/AT/Pentateuque/Gn/0014] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [/home/bata/livres/bible/AT/Pentateuque/Gn/0015] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [/home/bata/livres/bible/AT/Pentateuque/Gn/0016] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [/home/bata/livres/bible/AT/Pentateuque/Gn/0017] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [/home/bata/livres/bible/AT/Pentateuque/Gn/0018] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [/home/bata/livres/bible/AT/Pentateuque/Gn/0019] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [/home/bata/livres/bible/AT/Pentateuque/Gn/0020] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [/home/bata/livres/bible/AT/Pentateuque/Gn/0021] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [/home/bata/livres/bible/AT/Pentateuque/Gn/0022] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [/home/bata/livres/bible/AT/Pentateuque/Gn/0023] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [/home/bata/livres/bible/AT/Pentateuque/Gn/0024] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [/home/bata/livres/bible/AT/Pentateuque/Gn/0025] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [/home/bata/livres/bible/AT/Pentateuque/Gn/0026] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [/home/bata/livres/bible/AT/Pentateuque/Gn/0027] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [/home/bata/livres/bible/AT/Pentateuque/Gn/0028] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [/home/bata/livres/bible/AT/Pentateuque/Gn/0029] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [/home/bata/livres/bible/AT/Pentateuque/Gn/0030] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [/home/bata/livres/bible/AT/Pentateuque/Gn/0031] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [/home/bata/livres/bible/AT/Pentateuque/Gn/0032] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [/home/bata/livres/bible/AT/Pentateuque/Gn/0033] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [/home/bata/livres/bible/AT/Pentateuque/Gn/0034] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [/home/bata/livres/bible/AT/Pentateuque/Gn/0035] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [/home/bata/livres/bible/AT/Pentateuque/Gn/0036] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [/home/bata/livres/bible/AT/Pentateuque/Gn/0037] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [/home/bata/livres/bible/AT/Pentateuque/Gn/0038] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [/home/bata/livres/bible/AT/Pentateuque/Gn/0039] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [/home/bata/livres/bible/AT/Pentateuque/Gn/0040] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [/home/bata/livres/bible/AT/Pentateuque/Gn/0041] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [/home/bata/livres/bible/AT/Pentateuque/Gn/0042] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [/home/bata/livres/bible/AT/Pentateuque/Gn/0043] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [/home/bata/livres/bible/AT/Pentateuque/Gn/0044] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [/home/bata/livres/bible/AT/Pentateuque/Gn/0045] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [/home/bata/livres/bible/AT/Pentateuque/Gn/0046] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [/home/bata/livres/bible/AT/Pentateuque/Gn/0047] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [/home/bata/livres/bible/AT/Pentateuque/Gn/0048] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [/home/bata/livres/bible/AT/Pentateuque/Gn/0049] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [/home/bata/livres/bible/AT/Pentateuque/Gn/0050] load =>true
+DEBUG main books.model.interfaces.ISubDivision - [/home/bata/livres/bible/AT/Pentateuque/Gn] load =>true
 DEBUG main ihm.tree.TreeBooks - workspaceListener du TreeBooks conecté.
-DEBUG AWT-EventQueue-0 ihm.tree.TreeBooksListeners - path select : [root, Livres]
-DEBUG AWT-EventQueue-0 ihm.tree.TreeBooksPopupMenu - init treePopupMenu for one object
-DEBUG AWT-EventQueue-0 ihm.tree.TreeBooksListeners - path select : [root, Livres]
-DEBUG AWT-EventQueue-0 ihm.tree.TreeBooksListeners - path select : [root, Commentaires]
-DEBUG AWT-EventQueue-0 ihm.tree.TreeBooksPopupMenu - init treePopupMenu for several object
-DEBUG AWT-EventQueue-0 ihm.tree.TreeBooksListeners - path select : [root, Livres]
-DEBUG AWT-EventQueue-0 ihm.tree.TreeBooksPopupMenu - init treePopupMenu for one object
-DEBUG AWT-EventQueue-0 ihm.tree.TreeBooksListeners - path select : [root, Livres, Bible, Ancien Testament]
-DEBUG AWT-EventQueue-0 ihm.tree.TreeBooksPopupMenu - init treePopupMenu for one object
-DEBUG AWT-EventQueue-0 ihm.tree.TreeBooksListeners - path select : [root, Livres, Bible, Ancien Testament]
-DEBUG AWT-EventQueue-0 ihm.tree.TreeBooksListeners - path select : [root, Livres, Bible, Nouveau Testament]
-DEBUG AWT-EventQueue-0 ihm.tree.TreeBooksPopupMenu - init treePopupMenu for several object
-DEBUG AWT-EventQueue-0 ihm.tree.TreeBooksListeners - path select : [root, Livres, Bible, Nouveau Testament, Evangiles]
-DEBUG AWT-EventQueue-0 ihm.tree.TreeBooksPopupMenu - init treePopupMenu for one object
-DEBUG AWT-EventQueue-0 ihm.tree.TreeBooksListeners - path select : [root, Livres, Bible, Nouveau Testament, Evangiles]
-DEBUG AWT-EventQueue-0 ihm.tree.TreeBooksListeners - path select : [root, Livres, Bible, Nouveau Testament, Lettres Pauliniennes]
-DEBUG AWT-EventQueue-0 ihm.tree.TreeBooksListeners - path select : [root, Livres, Bible, Nouveau Testament, Lettres Catholiques]
-DEBUG AWT-EventQueue-0 ihm.tree.TreeBooksPopupMenu - init treePopupMenu for several object
-DEBUG AWT-EventQueue-0 ihm.tree.TreeBooksListeners - path select : [root, Livres, Bible, Nouveau Testament, Evangiles]
-DEBUG AWT-EventQueue-0 ihm.tree.TreeBooksListeners - path select : [root, Livres, Bible, Nouveau Testament, Lettres Pauliniennes]
-DEBUG AWT-EventQueue-0 ihm.tree.TreeBooksListeners - path select : [root, Livres, Bible, Nouveau Testament, Lettres Catholiques]
-DEBUG AWT-EventQueue-0 ihm.tree.TreeBooksListeners - path select : [root, Livres, Bible]
-DEBUG AWT-EventQueue-0 ihm.tree.TreeBooksPopupMenu - init treePopupMenu for several object
-DEBUG AWT-EventQueue-0 ihm.tree.TreeBooksListeners - path select : [root, Livres, Bible, Nouveau Testament, Evangiles]
-DEBUG AWT-EventQueue-0 ihm.tree.TreeBooksListeners - path select : [root, Livres, Bible, Nouveau Testament, Lettres Pauliniennes]
-DEBUG AWT-EventQueue-0 ihm.tree.TreeBooksListeners - path select : [root, Livres, Bible, Nouveau Testament, Lettres Catholiques]
-DEBUG AWT-EventQueue-0 ihm.tree.TreeBooksListeners - path select : [root, Livres, Bible]
-DEBUG AWT-EventQueue-0 ihm.tree.TreeBooksListeners - path select : [root, Livres]
-DEBUG AWT-EventQueue-0 ihm.tree.TreeBooksPopupMenu - init treePopupMenu for several object
-DEBUG AWT-EventQueue-0 ihm.tree.TreeBooksListeners - path select : [root, Livres, Bible, Nouveau Testament, Lettres Pauliniennes]
-DEBUG AWT-EventQueue-0 ihm.tree.TreeBooksListeners - path select : [root, Livres]
-DEBUG AWT-EventQueue-0 ihm.tree.TreeBooksListeners - path select : [root, Livres, Bible, Nouveau Testament, Lettres Catholiques]
-DEBUG AWT-EventQueue-0 ihm.tree.TreeBooksListeners - path select : [root, Livres, Bible, Nouveau Testament, Evangiles]
-DEBUG AWT-EventQueue-0 ihm.tree.TreeBooksPopupMenu - init treePopupMenu for several object
-DEBUG AWT-EventQueue-0 ihm.tree.TreeBooksListeners - path select : [root, Livres, Bible, Nouveau Testament, Lettres Pauliniennes]
-DEBUG AWT-EventQueue-0 ihm.tree.TreeBooksListeners - path select : [root, Livres, Bible, Nouveau Testament, Lettres Catholiques]
-DEBUG AWT-EventQueue-0 ihm.tree.TreeBooksListeners - path select : [root, Livres, Bible, Nouveau Testament, Evangiles]
-DEBUG AWT-EventQueue-0 ihm.tree.TreeBooksPopupMenu - init treePopupMenu for several object

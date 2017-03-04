@@ -7,11 +7,11 @@ import javax.swing.JOptionPane;
 import org.apache.log4j.Logger;
 
 import books.model.interfaces.ILoadSaveObject;
-import ihm.Window;
 import ihm.tree.nodes.BookNode;
 import ihm.tree.nodes.SubBookDivisionNode;
+import ihm.window.Window;
 
-public class SaveObjectAction implements ActionPerso{
+public class SaveObjectAction extends ActionPersoImplement{
 	
 	private static final Logger LOGGER = Logger.getLogger(SaveObjectAction.class);
 	

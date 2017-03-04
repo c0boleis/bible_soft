@@ -18,6 +18,8 @@ public interface IPropertiesUsed {
 	
 	public static final String KEY_AUTO_OPEN = "auto_open";
 	
+	public static final String KEY_NBR_OF_TEXTS = "nbr_of_texts";
+	
 	public Properties loadInfo() throws NoPropetiesException;
 	
 	public Properties saveInfo() throws NoPropetiesException;

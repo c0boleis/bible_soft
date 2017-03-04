@@ -8,6 +8,8 @@ public interface ILoadSaveObject {
 	
 	public void save() throws IOException;
 	
+	public void saveAll() throws IOException;
+	
 	public boolean isLoad();
 	
 	public void load() throws IOException;

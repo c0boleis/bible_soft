@@ -1,4 +1,4 @@
-package ihm;
+package ihm.dialogue;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -15,6 +15,7 @@ import javax.swing.event.CaretListener;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
+import ihm.window.Window;
 import util.StringUtil;
 
 public class SearhcPane {

@@ -10,5 +10,11 @@ package ihm.actions;
 public interface ActionPerso {
 	
 	public void doAction();
+	
+	public void addActionListener(ActionListenerPerso listener);
+	
+	public void removeActionListener(ActionListenerPerso listener);
+	
+	public ActionListenerPerso[] getActionListenerPersos();
 
 }

@@ -5,7 +5,6 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.sql.Savepoint;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -21,18 +20,35 @@ import books.model.interfaces.IShearchMatch;
 import books.model.interfaces.ISubDivision;
 import books.model.interfaces.IText;
 import books.model.listener.OrderedObjectListener;
+import books.model.listener.TextAddedListener;
+import books.model.rules.BookAbvRule;
+import books.model.rules.BookHierachyRule;
+import books.model.rules.BookNameRule;
 
+/**
+ * 
+ * @author C.B.
+ *
+ */
 public class SubDivision implements ISubDivision {
 	
 	private static final Logger LOGGER = Logger.getLogger(ISubDivision.class);
 
 	private String abv = null;
+	
+	private static final BookAbvRule BOOK_ABV_RULE = new BookAbvRule();
 
 	private String name = null;
+	
+	private static final BookNameRule BOOK_NAME_RULE = new BookNameRule();
 
 	private String folderPath = null;
 
 	private String hierarchy = null;
+	
+	private static final BookHierachyRule BOOK_HIERACHY_RULE = new BookHierachyRule();
+	
+	private int nbrOfText = -1;
 	
 	private boolean load = false;
 	
@@ -50,6 +66,8 @@ public class SubDivision implements ISubDivision {
 	
 	private List<OrderedObjectListener> orderedObjectListeners = new ArrayList<OrderedObjectListener>();
 
+	private List<TextAddedListener> textAddedListeners = new ArrayList<TextAddedListener>();
+	
 	private boolean allowListener = false;
 	
 	private List<ISubDivision> subDivisions = new ArrayList<ISubDivision>();
@@ -98,6 +116,7 @@ public class SubDivision implements ISubDivision {
 			this.name = pr.getProperty(KEY_NAME);
 			this.abv = pr.getProperty(KEY_ABV);
 			this.hierarchy = pr.getProperty(KEY_HIERARCHY,DEFAULT_HIERARCHY);
+			this.nbrOfText = Integer.parseInt(pr.getProperty(KEY_NBR_OF_TEXTS,"-1"));
 			this.order = Integer.parseInt(pr.getProperty(KEY_ORDER, "-1"));
 			autoOpen = Boolean.parseBoolean(pr.getProperty(KEY_AUTO_OPEN, "false"));
 			if(autoOpen){
@@ -114,6 +133,10 @@ public class SubDivision implements ISubDivision {
 		}
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * @see books.model.interfaces.ISubDivisonContainer#loadSubDivisions()
+	 */
 	@Override
 	public void loadSubDivisions(){
 		File folder = new File(folderPath);
@@ -142,26 +165,46 @@ public class SubDivision implements ISubDivision {
 		this.sortSubdivisions();
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * @see books.model.interfaces.ISubDivision#getAbv()
+	 */
 	@Override
 	public String getAbv() {
 		return this.abv;
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * @see books.model.interfaces.ISubDivision#getName()
+	 */
 	@Override
 	public String getName() {
 		return this.name;
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * @see books.model.interfaces.ISubDivisonContainer#getSubDivisions()
+	 */
 	@Override
 	public ISubDivision[] getSubDivisions() {
 		return subDivisions.toArray(new ISubDivision[0]);
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * @see books.model.interfaces.IOrderedObject#getOrder()
+	 */
 	@Override
 	public int getOrder() {
 		return this.order;
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * @see books.model.interfaces.IOrderedObject#setOrder(int)
+	 */
 	@Override
 	public void setOrder(int order) {
 		int oldOrder = this.order;
@@ -210,8 +253,9 @@ public class SubDivision implements ISubDivision {
 					continue;
 				}
 				try {
-					Text sub = new Text(this,file.getAbsolutePath());
-					texts.add(sub);
+					Text text = new Text(this,file.getAbsolutePath());
+					texts.add(text);
+					fireTextAdded(text);
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
@@ -262,26 +306,33 @@ public class SubDivision implements ISubDivision {
 
 	@Override
 	public void load() throws IOException {
-		if(this.isLoad()){
+		if(!this.isLoad()){
+			boolean loadTest = true;
+			this.loadSubDivisions();
+			for(ISubDivision div : this.subDivisions){
+				div.load();
+				if(!div.isLoad()){
+					loadTest = false;
+				}
+			}
+			this.loadTexts();
+			for(IText text : this.texts){
+				text.load();
+				if(!text.isLoad()){
+					loadTest = false;
+				}
+			}
+			LOGGER.debug("["+getFilePath()+"] load =>"+loadTest);
+			this.load = loadTest;
+		}
+		if(!this.isLoad()){
 			return;
 		}
-		boolean loadTest = true;
-		this.loadSubDivisions();
-		for(ISubDivision div : this.subDivisions){
-			div.load();
-			if(!div.isLoad()){
-				loadTest = false;
-			}
+		int nbrTmp = this.nbrOfText;
+		this.nbrOfText = calculNbrOfTexts();
+		if(this.nbrOfText!= nbrTmp){
+			this.save = false;
 		}
-		this.loadTexts();
-		for(IText text : this.texts){
-			text.load();
-			if(!text.isLoad()){
-				loadTest = false;
-			}
-		}
-		LOGGER.debug("["+name+"] load =>"+loadTest);
-		this.load = loadTest;
 	}
 
 	@Override
@@ -412,7 +463,8 @@ public class SubDivision implements ISubDivision {
 			if(this.order>=0){
 				pr.setProperty(KEY_ORDER, String.valueOf(this.order));
 			}
-			pr.setProperty(KEY_AUTO_OPEN, this.autoOpen?"true":"false");
+			pr.setProperty(KEY_NBR_OF_TEXTS, String.valueOf(this.nbrOfText));
+			pr.setProperty(KEY_AUTO_OPEN, String.valueOf(this.autoOpen));
 			pr.store(new FileWriter(file), null);
 			return pr;
 		} catch (FileNotFoundException e) {
@@ -498,6 +550,132 @@ public class SubDivision implements ISubDivision {
 			Collections.sort(subDivisions,
 					new OrderObjectComparator());
 		}
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * @see books.model.interfaces.ITextContainer#getNbrOfTexts()
+	 */
+	@Override
+	public int getNbrOfTexts() {
+		return this.nbrOfText;
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * @see books.model.interfaces.ISubDivision#setName(java.lang.String)
+	 */
+	@Override
+	public String setName(String newName) {
+		String error = BOOK_NAME_RULE.checkRule(newName);
+		if(error!=null){
+			return error;
+		}
+		this.name = BOOK_NAME_RULE.modifyWithRule(newName);
+		this.save = false;
+		return null;
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * @see books.model.interfaces.ISubDivision#setAbv(java.lang.String)
+	 */
+	@Override
+	public String setAbv(String newAbv) {
+		String error = BOOK_ABV_RULE.checkRule(newAbv);
+		if(error!=null){
+			return error;
+		}
+		this.abv = BOOK_ABV_RULE.modifyWithRule(newAbv);
+		this.save = false;
+		return null;
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * @see books.model.interfaces.ISubDivision#setHierarchy(java.lang.String)
+	 */
+	@Override
+	public String setHierarchy(String newHierarchy) {
+		String error = BOOK_HIERACHY_RULE.checkRule(newHierarchy);
+		if(error!=null){
+			return error;
+		}
+		this.hierarchy = BOOK_HIERACHY_RULE.modifyWithRule(newHierarchy);
+		this.save = false;
+		return null;
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * @see books.model.interfaces.ITextContainer#isAutoOpen()
+	 */
+	@Override
+	public boolean isAutoOpen() {
+		return this.autoOpen;
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * @see books.model.interfaces.ITextContainer#calculNbrOfTexts()
+	 */
+	@Override
+	public int calculNbrOfTexts() {
+		int nbrOut = this.texts.size();
+		ISubDivision[] divs = getSubDivisions();
+		for(ISubDivision div : divs){
+			nbrOut+=div.calculNbrOfTexts();
+		}
+		return nbrOut;
+	}
+
+	@Override
+	public void saveAll() throws IOException {
+		this.save();
+		ISubDivision[] divs = getSubDivisions();
+		for(ISubDivision div : divs){
+			div.saveAll();
+		}
+		IText[] textsTmp = this.getTexts();
+		for(IText text : textsTmp){
+			text.saveAll();
+		}
+		
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * @see books.model.interfaces.ITextContainer#removeTextAddedListener(books.model.listener.TextAddedListener)
+	 */
+	@Override
+	public void removeTextAddedListener(TextAddedListener listener) {
+		this.textAddedListeners.remove(listener);
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * @see books.model.interfaces.ITextContainer#getTextAddedListeners()
+	 */
+	@Override
+	public TextAddedListener[] getTextAddedListeners() {
+		return this.textAddedListeners.toArray(new TextAddedListener[0]);
+	}
+	
+	protected void fireTextAdded(IText text){
+		TextAddedListener[] tab = getTextAddedListeners();
+		for(TextAddedListener listener : tab){
+			listener.textAdded(text);
+		}
+		((Book)this.getBook()).fireTextAdded(text);
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * @see books.model.interfaces.ITextContainer#addTextAddedListener(books.model.listener.TextAddedListener)
+	 */
+	@Override
+	public void addTextAddedListener(TextAddedListener listener) {
+		this.textAddedListeners.add(listener);
 	}
 
 }

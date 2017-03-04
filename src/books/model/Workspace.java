@@ -21,7 +21,7 @@ import books.model.interfaces.ISubDivision;
 import books.model.interfaces.ISubDivisonContainer;
 import books.model.interfaces.IText;
 import books.model.listener.WorkspaceListener;
-import ihm.Window;
+import ihm.window.Window;
 
 public class Workspace implements ILoadSaveOld{
 	
@@ -304,6 +304,13 @@ public class Workspace implements ILoadSaveOld{
 		buf.close();
 		save = true;
 		this.fireSaveChange();
+	}
+
+	public void saveAll() throws IOException {
+		for(IBook book : Workspace.books){
+			book.saveAll();
+		}
+		
 	}
 
 	/**

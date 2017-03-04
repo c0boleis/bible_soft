@@ -1,11 +1,14 @@
 /**
  * 
  */
-package ihm;
+package ihm.window;
 
+import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.GraphicsDevice;
 import java.awt.GraphicsEnvironment;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -28,6 +31,7 @@ import books.model.Workspace;
 import books.model.interfaces.IBook;
 import books.model.interfaces.IComment;
 import books.model.listener.WorkspaceListener;
+import ihm.PanelJob;
 import ihm.consol.Consol;
 import ihm.tree.TreeBooks;
 import ihm.viewers.TabbedPaneChapeter;
@@ -44,9 +48,11 @@ public class Window extends JFrame {
 	 */
 	private static final long serialVersionUID = -9203348546932805145L;
 
-	static final Logger LOGGER = Logger.getLogger(Main.class);
+	static final Logger LOGGER = Logger.getLogger(Window.class);
 
 	private static Window INSTANCE = new Window();
+	
+	private static WindowProperties windowProperties;
 
 	private static JSplitPane mainSplit;
 
@@ -59,25 +65,27 @@ public class Window extends JFrame {
 	private static TabbedPaneChapeter tabbedPaneChapeter;
 
 	private static MenuBarWindow menuBarWindow;
+	
+	private static PanelJob panelJob;
 
 	private static Consol consol;
+	
+	private static WindowListener windowListener;
 
-	private static File FILE_PROPERTIES;
-
-	private static final String KEY_WORKSPACE_PROPERTIES = "workspace";
-
-	protected static final String SOFT_VERSION = "0.0.2";
+	protected static final String SOFT_VERSION = "0.0.3";
 
 	private static WorkspaceListener workspaceListener;
 
 	private Window(){
 		super();
 		this.setTitle("Bible soft");
-		this.setMinimumSize(new Dimension(300, 200));
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setExtendedState(JFrame.MAXIMIZED_BOTH);
 		this.setJMenuBar(getMenuBarWindow());
-		this.setContentPane(getMainSplit());
+		this.setLayout(new BorderLayout());
+		this.add(getMainSplit(),BorderLayout.CENTER);
+		this.add(getPanelJob(), BorderLayout.SOUTH);
+		this.addWindowListener(getWindowListener());
 	}
 
 	public static void main(String[] args) {
@@ -118,39 +126,8 @@ public class Window extends JFrame {
 	}
 
 	public static void open(){
-		String defaultWorkspace = "default";
-		Properties properties = new Properties();
 		try {
-			properties.load(new FileReader(getFileProperties()));
-			String workspaceFolder = properties.getProperty(
-					KEY_WORKSPACE_PROPERTIES,defaultWorkspace);
-			File folder = new File(workspaceFolder);
-			if(!folder.exists()){
-				File file = null;
-				while(file==null){
-					JFileChooser choose = new JFileChooser();
-					choose.setMultiSelectionEnabled(false);
-					choose.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-					choose.showOpenDialog(INSTANCE);
-					file = choose.getSelectedFile();
-					if(file==null){
-						int rep = JOptionPane.showConfirmDialog(
-								INSTANCE,
-								"le fichier est null voulez-vous quiter le logiciel?", 
-								"Workspace", JOptionPane.INFORMATION_MESSAGE);
-						if(rep==JOptionPane.OK_OPTION){
-							System.exit(0);
-						}
-					}
-				}
-				workspaceFolder = file.getPath();
-				properties.setProperty(KEY_WORKSPACE_PROPERTIES,
-						workspaceFolder);
-				properties.store(new FileWriter(getFileProperties()), null);
-			}
-			if(!workspaceFolder.equals(defaultWorkspace)){
-				Workspace.get().setFolder_path(workspaceFolder);
-			}
+			getWindowProperties().loadProperties();
 			Workspace.get().load();
 			getTreeBooks().initData();
 			conectListeners();
@@ -162,12 +139,11 @@ public class Window extends JFrame {
 		} catch (NoPropetiesException e) {
 			e.printStackTrace();
 		}
-//		GraphicsDevice gd = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
-//		int height = gd.getDisplayMode().getHeight();
-//		getSecondSplit().setDividerLocation(height/4);
-//		getSecondSplit().setDividerLocation(0.75);
-//		getMainSplit().setDividerLocation(0.35);
+//		INSTANCE.pack();
 		INSTANCE.setVisible(true);
+
+		getSecondSplit().setDividerLocation(getWindowProperties().getSecondSplitLocation());
+		getMainSplit().setDividerLocation(getWindowProperties().getMainSplitLocation());
 	}
 
 	private static void conectListeners(){
@@ -189,7 +165,7 @@ public class Window extends JFrame {
 	/**
 	 * @return the mainSplit
 	 */
-	private static JSplitPane getMainSplit() {
+	protected static JSplitPane getMainSplit() {
 		if(mainSplit==null){
 			mainSplit = new  JSplitPane();
 			mainSplit.setLeftComponent(getScrollPaneTree());
@@ -221,10 +197,20 @@ public class Window extends JFrame {
 	public static void save() {
 		try {
 			Workspace.get().save();
+			getWindowProperties().saveProperties();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 
+	}
+
+	public static void saveAll() {
+		try {
+			Workspace.get().saveAll();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
 	}
 
 	//	public static void needSave(){
@@ -292,7 +278,7 @@ public class Window extends JFrame {
 	/**
 	 * @return the secondSplit
 	 */
-	private static JSplitPane getSecondSplit() {
+	protected static JSplitPane getSecondSplit() {
 		if(secondSplit == null){
 			secondSplit = new JSplitPane();
 			secondSplit.setOrientation(JSplitPane.VERTICAL_SPLIT);
@@ -302,22 +288,85 @@ public class Window extends JFrame {
 		return secondSplit;
 	}
 
-	private static File getFileProperties(){
-		if(FILE_PROPERTIES==null){
-			FILE_PROPERTIES = new File("setting.properties");
-			if(!FILE_PROPERTIES.exists()){
-				try {
-					FILE_PROPERTIES.createNewFile();
-				} catch (IOException e) {
-					LOGGER.error("le fichier de propriété n'a pas été créé", e);
-				}
-			}
+	public static void close() {
+		try {
+			getWindowProperties().saveProperties();
+		} catch (IOException e) {
+			LOGGER.error("Les propriétés de la fenètre n'on pas été enregistré", e);
 		}
-		return FILE_PROPERTIES;
+		System.exit(0);
 	}
 
-	public static void close() {
-		System.exit(0);
+	/**
+	 * @return the panelJob
+	 */
+	public static PanelJob getPanelJob() {
+		if(Window.panelJob==null){
+			Window.panelJob = new PanelJob();
+		}
+		return Window.panelJob;
+	}
+
+	/**
+	 * @return the windowProperties
+	 */
+	private static WindowProperties getWindowProperties() {
+		if(windowProperties == null){
+			windowProperties = new WindowProperties();
+		}
+		return windowProperties;
+	}
+
+	/**
+	 * @return the windowListener
+	 */
+	private static WindowListener getWindowListener() {
+		if(windowListener==null){
+			windowListener = new WindowListener() {
+				
+				@Override
+				public void windowOpened(WindowEvent arg0) {
+				}
+				
+				@Override
+				public void windowIconified(WindowEvent arg0) {
+				}
+				
+				@Override
+				public void windowDeiconified(WindowEvent arg0) {
+				}
+				
+				@Override
+				public void windowDeactivated(WindowEvent arg0) {
+					
+				}
+				
+				@Override
+				public void windowClosing(WindowEvent arg0) {
+					try {
+						getWindowProperties().saveProperties();
+					} catch (IOException e) {
+						LOGGER.error("Les propriétés de la fenètre n'on pas été enregistré", e);
+					}
+					
+				}
+				
+				@Override
+				public void windowClosed(WindowEvent arg0) {
+					try {
+						getWindowProperties().saveProperties();
+					} catch (IOException e) {
+						LOGGER.error("Les propriétés de la fenètre n'on pas été enregistré", e);
+					}
+				}
+				
+				@Override
+				public void windowActivated(WindowEvent arg0) {
+					
+				}
+			};
+		}
+		return windowListener;
 	}
 
 }

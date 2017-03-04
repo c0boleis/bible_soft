@@ -17,9 +17,15 @@ IPropertiesUsed,ISubDivisonContainer, IShearable, ILoadSaveObject{
 	
 	public String getName();
 	
+	public String setName(String newName);
+	
 	public String getAbv();
 	
+	public String setAbv(String newAbv);
+	
 	public String getHierarchy();
+	
+	public String setHierarchy(String newHierarchy);
 	
 	public String getPath();
 	

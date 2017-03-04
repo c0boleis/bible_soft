@@ -1,46 +1,67 @@
 package ihm.actions;
 
 import javax.swing.JOptionPane;
+import javax.swing.SwingUtilities;
 
 import org.apache.log4j.Logger;
 
 import books.model.Searcher;
+import books.model.interfaces.IBook;
 import books.model.interfaces.IShearable;
 import books.model.interfaces.IShearchMatch;
+import books.model.interfaces.ISubDivision;
 import books.model.listener.SearcherListener;
+import books.model.rules.BookNameRule;
 import ihm.dialogue.SearhcPane;
+import ihm.dialogue.TextPane;
 import ihm.window.Window;
 
-public class ShearchAction extends ActionPersoImplement{
+public class SetNameAction extends ActionPersoImplement{
 
-	private static final Logger LOGGER = Logger.getLogger(ShearchAction.class);
+	private static final Logger LOGGER = Logger.getLogger(SetNameAction.class);
 
-	private IShearable shearable;
+	private IBook book = null;
+	
+	private ISubDivision subDivision = null;
 
-	private SearcherListener searcherListener;
+	private static SearcherListener searcherListener;
 
-	public ShearchAction(IShearable read) {
-		this.shearable = read;
+	public SetNameAction(IBook read) {
+		this.book = read;
+	}
+	
+	public SetNameAction(ISubDivision read) {
+		this.subDivision = read;
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * @see ihm.actions.ActionPerso#doAction()
+	 */
 	@Override
 	public void doAction() {
-		this.fireActionStarted();
-		Window.getPanelJob().initValueToLoad(100);
-		String regex = SearhcPane.getSearchRegex();
-		if(regex==null){
+		String initName = null;
+		if(this.book!=null){
+			initName = this.book.getName();
+		}else{
+			initName = this.subDivision.getName();
+		}
+		TextPane textPane = new TextPane(new BookNameRule(),initName);
+		String name = textPane.getSearchRegex();
+		if(name==null){
 			return;
 		}
-		Searcher.setListener(getSearcherListener());
-		
-		Window.getConsol().clear();
-		Searcher.search(this.shearable, regex);
+		if(this.book!=null){
+			this.book.setName(name);
+		}else{
+			this.subDivision.setName(name);
+		}
 	}
 
 	/**
 	 * @return the searcherListener
 	 */
-	public SearcherListener getSearcherListener() {
+	public static SearcherListener getSearcherListener() {
 		if(searcherListener == null){
 			searcherListener = new SearcherListener() {
 
@@ -70,7 +91,6 @@ public class ShearchAction extends ActionPersoImplement{
 						}
 						LOGGER.debug(tab.length+" résultats trouvés");
 					}
-					fireActionFinished();
 				}
 			};
 		}

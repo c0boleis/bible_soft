@@ -299,4 +299,10 @@ public class Comment implements IComment{
 		return editableAttributes;
 	}
 
+	@Override
+	public void saveAll() throws IOException {
+		this.save();
+		
+	}
+
 }

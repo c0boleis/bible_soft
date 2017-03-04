@@ -4,9 +4,9 @@ package ihm.actions;
 import javax.swing.JOptionPane;
 
 import books.model.interfaces.IOrderedObject;
-import ihm.Window;
+import ihm.window.Window;
 
-public class SetOrderAction implements ActionPerso{
+public class SetOrderAction extends ActionPersoImplement{
 
 	private IOrderedObject readable;
 

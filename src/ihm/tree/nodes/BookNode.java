@@ -17,7 +17,7 @@ import books.model.interfaces.ILoadSaveObject;
 import books.model.interfaces.IShearable;
 import books.model.interfaces.IShearchMatch;
 import books.model.interfaces.ISubDivision;
-import ihm.Window;
+import ihm.window.Window;
 
 public class BookNode extends DefaultMutableTreeNode 
 implements IShearable, ILoadSaveObject{
@@ -129,6 +129,16 @@ implements IShearable, ILoadSaveObject{
 	@Override
 	public void setFilePath(String path) {
 		// TODO Auto-generated method stub
+		
+	}
+	
+	public IBook getBook(){
+		return this.book;
+	}
+
+	@Override
+	public void saveAll() throws IOException {
+		this.book.saveAll();
 		
 	}
 

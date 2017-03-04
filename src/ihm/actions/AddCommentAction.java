@@ -1,24 +1,18 @@
 package ihm.actions;
 
-import java.awt.event.WindowStateListener;
-
 import javax.swing.JOptionPane;
-import javax.swing.JScrollPane;
 
 import books.model.Comment;
 import books.model.Workspace;
-import books.model.interfaces.IComment;
-import books.model.interfaces.IReadable;
 import books.model.interfaces.IText;
-import ihm.Window;
-import ihm.reader.Reader;
+import ihm.window.Window;
 
 /**
  * 
  * @author bata
  *
  */
-public class AddCommentAction implements ActionPerso{
+public class AddCommentAction extends ActionPersoImplement{
 	
 	private IText text;
 
@@ -43,8 +37,8 @@ public class AddCommentAction implements ActionPerso{
 			for(int index=0;index<tmp.length;index++){
 				if(!Character.isAlphabetic(tmp[index])){
 					JOptionPane.showMessageDialog(Window.get(),
-							"ERROR",
 							"Le nom peut contenir seulement des lettres",
+							"ERROR",
 							JOptionPane.ERROR_MESSAGE);
 					name=null;
 					break;
@@ -58,8 +52,8 @@ public class AddCommentAction implements ActionPerso{
 		Comment comment = new Comment(name, new IText[]{this.text}, text);
 		if(!Workspace.get().addComment(comment)){
 			JOptionPane.showMessageDialog(Window.get(),
-					"ERROR",
 					"Le commentaire n'a pas été ajouter",
+					"ERROR",
 					JOptionPane.ERROR_MESSAGE);
 		}
 		

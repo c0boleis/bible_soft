@@ -17,7 +17,7 @@ import books.model.interfaces.ISubDivision;
 import books.model.interfaces.ISubDivisonContainer;
 import books.model.interfaces.IText;
 import books.model.listener.OrderedObjectListener;
-import ihm.Window;
+import ihm.window.Window;
 
 public class SubBookDivisionNode extends DefaultMutableTreeNode 
 implements IReadable,IShearable,ILoadSaveObject,IOrderedObject{
@@ -239,6 +239,16 @@ implements IReadable,IShearable,ILoadSaveObject,IOrderedObject{
 			};
 		}
 		return orderedObjectListener;
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * @see books.model.interfaces.ILoadSaveObject#saveAll()
+	 */
+	@Override
+	public void saveAll() throws IOException {
+		this.subDivision.saveAll();
+		
 	}
 
 }
